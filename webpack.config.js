@@ -24,7 +24,8 @@ module.exports = {
             'containers': path.join(__dirname, './src/js/containers'),
             'components': path.join(__dirname, './src/js/components'),
             'js': path.join(__dirname, './src/js'),
-            'static': path.join(__dirname, './src/static')
+            'static': path.join(__dirname, './src/static'),
+            'css': path.join(__dirname, './src/css'),
         }
     },
     module: {
@@ -60,7 +61,7 @@ module.exports = {
             },
             {
                 test: /\.(html|ttf|eot|png|gif|jpg|woff|woff2|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                use: 'file-loader'
+                use: 'file-loader?name=[path][name].[ext]'
             }
         ]
     },

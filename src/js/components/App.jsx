@@ -15,6 +15,7 @@ export default CSSModules(class extends Component {
                     { this.props.children }
                     { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
                     <Containers.navbar.Navbar />
+                    <Containers.banner.Banner />
                 </div>
             </StyleRoot>
         )

@@ -1,4 +1,5 @@
 import App from './App'
+import banner from './banner'
 import intro from './intro'
 import map from './map'
 import news from './news'
@@ -11,6 +12,7 @@ import DevTools from './DevTools'
 import navbar from './navbar'
 export default {
     App,
+    banner,
     intro,
     map,
     news,

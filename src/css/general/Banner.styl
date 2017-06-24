@@ -4,24 +4,23 @@
     width: 100vw
     height: 100vh
     z-index: 0
-    // border: 10px solid $navbar-text-hover
     position: absolute
     top: 0
     left: 0
-    // Preview of the tutorial by Patryk Zabielski
-    // www.dribbble.com/zabielski | www.patrykzabielski.com
-    // Tutorial: https://medium.com/@PatrykZabielski/how-to-make-multi-layered-parallax-illustration-with-css-javascript-2b56883c3f27
 
     $bronze: #fff;
     $white: #fff;
-    $heroHeight: 800px;
     $black: #50514F;
 
     #hero {
-        height: $heroHeight;
         overflow: hidden;
-        position: relative;
+        position: absolute;
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
     }
+
     #content {
         max-width: 720px;
         padding: 0 100px;
@@ -39,6 +38,10 @@
     }
 
     #hero-mobile {
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
         width: 100%
         height: 700px
         display: none;
@@ -72,52 +75,144 @@
     }
 
     .layer-bg {
-        // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_bg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url('./../../static/bg.png');
     }
     .layer-1 {
-        // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_03.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-image: url('./../../static/bg-inner.png');
-        // background-position: left bottom;
-        }
+    }
     .layer-2 {
         background-image: url('./../../static/dot.png');
         background-size: cover;
         background-repeat: no-repeat;
-        // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_02.png');
     }
     .layer-3 {
         background-image: url('./../../static/circle.png');
         background-size: cover;
         background-repeat: no-repeat;
-        // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_man.png');
-            // background-position: right bottom;
-        }
-    .layer-4 {
-        // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png');
-        }
-    .layer-overlay {
-        // background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png');
+    }
+
+    .title--wrapper {
+
+        flexbox(column, flex-start, flex-start)
+        margin: 150px 0 0 150px
+
+        .text--wrapper {
+            color: $navbar-text-hover
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            .title--main {
+                font-family: $title-Big-Caslon
+                font-size: 70px
+                font-weight: 400
+                line-height: 60px
+            }
+            .title--sub {
+                font-size: 25px
+                font-weight: bolder
+                letter-spacing: 45px
+                margin-right: -40px
+            }
+
+            .title--date {
+                font-size: 38px
+                letter-spacing: 10px
+            }
+
+            .title--place {
+                font-size: 19px
+                letter-spacing: 6px
+            }
+
+            &.mobile {
+                display: none
+            }
+
+            &.desktop {
+                flexbox(column, flex-start, flex-start)
+
+                .title--sub {
+                    font-size: 20px
+                    letter-spacing: 5px
+                }
+
+                .title--date {
+                    font-size: 29px
+                    letter-spacing: 10px
+                }
+
+                .title--main {
+                    font-size: 100px
+                    font-weight: 400
+                    line-height: 80px
+                }
+            }
         }
 
+        .button--wrapper {
+            margin-top: 70px
+            flexbox(row, center, center)
 
-    // Media Queries
-    @media only screen and (max-width: $mobile-screen-width) {
-        #hero {
-            display: none;
-        }
-        #hero-mobile {
-            display: block;
+            div {
+                font-size: $navbar-text-font-button
+                color: white
+                padding: 10px
+                margin: 15px
+                width: 140px
+                text-align: center
+                transition: all 0.35s ease
+                background: $navbar-text-hover
+
+                &:hover {
+
+                    transition: all 0.25s ease
+                    color: $navbar-text-hover
+                    background: white
+                }
+            }
         }
     }
 
     // Media Queries
     @media only screen and (max-width: $mobile-screen-width) {
         height: auto;
-        // display: none;
+
+        #hero {
+            display: none;
+        }
+        #hero-mobile {
+            display: block;
+        }
+
+        .title--wrapper {
+            margin: 0
+            width: 100%
+            height: 100vh
+            min-height: 320px
+            overflow: hidden
+            flexbox(column, center, center)
+
+            .button--wrapper {
+                margin-top: 10px
+                flexbox(column, center, center)
+
+                div {
+                    width: 90%
+                    max-width: 240px
+                    min-width: 240px
+                }
+            }
+
+            .text--wrapper {
+                &.desktop {
+                    display: none
+                }
+            }
+        }
     }
 }

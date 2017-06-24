@@ -46,14 +46,33 @@ export default CSSModules(class extends Component {
             <div className="banner" onScroll={() => this.handleScroll()}>
                 <div id='hero'>
                     <div className='layer-bg layer' data-depth='2.0' data-type='parallax'></div>
-                  <div className='layer-1 layer' data-depth='1.00' data-type='parallax'></div>
-                  <div className='layer-2 layer' data-depth='1.25' data-type='parallax'></div>
-                  <div className='layer-3 layer' data-depth='1.75' data-type='parallax'></div>
-                  <div className='layer-overlay layer' data-depth='3.85' data-type='parallax'></div>
-                  <div className='layer-4 layer' data-depth='3.00' data-type='parallax'></div>
+                    <div className='layer-1 layer' data-depth='1.00' data-type='parallax'></div>
+                    <div className='layer-2 layer' data-depth='1.25' data-type='parallax'></div>
+                    <div className='layer-3 layer' data-depth='1.75' data-type='parallax'></div>
+                    <div className='layer-overlay layer' data-depth='3.85' data-type='parallax'></div>
+                    <div className='layer-4 layer' data-depth='3.00' data-type='parallax'></div>
                 </div>
                 <div id='hero-mobile'>
                     <img src={require('static/mb-bg.png')}/>
+                </div>
+                <div className="title--wrapper">
+                    <div className="text--wrapper mobile">
+                        <div className="title--main">COSCUP</div>
+                        <div className="title--sub">開源人年會</div>
+                        <div className="title--date">2017.8.5-6</div>
+                        <span className="separator"></span>
+                        <div className="title--place">@臺灣大學社會科學院</div>
+                    </div>
+                    <div className="text--wrapper desktop">
+                        <div className="title--date">2017.8.5-6</div>
+                        <div className="title--main">COSCUP</div>
+                        <div className="title--sub">開源人年會 @臺灣大學社會科學院</div>
+                        <span className="separator"></span>
+                    </div>
+                    <div className="button--wrapper">
+                        <div>ABOUT</div>
+                        <div>> REGISTER</div>
+                    </div>
                 </div>
             </div>
         )

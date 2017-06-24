@@ -48,7 +48,7 @@ export default CSSModules(class extends Component {
         if (this.state.offsetY / 1000 > 1) {
             return '0%'
         }
-        let returnWidth = (50 - (50 * this.state.offsetY / 1000)) + '%'
+        let returnWidth = (70 - (70 * this.state.offsetY / 1000)) + '%'
         return returnWidth
     }
 

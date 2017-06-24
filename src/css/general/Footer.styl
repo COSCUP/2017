@@ -1,0 +1,23 @@
+@import "./../_custom-variable.styl"
+
+.footer {
+    z-index: 0
+    width: 100vw
+    height: 100vh
+    min-height: 1024px
+    position: absolute
+    top: inherit
+    bottom: 0
+    left: 0
+
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    background-size: cover
+    background-repeat: no-repeat
+    background-image: url('./../../static/footer.png')
+
+    @media only screen and (max-width: $mobile-screen-width) {
+        min-height: 480px
+    }
+}

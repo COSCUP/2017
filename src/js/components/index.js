@@ -1,5 +1,5 @@
 import App from './App'
-import banner from './banner'
+import general from './general'
 import intro from './intro'
 import map from './map'
 import news from './news'
@@ -8,16 +8,14 @@ import sponsor from './sponsor'
 import staff from './staff'
 import transport from './transport'
 
-import navbar from './navbar'
 export default {
     App,
-    banner,
+    general,
     intro,
     map,
     news,
     schedule,
     sponsor,
     staff,
-    transport,
-    navbar
+    transport
 }

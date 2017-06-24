@@ -7,15 +7,24 @@ import CSSModules from 'react-css-modules'
 export default CSSModules(class extends Component {
     render () {
         return (
-            <StyleRoot>
+            <StyleRoot style={{
+                height: '100%',
+                width: '100%'
+            }}>
                 <div style={{
+                    position: 'relative',
                     display: 'flex',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%'
                 }}>
-                    { this.props.children }
+                    <div className="content--wrapper">
+                        { this.props.children }
+                    </div>
                     { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
-                    <Containers.navbar.Navbar />
-                    <Containers.banner.Banner />
+                    <Containers.general.Navbar />
+                    <Containers.general.Banner />
+                    <Containers.general.Footer />
                 </div>
             </StyleRoot>
         )

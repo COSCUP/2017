@@ -1,3 +1,5 @@
+@import "./_custom-variable.styl"
+
 body {
     padding: 0
     margin: 0
@@ -6,9 +8,29 @@ body {
     background-image: linear-gradient(60deg, rgba(#abecd6, 1) 0%, rgba(#fbed96, 0.25) 100%);
     // background: white
 
+    #app {
+        width: 100%
+        height: 100%
+    }
+
     ul {
         padding: 0
         margin: 0
     }
 
+    .content--wrapper {
+        z-index: 1
+        width: calc(100% - 100px)
+        height: calc(100% - 100px)
+        background: radial-gradient(rgba(white, 1) 0%, rgba(white, 0) 100%)
+    }
+
+    @media only screen and (max-width: $mobile-screen-width) {
+
+        .content--wrapper {
+
+            width: calc(100%)
+            height: calc(100%)
+        }
+    }
 }

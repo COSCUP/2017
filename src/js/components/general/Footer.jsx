@@ -43,17 +43,9 @@ export default CSSModules(class extends Component {
 
     render () {
         return (
-            <div className="banner" onScroll={() => this.handleScroll()}>
-                <div id='hero'>
-                    <div className='layer-bg layer' data-depth='0.10' data-type='parallax'></div>
-                  <div className='layer-1 layer' data-depth='0.50' data-type='parallax'></div>
-                  <div className='layer-2 layer' data-depth='2.50' data-type='parallax'></div>
-                  <div className='layer-3 layer' data-depth='2.80' data-type='parallax'></div>
-                  <div className='layer-overlay layer' data-depth='3.85' data-type='parallax'></div>
-                  <div className='layer-4 layer' data-depth='3.00' data-type='parallax'></div>
-                </div>
-                <div id='hero-mobile'></div>
+            <div className="footer">
+                {/* <img src={require('static/footer.png')}/> */}
             </div>
         )
     }
-}, require('css/banner/Banner.styl'))
+}, require('css/general/Footer.styl'))

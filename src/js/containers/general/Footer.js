@@ -7,4 +7,4 @@ const mapStateToProps = () => ({
 const mapDispatchToProps = (dispatch) => ({
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Components.banner.Banner)
+export default connect(mapStateToProps, mapDispatchToProps)(Components.general.Footer)

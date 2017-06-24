@@ -82,4 +82,4 @@ export default CSSModules(class extends Component {
             </div>
         )
     }
-}, require('css/navbar/Navbar.styl'))
+}, require('css/general/Navbar.styl'))

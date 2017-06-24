@@ -61,7 +61,7 @@ export default CSSModules(class extends Component {
                     width: this.MenuWidth()
                 }}>
                 <div className="logo">
-                    <img src={require('static/eddie.png')}/>
+                    <img src={require('static/logo.png')}/>
                 </div>
                 <div className="menu-list">
                     <ul className="tag-selector">

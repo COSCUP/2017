@@ -73,16 +73,24 @@ export default CSSModules(class extends Component {
                         <li className="active">
                             <Link to={'/intro'}>{ this.props.translate['intro'][language] }</Link>
                         </li>
-                        <li className="noactive">schedule</li>
-                        <li className="noactive">transport</li>
                         <li className="noactive">
-                            <Link to={'/map'}>map</Link>
+                            <Link to={'/schedule'}>{ json.translate['schedule'][language] }</Link>
                         </li>
                         <li className="noactive">
-                            <Link to={'/sponsor'}>sponsor</Link>
+                            <Link to={'/transport'}>{ json.translate['transport'][language] }</Link>
                         </li>
-                        <li className="noactive">staff</li>
-                        <li className="noactive">news</li>
+                        <li className="noactive">
+                            <Link to={'/map'}>{ json.translate['map'][language] }</Link>
+                        </li>
+                        <li className="noactive">
+                            <Link to={'/sponsor'}>{ json.translate['sponsor'][language] }</Link>
+                        </li>
+                        <li className="noactive">
+                            <Link to={'/staff'}>{ json.translate['staff'][language] }</Link>
+                        </li>
+                        <li className="noactive">
+                            <Link to={'/news'}>{ json.translate['news'][language] }</Link>
+                        </li>
                     </ul>
                     <ul className="lang-selector">
                         <span className="separator"></span>

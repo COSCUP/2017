@@ -1,6 +1,30 @@
 {
     "intro": {
         "zh": "介紹",
-        "en": "INTRO"
+        "en": "intro"
+    },
+    "schedule": {
+        "zh": "議程",
+        "en": "schedule"
+    },
+    "transport": {
+        "zh": "交通",
+        "en": "transport"
+    },
+    "map": {
+        "zh": "地圖",
+        "en": "map"
+    },
+    "sponsor": {
+        "zh": "贊助",
+        "en": "sponsor"
+    },
+    "staff": {
+        "zh": "工作人員",
+        "en": "staff"
+    },
+    "news": {
+        "zh": "動態",
+        "en": "news"
     }
 }

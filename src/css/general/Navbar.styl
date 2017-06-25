@@ -48,13 +48,13 @@
             flexbox(row, flex-start, center)
 
             li {
-
-                margin: 0 22px
+                margin: 0 15px
                 list-style: none
                 cursor: pointer
                 letter-spacing: 1.05px
                 transition: all 0.35s ease
                 text-transform: uppercase
+                color: $navbar-text-noactive
                 font-size: $navbar-text-font-primary
 
                 a {
@@ -81,7 +81,6 @@
                     }
 
                 }
-
             }
         }
 
@@ -97,6 +96,9 @@
                 }
             }
 
+            ul.tag-selector {
+                min-width: 65px
+            }
             ul.lang-selector {
 
                 display: none

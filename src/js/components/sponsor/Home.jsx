@@ -7,8 +7,12 @@ export default CSSModules(class extends Component {
     render () {
         return (
             <div>
-                sponsor/Home
+                <div className="subpage subpage--title">
+                    <div className="title--ch">贊助</div>
+                    <span></span>
+                    <div className="title--en">SPONSORS</div>
+                </div>
             </div>
         )
     }
-})
+}, require('css/sponsor/Home.styl'))

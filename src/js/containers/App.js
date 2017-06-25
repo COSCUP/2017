@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    getSession: (data) => dispatch(Actions.Session.get())
+    getTranslate: () => dispatch(Actions.Translate.get())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Components.App)

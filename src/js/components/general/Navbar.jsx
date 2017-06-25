@@ -3,7 +3,6 @@ import Radium from 'radium'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import { Link } from 'react-router'
-import json from 'src/json'
 
 @Radium
 export default CSSModules(class extends Component {
@@ -57,7 +56,6 @@ export default CSSModules(class extends Component {
 
     render () {
         const language = this.props.language
-        console.log(json)
         return (
             <div
                 className={ classNames('navbar', {'navbar--fixed': this.state.offsetY > 1000}, {'navbar--abs': this.state.offsetY < 1000})}
@@ -73,7 +71,7 @@ export default CSSModules(class extends Component {
                 <div className="menu-list">
                     <ul className="tag-selector">
                         <li className="active">
-                            <Link to={'/intro'}>{ json.translate['intro'][language] }</Link>
+                            <Link to={'/intro'}>{ this.props.translate['intro'][language] }</Link>
                         </li>
                         <li className="noactive">schedule</li>
                         <li className="noactive">transport</li>

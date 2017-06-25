@@ -3,7 +3,8 @@ import Components from 'components'
 import Actions from 'js/actions'
 
 const mapStateToProps = (state) => ({
-    language: state.Language
+    language: state.Language,
+    translate: state.Translate
 })
 
 const mapDispatchToProps = (dispatch) => ({

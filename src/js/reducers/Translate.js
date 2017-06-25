@@ -1,9 +1,9 @@
 import { handleActions } from 'redux-actions'
 
-const initialState = 'zh'
+const initialState = {}
 
 export default handleActions({
-    PUT_LANGUAGE: {
+    GET_TRANSLATE: {
         next (state, {payload}) {
             return payload
         }

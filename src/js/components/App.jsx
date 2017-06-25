@@ -1,3 +1,4 @@
+require('babel-polyfill')
 import React, { Component } from 'react'
 import Containers from 'containers'
 import Radium, { StyleRoot } from 'radium'
@@ -5,8 +6,14 @@ import CSSModules from 'react-css-modules'
 
 @Radium
 export default CSSModules(class extends Component {
+    async componentDidMount () {
+        await this.props.getTranslate()
+        this.setState({
+            loaded: true
+        })
+    }
     render () {
-        console.log(this.props.location)
+        if (!this.state.loaded) return null
         return (
             <StyleRoot style={{
                 height: '100%',

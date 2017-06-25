@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
+import { Link } from 'react-router'
+
 @Radium
 export default CSSModules(class extends Component {
     constructor (props) {
@@ -61,15 +63,23 @@ export default CSSModules(class extends Component {
                     width: this.MenuWidth()
                 }}>
                 <div className="logo">
-                    <img src={require('static/logo.png')}/>
+                    <Link to={'/'}>
+                        <img src={require('static/logo.png')}/>
+                    </Link>
                 </div>
                 <div className="menu-list">
                     <ul className="tag-selector">
-                        <li className="active">intro</li>
+                        <li className="active">
+                            <Link to={'/intro'}>intro</Link>
+                        </li>
                         <li className="noactive">schedule</li>
                         <li className="noactive">transport</li>
-                        <li className="noactive">map</li>
-                        <li className="noactive">sponsor</li>
+                        <li className="noactive">
+                            <Link to={'/map'}>map</Link>
+                        </li>
+                        <li className="noactive">
+                            <Link to={'/sponsor'}>sponsor</Link>
+                        </li>
                         <li className="noactive">staff</li>
                         <li className="noactive">news</li>
                     </ul>

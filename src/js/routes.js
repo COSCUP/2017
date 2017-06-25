@@ -14,6 +14,12 @@ export default class Root extends Component {
                     <Route path="intro" name="intro">
                         <IndexRoute component={Containers.intro.Home}/>
                     </Route>
+                    <Route path="map" name="map">
+                        <IndexRoute component={Containers.map.Home}/>
+                    </Route>
+                    <Route path="sponsor" name="sponsor">
+                        <IndexRoute component={Containers.sponsor.Home}/>
+                    </Route>
                 </Route>
             </Router>
 

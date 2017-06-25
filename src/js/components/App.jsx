@@ -6,6 +6,7 @@ import CSSModules from 'react-css-modules'
 @Radium
 export default CSSModules(class extends Component {
     render () {
+        console.log(this.props.location)
         return (
             <StyleRoot style={{
                 height: '100%',
@@ -22,8 +23,13 @@ export default CSSModules(class extends Component {
                         { this.props.children }
                     </div>
                     { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
+                    {/* 這裡是一些常用 component */}
                     <Containers.general.Navbar />
-                    <Containers.general.Banner />
+                    {
+                        this.props.location.pathname === '/'
+                        ? <Containers.general.Banner />
+                    : <Containers.general.SubpageBanner />
+                    }
                     <Containers.general.Footer />
                 </div>
             </StyleRoot>

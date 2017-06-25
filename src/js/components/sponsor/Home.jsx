@@ -7,7 +7,7 @@ export default CSSModules(class extends Component {
     render () {
         return (
             <div>
-                intro/Home
+                sponsor/Home
             </div>
         )
     }

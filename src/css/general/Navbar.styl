@@ -57,15 +57,27 @@
                 text-transform: uppercase
                 font-size: $navbar-text-font-primary
 
+                a {
+                    text-decoration: none
+                }
+
                 &.active {
 
-                    color: $navbar-text-active
-                    font-weight: bold
+                    a {
+                        color: $navbar-text-active
+                        font-weight: bold
+                    }
+
                 }
 
                 &.noactive {
 
                     color: $navbar-text-noactive
+
+                    a {
+                        color: $navbar-text-noactive
+                    }
+
                 }
 
             }
@@ -113,6 +125,10 @@
 
                     &:hover {
                         color: $navbar-text-hover
+
+                        a {
+                            color: $navbar-text-hover
+                        }
                     }
                 }
             }

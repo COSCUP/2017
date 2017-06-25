@@ -45,12 +45,10 @@ export default CSSModules(class extends Component {
         return (
             <div className="banner" onScroll={() => this.handleScroll()}>
                 <div id='hero'>
-                    <div className='layer-bg layer' data-depth='2.0' data-type='parallax'></div>
-                    <div className='layer-1 layer' data-depth='1.00' data-type='parallax'></div>
+                    <div className='layer-bg layer' data-depth='1.00' data-type='parallax'></div>
+                    <div className='layer-1 layer' data-depth='2.00' data-type='parallax'></div>
                     <div className='layer-2 layer' data-depth='1.25' data-type='parallax'></div>
                     <div className='layer-3 layer' data-depth='1.75' data-type='parallax'></div>
-                    <div className='layer-overlay layer' data-depth='3.85' data-type='parallax'></div>
-                    <div className='layer-4 layer' data-depth='3.00' data-type='parallax'></div>
                 </div>
                 <div id='hero-mobile'>
                     <img src={require('static/mb-bg.png')}/>

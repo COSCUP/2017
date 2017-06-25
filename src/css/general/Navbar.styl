@@ -63,6 +63,8 @@
 
                 &.active {
 
+                    color: $navbar-text-active
+
                     a {
                         color: $navbar-text-active
                         font-weight: bold
@@ -152,8 +154,15 @@
                     &.active {
 
                         font-weight: normal
+                        color: $navbar-text-active
+                        border-bottom: 1px solid $navbar-text-active
+                    }
+
+                    &.noactive {
+
+                        font-weight: normal
                         color: $navbar-text-noactive
-                        border-bottom: 1px solid $navbar-text-noactive
+                        border-bottom: 1px solid transparent
                     }
                 }
             }

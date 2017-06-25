@@ -12,16 +12,28 @@ export default CSSModules(class extends Component {
         this.MenuWidth = this.MenuWidth.bind(this)
         this.MenuTopOffset = this.MenuTopOffset.bind(this)
         this.state = {
-            offsetY: 0
+            offsetY: 0,
+            animationActive: true
         }
     }
 
     componentDidMount () {
         window.addEventListener('scroll', this.handleScroll)
+        console.log(this.props)
+        this.setState({
+            animationActive: this.props.NavbarConfig.isIndex
+        })
+    }
+
+    componentWillReceiveProps (nextProps) {
+        this.setState({
+            animationActive: nextProps.NavbarConfig.isIndex
+        })
     }
 
     componentWillUnmount () {
         window.removeEventListener('scroll', this.handleScroll)
+        console.log(this.props)
     }
 
     handleScroll (event) {
@@ -31,34 +43,40 @@ export default CSSModules(class extends Component {
     }
 
     MenuWidth () {
-        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-        if (width < 720) {
-            return ''
+        if (this.state.animationActive === true) {
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+            if (width < 720) {
+                return ''
+            }
+            if (this.state.offsetY / 1000 > 1) {
+                return '100%'
+            }
+            let returnWidth = (80 + (20 * this.state.offsetY / 1000)) + '%'
+            return returnWidth
         }
-        if (this.state.offsetY / 1000 > 1) {
-            return '100%'
-        }
-        let returnWidth = (80 + (20 * this.state.offsetY / 1000)) + '%'
-        return returnWidth
+        return ''
     }
 
     MenuTopOffset () {
-        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-        if (width < 720) {
-            return ''
+        if (this.state.animationActive === true) {
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+            if (width < 720) {
+                return ''
+            }
+            if (this.state.offsetY / 1000 > 1) {
+                return '0%'
+            }
+            let returnWidth = (70 - (70 * this.state.offsetY / 1000)) + '%'
+            return returnWidth
         }
-        if (this.state.offsetY / 1000 > 1) {
-            return '0%'
-        }
-        let returnWidth = (70 - (70 * this.state.offsetY / 1000)) + '%'
-        return returnWidth
+        return ''
     }
 
     render () {
         const language = this.props.language
         return (
             <div
-                className={ classNames('navbar', {'navbar--fixed': this.state.offsetY > 1000}, {'navbar--abs': this.state.offsetY < 1000})}
+                className={ classNames('navbar', {'navbar--fixed': (!this.state.animationActive || this.state.offsetY > 1000)}, {'navbar--abs': (this.state.animationActive && this.state.offsetY < 1000)})}
                 style={{
                     top: this.MenuTopOffset(),
                     width: this.MenuWidth()
@@ -74,22 +92,22 @@ export default CSSModules(class extends Component {
                             <Link to={'/intro'}>{ this.props.translate['intro'][language] }</Link>
                         </li>
                         <li className="noactive">
-                            <Link to={'/schedule'}>{ json.translate['schedule'][language] }</Link>
+                            <Link to={'/schedule'}>{ this.props.translate['schedule'][language] }</Link>
                         </li>
                         <li className="noactive">
-                            <Link to={'/transport'}>{ json.translate['transport'][language] }</Link>
+                            <Link to={'/transport'}>{ this.props.translate['transport'][language] }</Link>
                         </li>
                         <li className="noactive">
-                            <Link to={'/map'}>{ json.translate['map'][language] }</Link>
+                            <Link to={'/map'}>{ this.props.translate['map'][language] }</Link>
                         </li>
                         <li className="noactive">
-                            <Link to={'/sponsor'}>{ json.translate['sponsor'][language] }</Link>
+                            <Link to={'/sponsor'}>{ this.props.translate['sponsor'][language] }</Link>
                         </li>
                         <li className="noactive">
-                            <Link to={'/staff'}>{ json.translate['staff'][language] }</Link>
+                            <Link to={'/staff'}>{ this.props.translate['staff'][language] }</Link>
                         </li>
                         <li className="noactive">
-                            <Link to={'/news'}>{ json.translate['news'][language] }</Link>
+                            <Link to={'/news'}>{ this.props.translate['news'][language] }</Link>
                         </li>
                     </ul>
                     <ul className="lang-selector">

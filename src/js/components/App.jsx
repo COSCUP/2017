@@ -31,7 +31,7 @@ export default CSSModules(class extends Component {
                     </div>
                     { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
                     {/* 這裡是一些常用 component */}
-                    <Containers.general.Navbar />
+                    <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
                     {
                         this.props.location.pathname === '/'
                         ? <Containers.general.Banner />

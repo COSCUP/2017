@@ -19,4 +19,26 @@
         margin: 10px 0
         background: black
     }
+
+    @media only screen and (max-width: $mobile-screen-width) {
+
+        font-family: $title-Big-Caslon
+        color: $navbar-logo-border
+        flexbox(row-reverse, flex-start, flex-end)
+
+        .title--en {
+
+            line-height: 50px
+        }
+
+        .title--ch {
+
+            margin: 0 5px
+        }
+
+        span {
+
+            display: none
+        }
+    }
 }

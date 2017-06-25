@@ -61,7 +61,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'stylus-loader']
             },
             {
-                test: /\.(html|ttf|eot|png|gif|jpg|woff|woff2|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(json|html|ttf|eot|png|gif|jpg|woff|woff2|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: 'file-loader?name=[path][name].[ext]'
             }
         ]

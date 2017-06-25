@@ -68,7 +68,7 @@ module.exports = {
                 })
             },
             {
-                test: /\.(html|ttf|eot|png|gif|jpg|woff|woff2|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(json|html|ttf|eot|png|gif|jpg|woff|woff2|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: 'file-loader'
             }
         ]

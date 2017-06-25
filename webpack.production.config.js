@@ -29,7 +29,9 @@ module.exports = {
             'containers': path.join(__dirname, './src/js/containers'),
             'components': path.join(__dirname, './src/js/components'),
             'js': path.join(__dirname, './src/js'),
-            'static': path.join(__dirname, './src/static')
+            'static': path.join(__dirname, './src/static'),
+            'css': path.join(__dirname, './src/css'),
+            'json': path.join(__dirname, './src/json')
         }
     },
     module: {

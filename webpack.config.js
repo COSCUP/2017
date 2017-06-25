@@ -26,6 +26,7 @@ module.exports = {
             'js': path.join(__dirname, './src/js'),
             'static': path.join(__dirname, './src/static'),
             'css': path.join(__dirname, './src/css'),
+            'json': path.join(__dirname, './src/json')
         }
     },
     module: {

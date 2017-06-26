@@ -11,6 +11,7 @@ export default CSSModules(class extends Component {
         this.handleScroll = this.handleScroll.bind(this)
         this.MenuWidth = this.MenuWidth.bind(this)
         this.MenuTopOffset = this.MenuTopOffset.bind(this)
+        this.MenuLeftOffset = this.MenuLeftOffset.bind(this)
         this.state = {
             offsetY: 0,
             animationActive: true
@@ -48,10 +49,10 @@ export default CSSModules(class extends Component {
             if (width < 720) {
                 return ''
             }
-            if (this.state.offsetY / 1000 > 1) {
+            if (this.state.offsetY / 480 > 1) {
                 return '100%'
             }
-            let returnWidth = (80 + (20 * this.state.offsetY / 1000)) + '%'
+            let returnWidth = (80 + (20 * this.state.offsetY / 480)) + '%'
             return returnWidth
         }
         return ''
@@ -63,11 +64,27 @@ export default CSSModules(class extends Component {
             if (width < 720) {
                 return ''
             }
-            if (this.state.offsetY / 1000 > 1) {
+            if (this.state.offsetY / 480 > 1) {
                 return '0%'
             }
-            let returnWidth = (70 - (70 * this.state.offsetY / 1000)) + '%'
+            let returnWidth = (80 - (80 * this.state.offsetY / 480)) + '%'
             return returnWidth
+        }
+        return ''
+    }
+
+    MenuLeftOffset () {
+        if (this.state.animationActive === true) {
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+            if (width < 720) {
+                return ''
+            }
+            if (this.state.offsetY / 480 > 1) {
+                return '0%'
+            }
+            let returnWidth = (80 + (20 * this.state.offsetY / 480))
+            console.log(((100 - returnWidth) / 2) + '%')
+            return ((100 - returnWidth) / 2) + '%'
         }
         return ''
     }
@@ -76,10 +93,11 @@ export default CSSModules(class extends Component {
         const language = this.props.language
         return (
             <div
-                className={ classNames('navbar', {'navbar--fixed': (!this.state.animationActive || this.state.offsetY > 1000)}, {'navbar--abs': (this.state.animationActive && this.state.offsetY < 1000)})}
+                className={ classNames('navbar', {'navbar--fixed': (!this.state.animationActive || this.state.offsetY > 480)}, {'navbar--abs': (this.state.animationActive && this.state.offsetY < 480)})}
                 style={{
                     top: this.MenuTopOffset(),
-                    width: this.MenuWidth()
+                    width: this.MenuWidth(),
+                    left: this.MenuLeftOffset()
                 }}>
                 <div className="logo">
                     <Link to={'/'}>

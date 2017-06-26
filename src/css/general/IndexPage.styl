@@ -1,0 +1,136 @@
+@import "./../_custom-variable.styl"
+
+.indexpage {
+    width: 100vw
+    height: 100vh
+
+    flexbox(column, flex-start, flex-start)
+
+    .title--wrapper {
+
+        flexbox(column, flex-start, flex-start)
+        margin: 100px 0 0 100px
+
+        .text--wrapper {
+            color: $navbar-text-hover
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            .title--main {
+                font-family: $title-Big-Caslon
+                font-size: 70px
+                font-weight: 400
+                line-height: 60px
+            }
+            .title--sub {
+                font-size: 25px
+                font-weight: bolder
+                letter-spacing: 45px
+                margin-right: -40px
+            }
+
+            .title--date {
+                font-size: 38px
+                letter-spacing: 10px
+            }
+
+            .title--place {
+                font-size: 19px
+                letter-spacing: 6px
+            }
+
+            &.mobile {
+                display: none
+            }
+
+            &.desktop {
+                flexbox(column, flex-start, flex-start)
+
+                .title--sub {
+                    font-size: 20px
+                    letter-spacing: 5px
+                }
+
+                .title--date {
+                    font-size: 29px
+                    letter-spacing: 10px
+                }
+
+                .title--main {
+                    font-size: 100px
+                    font-weight: 400
+                    line-height: 80px
+                }
+            }
+        }
+
+        .button--wrapper {
+            margin-top: 70px
+            flexbox(row, center, center)
+
+            div {
+                font-size: $navbar-text-font-button
+                color: white
+                padding: 10px
+                margin: 15px
+                width: 140px
+                cursor: pointer
+                text-align: center
+                transition: all 0.35s ease
+                background: $navbar-text-hover
+                box-shadow: 12px 16px 50px 0px $navbar-button-shadow
+
+                &:hover {
+
+                    transition: all 0.25s ease
+                    color: $navbar-text-hover
+                    background: white
+                    a {
+                        color: $navbar-text-hover
+                        text-decoration: none
+                    }
+                }
+
+                a {
+                    color: white
+                    text-decoration: none
+                }
+            }
+        }
+    }
+
+    // Media Queries
+    @media only screen and (max-width: $mobile-screen-width) {
+
+        .title--wrapper {
+            margin: 0
+            width: 100%
+            height: 100vh
+            min-height: 320px
+            overflow: hidden
+            flexbox(column, center, center)
+
+            .button--wrapper {
+                margin-top: 10px
+                flexbox(column, center, center)
+
+                div {
+                    width: 90%
+                    max-width: 240px
+                    min-width: 240px
+                }
+            }
+
+            .text--wrapper {
+                &.desktop {
+                    display: none
+                }
+
+                &.mobile {
+                    display: block
+                }
+            }
+        }
+    }
+}

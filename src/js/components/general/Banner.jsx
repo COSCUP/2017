@@ -53,25 +53,6 @@ export default CSSModules(class extends Component {
                 <div id='hero-mobile'>
                     <img src={require('static/mb-bg.png')}/>
                 </div>
-                <div className="title--wrapper">
-                    <div className="text--wrapper mobile">
-                        <div className="title--main">COSCUP</div>
-                        <div className="title--sub">開源人年會</div>
-                        <div className="title--date">2017.8.5-6</div>
-                        <span className="separator"></span>
-                        <div className="title--place">@臺灣大學社會科學院</div>
-                    </div>
-                    <div className="text--wrapper desktop">
-                        <div className="title--date">2017.8.5-6</div>
-                        <div className="title--main">COSCUP</div>
-                        <div className="title--sub">開源人年會 @臺灣大學社會科學院</div>
-                        <span className="separator"></span>
-                    </div>
-                    <div className="button--wrapper">
-                        <div>ABOUT</div>
-                        <div>> REGISTER</div>
-                    </div>
-                </div>
             </div>
         )
     }

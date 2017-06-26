@@ -6,7 +6,7 @@ export default CSSModules(class extends Component {
     }
     render () {
         return (
-            <div>
+            <div className="subPage">
                 <div className="subpage subpage--title">
                     <div className="title--ch">地圖</div>
                     <span></span>

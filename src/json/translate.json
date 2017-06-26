@@ -26,5 +26,9 @@
     "news": {
         "zh": "動態",
         "en": "news"
+    },
+    "register": {
+        "zh": ">註冊",
+        "en": ">register"
     }
 }

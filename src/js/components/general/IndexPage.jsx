@@ -31,7 +31,9 @@ export default CSSModules(class extends Component {
                         <div>
                             <Link to={'/intro'}>{ this.props.translate['intro'][language] }</Link>
                         </div>
-                        <div>> REGISTER</div>
+                        <div>
+                            <Link to={'/'}>{ this.props.translate['register'][language] }</Link>
+                        </div>
                     </div>
                 </div>
                 <div className="indexpage--content">

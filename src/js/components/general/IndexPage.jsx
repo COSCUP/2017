@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 import CSSModules from 'react-css-modules'
 import { Link } from 'react-router'
-// import classNames from 'classnames'
+import classNames from 'classnames'
+
 @Radium
 export default CSSModules(class extends Component {
     // constructor (props) {
@@ -20,6 +21,14 @@ export default CSSModules(class extends Component {
                         <div className="title--date">2017.8.5-6</div>
                         <span className="separator"></span>
                         <div className="title--place">@臺灣大學社會科學院</div>
+                        <div className="lang--selector--mobile">
+                            <div>
+                                <span className={classNames({'active': language === 'en'})} onClick={() => this.props.putLanguage('en')}>EN</span>
+                            </div>
+                            <div>
+                                <span className={classNames({'active': language === 'zh'})} onClick={() => this.props.putLanguage('zh')}>繁</span>
+                            </div>
+                        </div>
                     </div>
                     <div className="text--wrapper desktop">
                         <div className="title--date">2017.8.5-6</div>

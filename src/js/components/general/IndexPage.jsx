@@ -34,6 +34,30 @@ export default CSSModules(class extends Component {
                         <div>> REGISTER</div>
                     </div>
                 </div>
+                <div className="indexpage--content">
+                    <div className="section indexpage--section">
+                        <div className="section--title">
+                            <div>
+                                <h2 className="title--en">ABOUT</h2>
+                                <div>/</div>
+                                <h2 className="title--ch">關於</h2>
+                            </div>
+                        </div>
+                        <div className="section--content">
+                        </div>
+                    </div>
+                    <div className="section indexpage--section">
+                        <div className="section--title">
+                            <div>
+                                <h2 className="title--en">SPONSORS</h2>
+                                <div>/</div>
+                                <h2 className="title--ch">贊助</h2>
+                            </div>
+                        </div>
+                        <div className="section--content">
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

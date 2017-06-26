@@ -3,11 +3,10 @@
 .indexpage {
     width: 100vw
     height: 100vh
-
     flexbox(column, flex-start, flex-start)
 
     .title--wrapper {
-
+        min-height: 300px
         flexbox(column, flex-start, flex-start)
         margin: 100px 0 0 100px
 
@@ -100,6 +99,60 @@
         }
     }
 
+    .indexpage--content {
+        width: 100%
+        height: auto
+        padding-top: 250px
+        flexbox(column, flex-start, center)
+
+        .indexpage--section {
+
+            width: 100%
+            height: auto
+            margin: 200px
+            flexbox(column, flex-start, center)
+
+            .section--title {
+
+                width: 100%
+                flexbox(row, flex-start, flex-start)
+
+                > div {
+                    color: $navbar-logo-border
+                    flexbox(row-reverse, flex-end, flex-end)
+
+                    .title--en {
+                        margin: 0
+                        font-weight: 400
+                        font-size: 147px
+                        line-height: 100px
+                        font-family: $title-Big-Caslon
+                    }
+
+                    .title--ch, div {
+                        margin: 0
+                        font-weight: 400
+                        font-size: 56px
+                        line-height: 46px
+                    }
+
+                }
+            }
+
+            &:nth-child(2) {
+
+                & .section--title {
+
+                    flexbox(row, flex-end, flex-start)
+
+                    > div {
+
+                        flexbox(row, flex-end, flex-end)
+                    }
+                }
+            }
+        }
+    }
     // Media Queries
     @media only screen and (max-width: $mobile-screen-width) {
 

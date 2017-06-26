@@ -2,7 +2,7 @@
 
 .indexpage {
     width: 100vw
-    height: 100vh
+    height: auto
     flexbox(column, flex-start, flex-start)
 
     .title--wrapper {
@@ -109,7 +109,7 @@
 
             width: 100%
             height: auto
-            margin: 200px
+            margin: 100px
             flexbox(column, flex-start, center)
 
             .section--title {
@@ -119,7 +119,7 @@
 
                 > div {
                     color: $navbar-logo-border
-                    flexbox(row-reverse, flex-end, flex-end)
+                    flexbox(row, flex-end, flex-end)
 
                     .title--en {
                         margin: 0
@@ -139,6 +139,24 @@
                 }
             }
 
+            .section--content {
+
+                max-width: 100%
+                flexbox(row, flex-end, flex-start)
+
+                > div {
+
+                    max-width: 80%
+                    padding: 20px
+
+                    p {
+
+                        color: #4A4A4A
+                    }
+                }
+
+            }
+
             &:nth-child(2) {
 
                 & .section--title {
@@ -147,8 +165,14 @@
 
                     > div {
 
-                        flexbox(row, flex-end, flex-end)
+                        flexbox(row-reverse, flex-end, flex-end)
                     }
+                }
+
+                & .section--content {
+
+                    flexbox(row, flex-start, flex-start)
+
                 }
             }
         }
@@ -182,6 +206,44 @@
 
                 &.mobile {
                     display: block
+                }
+            }
+        }
+
+        .indexpage--content {
+
+            padding-top: 0px
+
+            .indexpage--section {
+
+                .section--title {
+
+                    > div {
+
+                        .title--en {
+                            font-size: 50px
+                            line-height: 50px
+                        }
+
+                        .title--ch, div {
+                            font-size: 24px
+                            line-height: 24px
+                        }
+
+                    }
+                }
+
+                .section--content {
+
+                    width: 100%
+
+                    > div {
+                        width: 100%
+                        max-width: 100%
+                        padding: 20px
+
+                    }
+
                 }
             }
         }

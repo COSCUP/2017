@@ -7,8 +7,12 @@ export default CSSModules(class extends Component {
     render () {
         return (
             <div>
-                intro/Home
+                <div className="subpage subpage--title">
+                    <div className="title--ch">介紹</div>
+                    <span></span>
+                    <div className="title--en">ABOUT</div>
+                </div>
             </div>
         )
     }
-})
+}, require('css/intro/Home.styl'))

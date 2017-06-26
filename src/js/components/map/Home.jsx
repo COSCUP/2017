@@ -6,15 +6,7 @@ export default CSSModules(class extends Component {
     }
     render () {
         return (
-            <div
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    overflow: 'hidden',
-                    flexDirection: 'column',
-                    alignItems: 'center'
-                }}>
+            <div>
                 <div className="subpage subpage--title">
                     <div className="title--ch">地圖</div>
                     <span></span>

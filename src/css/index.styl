@@ -1,4 +1,6 @@
 @import "./_custom-variable.styl"
+@import "./general/PopOutMenu.styl"
+// blur effect in /gerneral/popOutMenu
 
 body {
     padding: 0
@@ -26,6 +28,10 @@ body {
         height: calc(100% - 100px)
         flexbox(column, flex-start, center)
         background: radial-gradient(rgba(white, 1) 0%, rgba(white, 0) 100%)
+
+        &.blur-in {
+            animation: blur 2s forwards;
+        }
     }
 
     @media only screen and (max-width: $mobile-screen-width) {

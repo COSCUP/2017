@@ -1,0 +1,39 @@
+@import "./../_custom-variable.styl"
+
+.popOutMenu {
+
+    position: absolute
+    content: ''
+    display: none
+    z-index: 100
+    height: 100%
+    width: 100%
+    background: #FCFCFC
+
+    @media only screen and (max-width: $mobile-screen-width) {
+        top: 0
+        left: 0
+        display: block
+        background-color: rgba(#FCFCFC, 0.85)
+    }
+}
+
+@keyframes blur {
+    0% {
+        filter: blur(0px);
+    }
+
+    100% {
+        filter: blur(5px);
+    }
+}
+
+@keyframes blur-out {
+    0% {
+        filter: blur(5px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+}

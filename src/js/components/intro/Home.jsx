@@ -5,12 +5,13 @@ export default CSSModules(class extends Component {
     static propTypes = {
     }
     render () {
+        const language = this.props.language
         return (
             <div className="subPage">
                 <div className="subpage subpage--title">
-                    <div className="title--ch">介紹</div>
-                    <span></span>
-                    <div className="title--en">ABOUT</div>
+                    <div className="subpage subpage--title">
+                        <div className="title--text">{ this.props.translate['intro'][language] }</div>
+                    </div>
                 </div>
             </div>
         )

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Containers from 'containers'
 import Radium, { StyleRoot } from 'radium'
 // import classNames from 'classnames'
+import _ from 'lodash'
 import CSSModules from 'react-css-modules'
 
 @Radium
@@ -29,6 +30,21 @@ export default CSSModules(class extends Component {
                 }}>
                     <div className="content--wrapper">
                         { this.props.children }
+                        <div className="content--footer">
+                            <div>
+
+                            </div>
+                            <div className="content--footer--history">
+                                {
+                                    _.range(2006, 2017).map((year) => (
+                                        <div key={year}>
+                                            <a href={`http://coscup.org/${year}/`} target='_blank'>{year}</a>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+
+                        </div>
                     </div>
                     { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
                     {/* 這裡是一些常用 component */}

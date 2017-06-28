@@ -44,7 +44,6 @@ export default CSSModules(class extends Component {
     render () {
         return (
             <div className="footer">
-                {/* <img src={require('static/footer.png')}/> */}
             </div>
         )
     }

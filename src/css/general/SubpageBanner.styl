@@ -71,7 +71,7 @@
     }
 
     #hero, .layer {
-        min-height: 800px;
+        min-height: 1024px;
     }
 
     .layer-bg {
@@ -88,14 +88,9 @@
 
     // Media Queries
     @media only screen and (max-width: $mobile-screen-width) {
-        height: auto;
 
-        #hero {
-            display: none;
-        }
-        #hero-mobile {
-            // display: block;
-            display: none;
+        #hero, .layer {
+            min-height: 550px;
         }
     }
 }

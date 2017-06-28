@@ -2,7 +2,7 @@ require('babel-polyfill')
 import React, { Component } from 'react'
 import Containers from 'containers'
 import Radium, { StyleRoot } from 'radium'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import CSSModules from 'react-css-modules'
 
 @Radium
@@ -32,12 +32,16 @@ export default CSSModules(class extends Component {
                     </div>
                     { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
                     {/* 這裡是一些常用 component */}
+                    {
+                    /*
                     <div className={classNames('popOutMenu', 'blur-in')}>
                         <div className="popOutMenu--bg"></div>
                         <div className="popOutMenu--content">
                             XDDD
                         </div>
                     </div>
+                    */
+                }
                     <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
                     {
                         this.props.location.pathname === '/'

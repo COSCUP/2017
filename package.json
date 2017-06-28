@@ -77,7 +77,7 @@
     "start": "node server.js",
     "lint": "eslint src",
     "build": "NODE_ENV=production webpack -p --progress  --config ./webpack.production.config.js --bail",
-    "dev": "npm i && NODE_ENV=development node server.js"
+    "dev": "NODE_ENV=development node server.js"
   },
   "repository": {
     "type": "git",

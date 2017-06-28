@@ -25,6 +25,7 @@ export default CSSModules(class extends Component {
             offsetY: window.pageYOffset
         })
 
+        /*
         let depth, i, layer, layers, len, movement, topDistance, translate3d
         topDistance = this.state.offsetY
         layers = document.querySelectorAll("[data-type='parallax']")
@@ -39,17 +40,18 @@ export default CSSModules(class extends Component {
             layer.style['-o-transform'] = translate3d
             layer.style.transform = translate3d
         }
+        */
     }
 
     render () {
         return (
             <div>
-                <div className="subpage--banner" onScroll={() => this.handleScroll()}>
+                <div className="subpage--banner">
                     <div id='hero'>
-                        <div className='layer-bg layer' data-depth='2.0' data-type='parallax'></div>
-                        <div className='layer-1 layer' data-depth='1.00' data-type='parallax'></div>
-                        <div className='layer-2 layer' data-depth='1.25' data-type='parallax'></div>
-                        <div className='layer-3 layer' data-depth='1.75' data-type='parallax'></div>
+                        <div className='layer-bg layer'></div>
+                        <div className='layer-1 layer'></div>
+                        <div className='layer-2 layer'></div>
+                        <div className='layer-3 layer'></div>
                     </div>
                     <div id='hero-mobile'>
                         <img src={require('static/sub-mb-bg.png')}/>

@@ -3,6 +3,7 @@ import Radium from 'radium'
 import CSSModules from 'react-css-modules'
 import { Link } from 'react-router'
 import classNames from 'classnames'
+import Containers from 'js/containers'
 
 @Radium
 export default CSSModules(class extends Component {
@@ -78,15 +79,7 @@ export default CSSModules(class extends Component {
                         </div>
                         <div className="section--content">
                             <div>
-                                <p>
-                                    COSCUP是由台灣開放原始碼社群聯合推動的年度研討會，起源於2006年，是台灣自由軟體運動(FOSSM)重要的推動者之一。
-                                    活動包括有講座、攤位、社團同樂會等，除了邀請國際的重量級演講者之外，台灣本土的自由軟體推動者也經常在此發表演說，會議的發起人、工作人員與講者都是志願參與的志工。</p>
-                                <p>COSCUP的宗旨在於提供一個聯結開放原始碼開發者、使用者與推廣者的平台。希望藉由每年一度的研討會，來推動自由及開放原始碼軟體(FLOSS)。由於有許多贊助商及熱心捐助者，所有議程都是免費參加，但因會場人數限制，通常在一開放網路報名後就會立刻額滿。</p>
-                                <p>傳統商業軟體的使用者(Users)很少有機會能跟開發者(Coders)交流，</p>
-                                <p>當軟體使用起來有問題，只能打技術支援電話，由客服人員為你服務，他或許已經盡其所能，但未必能解決你的問題。</p>
-                                <p>如果問題是軟體的臭蟲，你只好痴痴地等待更新、或只能買新版本。</p>
-                                <p>而你當初之所以選用Ａ軟體而不是Ｂ軟體，常常是聽信銷售員或同儕的推薦。</p>
-                                <p>在這個行為模式下，使用者面對的是銷售員和客服，開發者面對的還是銷售員和客服，使用者遇到的問題無法直接反應到開發者手上。</p>
+                                <Containers.general.SponsorList />
                             </div>
                         </div>
                     </div>

@@ -43,15 +43,20 @@ export default CSSModules(class extends Component {
 
     render () {
         return (
-            <div className="subpage--banner" onScroll={() => this.handleScroll()}>
-                <div id='hero'>
-                    <div className='layer-bg layer' data-depth='2.0' data-type='parallax'></div>
-                    <div className='layer-1 layer' data-depth='1.00' data-type='parallax'></div>
-                    <div className='layer-2 layer' data-depth='1.25' data-type='parallax'></div>
-                    <div className='layer-3 layer' data-depth='1.75' data-type='parallax'></div>
+            <div>
+                <div className="subpage--banner" onScroll={() => this.handleScroll()}>
+                    <div id='hero'>
+                        <div className='layer-bg layer' data-depth='2.0' data-type='parallax'></div>
+                        <div className='layer-1 layer' data-depth='1.00' data-type='parallax'></div>
+                        <div className='layer-2 layer' data-depth='1.25' data-type='parallax'></div>
+                        <div className='layer-3 layer' data-depth='1.75' data-type='parallax'></div>
+                    </div>
+                    <div id='hero-mobile'>
+                        <img src={require('static/sub-mb-bg.png')}/>
+                    </div>
                 </div>
-                <div id='hero-mobile'>
-                    <img src={require('static/sub-mb-bg.png')}/>
+                <div>
+                    {this.props.children}
                 </div>
             </div>
         )

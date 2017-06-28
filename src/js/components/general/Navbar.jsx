@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
-import { Link } from 'react-router'
+import { IndexLink, Link } from 'react-router'
 
 @Radium
 export default CSSModules(class extends Component {
@@ -20,7 +20,6 @@ export default CSSModules(class extends Component {
 
     componentDidMount () {
         window.addEventListener('scroll', this.handleScroll)
-        console.log(this.props)
         this.setState({
             animationActive: this.props.NavbarConfig.isIndex
         })
@@ -34,7 +33,6 @@ export default CSSModules(class extends Component {
 
     componentWillUnmount () {
         window.removeEventListener('scroll', this.handleScroll)
-        console.log(this.props)
     }
 
     handleScroll (event) {
@@ -83,7 +81,6 @@ export default CSSModules(class extends Component {
                 return '0%'
             }
             let returnWidth = (80 + (20 * this.state.offsetY / 480))
-            console.log(((100 - returnWidth) / 2) + '%')
             return ((100 - returnWidth) / 2) + '%'
         }
         return ''
@@ -106,26 +103,23 @@ export default CSSModules(class extends Component {
                 </div>
                 <div className="menu-list">
                     <ul className="tag-selector">
-                        <li className="active">
-                            <Link to={'/intro'}>{ this.props.translate['intro'][language] }</Link>
+                        <li>
+                            <IndexLink activeClassName="active" to='/'>{ this.props.translate['intro'][language] }</IndexLink>
                         </li>
-                        <li className="noactive">
-                            <Link to={'/schedule'}>{ this.props.translate['schedule'][language] }</Link>
+                        <li>
+                            <Link activeClassName="active" to='/schedule'>{ this.props.translate['schedule'][language] }</Link>
                         </li>
-                        <li className="noactive">
-                            <Link to={'/transport'}>{ this.props.translate['transport'][language] }</Link>
+                        <li>
+                            <Link activeClassName="active" to='/transport'>{ this.props.translate['transport'][language] }</Link>
                         </li>
-                        <li className="noactive">
-                            <Link to={'/map'}>{ this.props.translate['map'][language] }</Link>
+                        <li>
+                            <Link activeClassName="active" to='/sponsor'>{ this.props.translate['sponsor'][language] }</Link>
                         </li>
-                        <li className="noactive">
-                            <Link to={'/sponsor'}>{ this.props.translate['sponsor'][language] }</Link>
+                        <li>
+                            <Link activeClassName="active" to='/staff'>{ this.props.translate['staff'][language] }</Link>
                         </li>
-                        <li className="noactive">
-                            <Link to={'/staff'}>{ this.props.translate['staff'][language] }</Link>
-                        </li>
-                        <li className="noactive">
-                            <Link to={'/news'}>{ this.props.translate['news'][language] }</Link>
+                        <li>
+                            <Link activeClassName="active" to='/news'>{ this.props.translate['news'][language] }</Link>
                         </li>
                     </ul>
                     <ul className="lang-selector">

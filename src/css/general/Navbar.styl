@@ -61,28 +61,19 @@
                 a {
                     white-space: nowrap
                     text-decoration: none
-                }
-
-                &.active {
-
-                    color: $navbar-text-active
-
-                    a {
-                        color: $navbar-text-active
-                        font-weight: bold
-                    }
-
-                }
-
-                &.noactive {
-
                     color: $navbar-text-noactive
+                    &.active {
 
-                    a {
-                        color: $navbar-text-noactive
+                        color: $navbar-text-active
+
+                        a {
+                            color: $navbar-text-active
+                            font-weight: bold
+                        }
+
                     }
-
                 }
+
             }
         }
 

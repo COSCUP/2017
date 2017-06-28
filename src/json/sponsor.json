@@ -1,282 +1,59 @@
 [
     {
         "level": 1,
-        "place": 1,
-        "logolink": "http://www.hopebaytech.com",
-        "logourl": "/2016-assets/images/sponsor-HopeBayMobile.png",
-        "nameen": "Hope Bay Mobile \r",
-        "namezh": "和沛移動",
-        "introen": "Hope Bay Technologies, Inc. provides cloud computing solutions to businesses and individuals worldwide, including front-end and back-end software and hardware; storage, data center, power, and energy management applications; and other cloud services. HB Mobile Inc., founded in January 2016 as a division of Hope Bay Technologies, focuses solely on developing cloud storage solutions for mobile devices. HB Mobile’s first product, Tera, is an extensive and seamless cloud memory extension for smartphones running Android system.",
-        "introzh": "和沛科技股份有限公司，提供全世界企業及個人各式前後端之軟硬體雲端運算解決方案，包括雲端儲存、資料中心、運算能力、能源管理應用程式，以及其他雲端服務。和沛移動成立於2016年1月，為和沛科技關係企業的一員。和沛移動專注於開發行動裝置端的雲端儲存相關方案。其首發產品Tera，即為能夠廣泛且無縫地應用在各種Andriod智慧手機上的雲記憶體。\r"
-    },
-    {
-        "level": 1,
-        "place": 2,
-        "logolink": "https://www.gandi.net/",
-        "logourl": "/2016-assets/images/sponsor-Gandi.png",
-        "nameen": "Gandi",
-        "namezh": "Gandi",
-        "introen": "Gandi is a domain name registrar and cloud hosting provider. We now manage nearly 2 million domain names (which puts us among the top registrars in the world) and offer over 700 extensions (such as .cafe, .taipei, .tw, .club, .asia). Gandi supports numerous open source projects (Gnome, Debian, Ubuntu, Let's Encrypt). We would be happy to support your open source project with our resources, just contact us.\n\nWhat you get with each domain name at Gandi\n* A 1-year SSL certificate\n* 5 mailboxes with a total of 1 GB storage\n* 1000 forwarding addresses\n* Private Domain name registration\n* Reduced pricing (50% off) for Gandi's Simple Hosting (for Wordpress, Drupal, Django and others).\n\nVisit us: www.gandi.net\n\nGandi's open source tools\n\nGandi CLI, to manage domain names, SSL, hosting from the command line: http://cli.gandi.net/ Let's Encrypt for Gandi CLI: https://github.com/Gandi/letsencrypt-gandi\nBaobab, the application behind status.gandi.net: https://github.com/Gandi/baobab",
-        "introzh": "Gandi 提供網域名稱與雲端主機的服務,我們管理了近兩百萬個網域名稱,提供超過七百種網域後綴, 包括 .cafe, .taipei, .tw, .club, .asia。\n\n註冊或轉入 Gandi 的域名可享有 \n* 1 年期免費 SSL 憑證\n* 5 個電子信箱,共 1GB\n* 1000 個轉址\n* 隱藏域名註冊資訊\n* Simple Hosting 半價優惠 (支援 Wordpress, Drupal, Django..)\n\n逛逛 Gandi 網站: www.gandi.net\n\nGandi 的開源工具\nGandi CLI,助您管理域名、SSL 憑證、虛機: http://cli.gandi.net/\n透過 Gandi CLI 管理 Let's Encrypt: https://github.com/Gandi/letsencrypt-gandi \nstatus.gandi.net 背後的應用程式 ─ Baobab: https://github.com/Gandi/baobab"
-    },
-    {
-        "level": 1,
-        "place": 3,
-        "logolink": "https://www.qnap.com/i/cht/",
-        "logourl": "/2016-assets/images/sponsor-QNAP.png",
-        "nameen": "QNAP",
-        "namezh": "威聯通科技股份有限公司",
-        "introen": "QNAP Systems, Inc., as its brand promise \"Quality Network Appliance Provider\", aims to deliver comprehensive offerings of cutting edge network attached storage (NAS) and network video recorder (NVR) solutions featured with ease-of-use, robust operation, large storage capacity, and trustworthy reliability.",
-        "introzh": "威聯通科技股份有限公司 (QNAP Systems, Inc.)，如同其品牌所傳達「優質網路應用設備供應商」的承諾以提供全面及先進的 NAS 網路儲存裝置及 NVR 安全監控系統解決方案為目標，讓使用者享有操作簡單、穩定性能及大儲存空間的數位應用產品。"
-    },
-    {
-        "level": 1,
-        "place": 4,
-        "logolink": "https://tw.yahoo.com/",
-        "logourl": "/2016-assets/images/sponsor-Yahoo.png",
-        "nameen": "YAHOO!",
-        "namezh": "Yahoo!",
-        "introen": "Yahoo is a guide focused on informing, connecting, and entertaining our users. By creating highly personalized experiences for our users, we keep people connected to what matters most to them, across devices and around the world. In turn, we create value for advertisers by connecting them with the audiences that build their businesses. \rYahoo operates under the name Yahoo Kimo in Taiwan and today owns a number of properties including News, Mail, Search, Store, Shopping, Auction, Finance, Life Style, Movies and Sports. Yahoo Taiwan also provides a comprehensive suite of e-commerce services. For more information, visit the company’s corporate blog (http://ycorpblog.tumblr.com/)\r\rFlurry from Yahoo presents the latest stats on app usage in mobile based on the 800,000 apps Flurry Analytics tracks and the Mobile Developer Suite. Flurry's Analytics SDKs are using by more than 250,000 mobile developers globally and we are excited to partner with developers to understand users better and monetize its apps. Mobile developers can access these new tools by visiting developer.yahoo.com\r",
-        "introzh": "Yahoo致力成為讓網友彼此聯繫、獲取資訊、豐富娛樂生活的網路指南。透過各種行動裝置，提供深入且完整的個人使用經驗，讓全球網友隨時與其最相關的人事物連結在一起。同時，Yahoo有效連結廣告主與消費者關係，以創造絕佳廣告價值。\r \r在台灣，Yahoo以Yahoo奇摩為品牌，提供包括新聞、電子信箱、搜尋、拍賣、超級商城、購物中心、股市、名人娛樂、電影、運動等服務。除服務廣大網友及廣告主，也為企業提供電子商務解決方案。更多訊息歡迎瀏覽企業部落格(http://ycorpblog.tumblr.com/)。\r \r而全球領先的行動數據分析平台Flurry，每月追蹤全球超過20億台行動裝置，深入剖析全球行動用戶 使用行為，協助開發者打造更符合用戶需求的產品。全球超過25萬名開發者使用，並運用在80萬個App中。Yahoo串連Flurry推出免費行動開發者套件 (Yahoo Mobile Developer Suite)，為廣大行動開發者提供各項分析、優化與推廣工具。更多行動洞察，歡迎瀏覽Yahoo行動開發者平台(https://developer.yahoo.com/)"
+        "name": {
+            "en": "Diamond Level",
+            "zh": "鑽石級贊助"
+        },
+        "data": [
+            {
+                "logolink": "http://www.hopebaytech.com",
+                "logourl": "/2016-assets/images/sponsor-HopeBayMobile.png",
+                "name": {
+                    "en": "Hope Bay Mobile \r",
+                    "zh": "和沛移動"
+                },
+                "intor": {
+                    "en": "Hope Bay Technologies, Inc. provides cloud computing solutions to businesses and individuals worldwide, including front-end and back-end software and hardware; storage, data center, power, and energy management applications; and other cloud services. HB Mobile Inc., founded in January 2016 as a division of Hope Bay Technologies, focuses solely on developing cloud storage solutions for mobile devices. HB Mobile’s first product, Tera, is an extensive and seamless cloud memory extension for smartphones running Android system.",
+                    "zh": "和沛科技股份有限公司，提供全世界企業及個人各式前後端之軟硬體雲端運算解決方案，包括雲端儲存、資料中心、運算能力、能源管理應用程式，以及其他雲端服務。和沛移動成立於2016年1月，為和沛科技關係企業的一員。和沛移動專注於開發行動裝置端的雲端儲存相關方案。其首發產品Tera，即為能夠廣泛且無縫地應用在各種Andriod智慧手機上的雲記憶體。\r"
+                }
+            },
+        ]
     },
     {
         "level": 2,
-        "place": 1,
-        "logolink": "http://www.pumo.com.tw/",
-        "logourl": "/2016-assets/images/sponsor-PUMO.png",
-        "nameen": "PUMO",
-        "namezh": "捕夢網",
-        "introen": "捕夢網 – 企業雲端，最佳捷徑\r捕夢網自2003年創立至今，為二類電信中最為知名的企業之一。自創立以來，捕夢網注重給客戶的服務，無論是硬體方面的機房建置，線路架構規劃，或是24小時客服的親切回應，即時解決問題的速度，都是捕夢網所重視的項目。因為我們提供給客戶的是「Solution」，而非「Production」。\r我們相信，擁有專業的資訊系統，或是雲端規劃，並非大企業所專屬的，中小企業也應該擁有同樣高品質的服務。因此，我們在機房規劃與網路建置方面，特別注動設備與線路的「高可用性（High Availability）」，無論發生任何災難，都必須順暢運作。\r在收費方面，我們提供客戶「用多少才付多少」的租賃概念，不需花費數百萬來建立資訊系統，只需每月或每年給付固定且合理的金額，就能擁有與國際企業一樣的服務。在捕夢網的規劃中，我們擁有高度的「擴充性」，即使客戶在短期內需要在硬體或線路上做調整，我們也能完全配合，只要一通電話，客戶的所承租捕夢網的一切服務都能立即調整，完全符合客戶需求。\r由於捕夢網多年來對於服務的堅持，客戶數已經突破一萬人。近年來各種獎項的肯定，包括連續三年(2010~2012)獲得科技今獎與網路人企獎、國家品質玉山獎(最家企業獎與最佳產品獎)、ISO 27001國際資訊安全認證、經濟部透明化信賴電子商店認證。但捕夢網不會以此滿足，因為，唯有客戶滿意，才是我們的目標。\r要了解更多資訊，請上捕夢網官方網站 www.pumo.com.tw\r",
-        "introzh": "捕夢網 – 企業雲端，最佳捷徑\r捕夢網自2003年創立至今，為二類電信中最為知名的企業之一。自創立以來，捕夢網注重給客戶的服務，無論是硬體方面的機房建置，線路架構規劃，或是24小時客服的親切回應，即時解決問題的速度，都是捕夢網所重視的項目。因為我們提供給客戶的是「Solution」，而非「Production」。\r我們相信，擁有專業的資訊系統，或是雲端規劃，並非大企業所專屬的，中小企業也應該擁有同樣高品質的服務。因此，我們在機房規劃與網路建置方面，特別注動設備與線路的「高可用性（High Availability）」，無論發生任何災難，都必須順暢運作。\r在收費方面，我們提供客戶「用多少才付多少」的租賃概念，不需花費數百萬來建立資訊系統，只需每月或每年給付固定且合理的金額，就能擁有與國際企業一樣的服務。在捕夢網的規劃中，我們擁有高度的「擴充性」，即使客戶在短期內需要在硬體或線路上做調整，我們也能完全配合，只要一通電話，客戶的所承租捕夢網的一切服務都能立即調整，完全符合客戶需求。\r由於捕夢網多年來對於服務的堅持，客戶數已經突破一萬人。近年來各種獎項的肯定，包括連續三年(2010~2012)獲得科技今獎與網路人企獎、國家品質玉山獎(最家企業獎與最佳產品獎)、ISO 27001國際資訊安全認證、經濟部透明化信賴電子商店認證。但捕夢網不會以此滿足，因為，唯有客戶滿意，才是我們的目標。\r要了解更多資訊，請上捕夢網官方網站 www.pumo.com.tw\r"
-    },
-    {
-        "level": 2,
-        "place": 2,
-        "logolink": "http://automattic.com/",
-        "logourl": "/2016-assets/images/sponsor-Automattic.png",
-        "nameen": "Automattic",
-        "namezh": "Automattic",
-        "introen": "Automattic wants to make the web a better place. Our family includes Jetpack, WooCommerce, Longreads, WordPress.com, and more.\n\nWith WordPress.com, you can create beautiful websites and blogs for free and enhance those sites with our premium services. We are strong believers in Open Source, and the vast majority of our work is available under licenses like the GPL.\n\nA fully distributed company, Automattic — has over 450 staff working from their homes around the globe.\n\nWe are hiring! Learn more at http://automattic.com.",
-        "introzh": "Automattic致力於打造更好的全球資訊網，旗下產品包括Jetpack、WooCommerce、Longreads、以及WordPress.com等等。\n\n透過WordPress.com，您可以免費建立美麗的網站與部落格，並進一步運用進階服務使其獨一無二。我們深信開源的理念，因此絕大多數的程式碼都透過GPL等授權條款發布。\n\n我們是分散式的公司，超過450名夥伴遍佈全球各地工作，自由自在、適時適所。\n\n人才招募中！請至 http://automattic.com/ 瞭解詳情。"
-    },
-    {
-        "level": 2,
-        "place": 3,
-        "logolink": "http://www.appier.com/",
-        "logourl": "/2016-assets/images/sponsor-Appier.png",
-        "nameen": "Appier",
-        "namezh": "Appier",
-        "introen": "Appier is a technology company that makes it easy for businesses to use artificial intelligence to grow and succeed in a cross screen era. Appier is formed by a passionate team of computer scientists and engineers with experience in AI, data analysis, distributed systems, and marketing. Our colleagues come from Google, Intel, Yahoo, as well as renowned AI research groups in Harvard University and Stanford University. Headquartered in Taipei, Appier serves more than 500 global brands and agencies from offices in eleven markets across Asia, including Taipei, Singapore, Tokyo, Sydney, Ho Chi Minh City, Manila, Hong Kong, Mumbai, New Delhi, Jakarta and Seoul. For more information please visit www.appier.com.",
-        "introzh": "Appier成立於2012年，是一家專注於人工智慧與跨螢技術的新創公司，以人工智慧技術為基礎幫助企業解決跨螢世代的各種複雜難題，並讓更多領域的企業透過人工智慧應用擬定最佳的商業策略。Appier由一群充滿熱情的電腦、資訊科學家以及網路行銷專家所組成，成員從Google、Intel、Yahoo等知名企業而來，技術團隊則來自於擁有豐富人工智慧研究成果的哈佛及史丹佛大學。Appier的總部設於台北，結合新加坡、東京、雪梨、胡志明市、馬尼拉、香港、孟買、新德里、雅加達與首爾等遍佈亞洲11個城市的營運據點，為超過500家知名品牌與代理商提供優質服務。更多資訊請至：www.appier.com。\r"
-    },
-    {
-        "level": 2,
-        "place": 4,
-        "logolink": "http://www.topcareer.jp/inter/",
-        "logourl": "/2016-assets/images/sponsor-TopCareer.png",
-        "nameen": "TOP CAREER",
-        "namezh": "TOP CAREER",
-        "introen": "Are you seeking an opportunity to work in Japan and around the world?\rSign up with us here! http://www.topcareer.jp/inter/\r\rTOP CAREER is an international career and recruitment service for university students worldwide.We offer Global Human Resource Services including job-seeking consulting services, education, and training services for top global students and graduates around the world. \r\rTop multinational and Japanese companies are waiting for you!\rYou can see our clients here :http://www.topcareer.jp/inter/company_search/\r\r[The Strengths of TOP CAREER]\r1. Direct Communications between Registered Students and Top Companies.\r2. Established links with top international universities and recruitment firms.\r3. Recruiting events all over the world.\r4. An extensive network of high level human capital from across the world.\r\rIf you are interested in our services, register now!\rhttp://www.topcareer.jp/inter/\r",
-        "introzh": "想要立足世界舞台、培養國際視野嗎？\r正在尋找海外或是日本的工作機會嗎？\r我們是來自日本的跨國性人力資源顧問公司－TOP CAREER，\r為全球頂尖的學生及畢業生提供就業諮詢、教育與訓練，\r媒合企業與學生，提供在日本及世界各地的工作機會。\r\r與我們合作的日本企業：\r日本樂天、LINE、Softbank、NTT Communications、Amazon、旭化成以及眾多日本手遊、新創公司。\r\r無論是轉職、應屆新鮮人或是在校生，\r擁有資工專長的您，絕對是眾家國際企業極欲採用的人才！\r\r現在就趕快上網登錄http://www.topcareer.jp/inter/\r炙手可熱的跨國及日本企業正在等著您！\r"
-    },
-    {
-        "level": 2,
-        "place": 5,
-        "logolink": "http://www.eitc.com.tw/",
-        "logourl": "/2016-assets/images/sponsor-EIT.png",
-        "nameen": "東森信息",
-        "namezh": "東森信息",
-        "introen": "東森信息成立於 2000 年 8 月，營運十多年來關注於應用頂尖的資訊管理技術，善用大數據分析能力，協助台灣傳媒產業與線上零售業的經營管理與業務發展，並深獲兩岸家庭購物以及線上購物多家企業的使用與信賴，是迅速提昇企業管理績效，創造企業全新營運契機的最佳伙伴。於2013年成立「大數據中心」積極地網羅專業人才加入團隊，引進最新、最先進的大數據技術，使得東森的事業發展從傳統CRM應用升級到以數據驅動營銷，優化營運流程與強化個人化顧客服務，成為業界在大數據應用領域的領先開創者；2016再投入DMP (Data Management Platform, 數據管理平台) 發展，結合網路行為與線下CRM資料發展自動化精準營銷技術，以東森全通路884萬會員資料庫為基礎，結合線上行為追蹤與大數據預測技術，強強結盟、O2O線上線下的整合，創造東森集團與事業聯盟夥伴數據融合應用的最大綜效!",
-        "introzh": "東森信息成立於 2000 年 8 月，營運十多年來關注於應用頂尖的資訊管理技術，善用大數據分析能力，協助台灣傳媒產業與線上零售業的經營管理與業務發展，並深獲兩岸家庭購物以及線上購物多家企業的使用與信賴，是迅速提昇企業管理績效，創造企業全新營運契機的最佳伙伴。於2013年成立「大數據中心」積極地網羅專業人才加入團隊，引進最新、最先進的大數據技術，使得東森的事業發展從傳統CRM應用升級到以數據驅動營銷，優化營運流程與強化個人化顧客服務，成為業界在大數據應用領域的領先開創者；2016再投入DMP (Data Management Platform, 數據管理平台) 發展，結合網路行為與線下CRM資料發展自動化精準營銷技術，以東森全通路884萬會員資料庫為基礎，結合線上行為追蹤與大數據預測技術，強強結盟、O2O線上線下的整合，創造東森集團與事業聯盟夥伴數據融合應用的最大綜效!"
-    },
-    {
-        "level": 2,
-        "place": 6,
-        "logolink": "http://www.kkbox.com/about%25A1FKKBOX",
-        "logourl": "/2016-assets/images/sponsor-KKBOX.png",
-        "nameen": "KKBOX",
-        "namezh": "KKBOX",
-        "introen": "KKBOX, Asia's leading music streaming service, was established in 2004 by a group of Taiwanese software programmers with a shared passion for technology and music. With the support from more than 500 international major and local independent music labels, KKBOX features 25 million legal tracks, including the most comprehensive Asia-Pop music library, and is currently available in Taiwan, Hong Kong, Japan, Singapore, Malaysia and Thailand with over 10 million users. More information:www.kkbox.com/about.",
-        "introzh": "KKBOX是亞洲數位音樂領導品牌，由一群熱愛技術及音樂的工程師於2004年創立，是全世界第一個提供付費線上音樂串流的服務！我們致力於打造一個讓人們能輕鬆享受聽音樂、並與同好分享音樂熱情的平台。KKBOX目前服務地區包括台灣、日本、香港、新加坡、馬來西亞及泰國，擁有2500萬首歌曲（包括最大的亞洲音樂曲庫），並有超過1000萬註冊用戶及200萬付費會員。產品支援多平台及各種智慧行動裝置，更榮獲2015 Google Play年度最佳應用程式。更多資訊請參考www.kkbox.com/about。"
-    },
-    {
-        "level": 2,
-        "place": 7,
-        "logolink": "https://www.hde.co.jp/zh-hant/",
-        "logourl": "/2016-assets/images/sponsor-HDE.png",
-        "nameen": "HDE",
-        "namezh": "HDE",
-        "introen": "HDE, Inc. is a leading cloud-based security provider in Japan. We deliver an additional security layer to companies which are using their system on the cloud. Our service HDE One owns over 74% of market share in Microsoft Office 365/Google Apps targeted security service area in Japan. HDE One is a cloud service designed to prevent unauthorized access to cloud services (Access Control); reduce the risk of information leakage due to devices theft or loss (Device Security); prevent email data breaches (Messaging Security). \r\rWe need talented engineers who can create services which can change the world. For programming language, not only we use popular languages like Python, but also we use new or niche languages like Go Language and Erlang. We also aggressively adopt cloud-based infrastructure such as GitHub, Amazon Web Services and Google App Engine. Conversations in the office will be done in English, so Japanese skill is NOT required. Software engineer position will be within the Cloud Product Development division located in Tokyo, Japan.\r\rMore information: \rGIP: https://www.hde.co.jp/en/gip/\rHDE:https://www.hde.co.jp/en/\r",
-        "introzh": "HDE, Inc.在日本是雲端安全業界的領導者,提供使用雲端服務的企業多一層安全防護,在日本使用 Google Apps\r 或Microsoft Office 365等雲端辦公與Email服務的公司中有74%使用HDE的雲端安全服務。\r\r 針對企業導入雲端服務時，可能面對未授權存取、裝置遺失和郵件資料外洩等問題，HDE One 整合存取 (Access) 、裝置 (Device) 、和郵件 (Email) 三方面的安全方案於一，全方位防護您的雲端辦公與Email服務。\r\r我們期待有才能的軟體工程師加入HDE, Inc.,和我們一起挑戰最前端的科技，創造出改變世界的服務!為了提升軟體價值,我們利用各種新科技，運用Python、Go和Erlang等語言來寫程式，也積極運用GitHub、Amazon Web Services、Google App Engine等，以雲端為基礎的架構，並利用EC2、S3、DynamoDB等發展原生雲服務。 辦公室是英文溝通環境，不需要日文能力，軟體工程師將會進入HDE, Inc.在日本東京的雲端產品開發部門! \r\rGIP徵才:https://www.hde.co.jp/en/gip/\r公司資訊:https://www.hde.co.jp/zh-hant/\r"
-    },
-    {
-        "level": 2,
-        "place": 8,
-        "logolink": "http://linecorp.com/zh-hant/",
-        "logourl": "/2016-assets/images/sponsor-LINE.png",
-        "nameen": "LINE",
-        "namezh": "LINE",
-        "introen": "The LINE app was launched in June, 2011 and offers free voice calls, messaging, stickers, timeline, official accounts, as well as a diverse array of interactive features and services. LINE is available in 19 different languages and more than 230 countries and regions. With a MAU of over 218 million in the global market, LINE has developed into a social platform.\r \rUnder its corporate mission “CLOSING THE DISTANCE,” LINE will constantly develop new initiatives and systems for accelerating expansion and improving services as it strives not only to bring people closer to each other, but also to bring people closer to a wide variety of information, services and products.  Backed by a strong user base and high activity rate, LINE is pushing ahead with a “Smart Portal” platform strategy. LINE looks forward to partnering with governmental organisations, brands, small and medium enterprises, as well as individual developers in building the Smart Portal. LINE will act as the gateway to a broad range of information and services, both online and offline, and will undertake new initiatives to enrich the lives of as many users as possible. \r \rFor more information, please visit the company website at http://linecorp.com/en/",
-        "introzh": "LINE 於2011年6月推出，為全球用戶提供免費的語音通話、線上聊天、貼圖、動態消息、官方帳號等多種互動功能，支援19種語言，在全球230個國家都可下載。目前 LINE 已發展成為一個社群平台，在全球擁有超過2.18億的月活躍用戶。 \r \rLINE 的企業使命是要拉近人與人、人與資訊、人與應用服務間的距離，並建構一個「智慧入口」，在不斷演變的行動世代中滿足所有人的需求。LINE 除了做人與人之間溝通的最佳橋樑，也希望與企業、政府、公益等各類型的組織或個人開發者合作，透過 LINE 的開放平台資源，串聯多元的服務與創新應用，一起打造匯流豐富資源的「智慧入口」。未來，用戶不再需要下載或開啟不同的 App，只要透過 LINE 這個單一入口就能掌握資訊，悠遊於線上與線下、虛擬與實體之間，享受日常生活所需的各式服務。\r \r欲瞭解更多資訊，請瀏覽官方網站：http://linecorp.com/zh-hant/"
-    },
-    {
-        "level": 2,
-        "place": 9,
-        "logolink": "https://www.oracle.com/index.html",
-        "logourl": "/2016-assets/images/sponsor-MySQL.png",
-        "nameen": "MySQL",
-        "namezh": "MySQL",
-        "introen": " Oracle is shifting the complexity from IT, moving it out of the enterprise by engineering hardware and software to work together—in the cloud and in the data center. By eliminating complexity and simplifying IT, Oracle enables its customers—400,000 of them in more than 145 countries around the world—to accelerate innovation and create added value for their customers. • MySQL: MySQL is the world's most popular open source database. With its proven ease-of-use, performance, and scalability, MySQL has become the leading database choice for Web-based applications, used by high profile web properties including Facebook, Twitter, YouTube, Yahoo!, and many more.",
-        "introzh": " Oracle is shifting the complexity from IT, moving it out of the enterprise by engineering hardware and software to work together—in the cloud and in the data center. By eliminating complexity and simplifying IT, Oracle enables its customers—400,000 of them in more than 145 countries around the world—to accelerate innovation and create added value for their customers. • MySQL: MySQL is the world's most popular open source database. With its proven ease-of-use, performance, and scalability, MySQL has become the leading database choice for Web-based applications, used by high profile web properties including Facebook, Twitter, YouTube, Yahoo!, and many more."
-    },
-    {
-        "level": 2,
-        "place": 10,
-        "logolink": "https://livehouse.in/",
-        "logourl": "/2016-assets/images/sponsor-LIVEhouse_in.png",
-        "nameen": "LIVEhouse.in",
-        "namezh": "LIVEhouse.in",
-        "introen": "LIVEhouse.in is the only one Premier Partner of Google Cloud Platform(GCP) in Taiwan.\rWe can lets you build and host applications and websites, store data, and analyze data on Google's scalable infrastructure.\rAlso provide more cost-effective cloud service than AWS / Azure. To know more detail, please contact：gcp@livehouse.in",
-        "introzh": "LIVEhouse.in 是台灣唯一 Google Cloud Platform - GCP 雲端服務頂級合作技術夥伴，提供隨時租用的台灣在地機房與全球網路專線，幫您建置規劃比 AWS / Azure 更便宜且彈性擴充的 Google 雲端服務，電子商務、遊戲業、物聯網...等大數據分析與人工智慧應用的產業，都可以找 LIVEhouse.in ，我們提供最專業的技術諮詢。\r"
+        "name": {
+            "en": "Gold Level",
+            "zh": "黃金級贊助"
+        },
+        "data": [
+        ]
     },
     {
         "level": 3,
-        "place": 1,
-        "logolink": "http://www.archilife.org/",
-        "logourl": "/2016-assets/images/sponsor-Archilife.png",
-        "nameen": "Archilife Research Foundation",
-        "namezh": "祐生研究基金會",
-        "introen": "Starting from 1987, the Archilife Research Foundation commenced long-term researches in the areas of architecture, environmental sustainability and development, and go on to other areas of knowledge integration and education. During the process of the researches, we discovered that advancements of information technologies and cyberspace over the past decade had profound impacts on us. The sharing and integration of knowledge in these fields should be one of our essential objectives. \n\nBesides giving scholarships in aforementioned areas, Archilife developed different methods including a knowledge bank system, and knowledge keepers to help the application and integration of our understandings of the world. And since 2011, we have been continuing the sponsorships for various Open Source related events, and also started a series of meet-ups among the domestic independent game developers' community, communicating the experiences learned from international game development conferences.",
-        "introzh": "自1987年起，祐生研究基金會由推動建築與環境永續發展之研究開始，推動長期的知識累積與人才培養。在本會探究人類居住環境與永續發展的過程中發覺，近年來資訊科技與數位化的發展，對於人類生活模式帶來了舉足輕重的影響，對於此領域之相關知識分享與整合，是我們必需面對的重要課題之一。\r\r過去除了建築、環境、生態、健康與資訊社會與文化等面向之碩士論文獎助主題外，本會也曾發展出知識庫、養成各科門知識執守者等知識整合應用方式，和目前定期舉辦的聯誼會及讀書會，強化祐生成員的知識密度。其後，於2011年起，開始持續針對國內開源會議活動進行贊助，也針對國內獨立遊戲開發相關社群，推動知識與資訊分享聚會，將參訪國際遊戲開發論壇之研習心得與國內的獨立開發者交流，期能幫助國內相關社群之發展。"
-    },
-    {
-        "level": 3,
-        "place": 2,
-        "logolink": "http://www.geminiopencloud.com/",
-        "logourl": "/2016-assets/images/sponsor-Gemini.png",
-        "nameen": "geminiopencloud",
-        "namezh": "雙子星雲端運算公司",
-        "introen": "Gemini Open Cloud (GOC) contains the one-stop-shopping OpenStack IaaS and Gemini PaaS for enterprise to migrate legacy application/software to cloud environment. GOC is the cloud turn-key solution to customers/service operator without the need to change any code in 3rd party’s application software.\nGOC enables customer to manage cloud service life cycle from develop to operate under the unified user portal, as well as deployment of application/service to heterogeneous environment based on the requirement, to increase the experience of enterprise cloud service management.",
-        "introzh": "雙子星雲端核心產品Gemini Open Cloud包含從運算、儲存、網路三大功能一站購足的整合式OpenStack IaaS雲端系統軟體，以及讓企業將既有應用程式輕鬆移至雲端的PaaS管理平台，同時整合第三方雲端應用服務的完整雲端解決方案(Turnkey Solution)，可幫助服務營運商在不需更改任何一行程式碼的前提下，將舊有的應用軟體輕鬆轉為雲端化服務，並可透過單一管理介面支援從開發至維運完整的雲端服務生命週期管理，以及針對應用服務屬性進行跨異質平台環境彈性佈署，提升企業雲端服務管理體驗。"
+        "name": {
+            "en": "Silver Level",
+            "zh": "白銀級贊助"
+        },
+        "data": [
+        ]
     },
     {
         "level": 4,
-        "place": 1,
-        "logolink": "http://www.unisharp.com",
-        "logourl": "/2016-assets/images/sponsor-UniSharp.png",
-        "nameen": "悠夏爾科技",
-        "namezh": "悠夏爾科技",
-        "introen": "悠夏爾科技團隊成員為業界「網站設計開發」、「Agile - Scrum 軟體專案管理」、「Linux 伺服器系統及雲端平台」等領域之專家，幫助客戶在服務開發階段或服務上線前後，做全面的評估、分析及其他實際協助。",
-        "introzh": "悠夏爾科技團隊成員為業界「網站設計開發」、「Agile - Scrum 軟體專案管理」、「Linux 伺服器系統及雲端平台」等領域之專家，幫助客戶在服務開發階段或服務上線前後，做全面的評估、分析及其他實際協助。"
-    },
-    {
-        "level": 4,
-        "place": 2,
-        "logolink": "http://skymizer.com/",
-        "logourl": "/2016-assets/images/sponsor-Skymizer.png",
-        "nameen": "Skymizer",
-        "namezh": "Skymizer",
-        "introen": "Skymizer is an optimization compiler vendor, aiming to speed up mobile devices and boost cloud infrastructure. We also provide developer kits and consulting services to enhance mobile devices and servers performance. Our core team comes from Andes, Google, HTC, Marvell, MediaTek, Yahoo etc., and is actively involved in renowned worldwide projects.",
-        "introzh": "Skymizer 是一個致力於編譯器最佳化技術的頂尖開發團隊，希望能夠加速您的行動與雲端裝置。我們也提供開發工具與顧問服務，協助客戶增進其行動裝置與伺服器效能。 Skymizer的技術團隊來自世界各大知名軟硬體公司（Andes, Google, HTC, Marvell, MediaTek, Yahoo），並擁有豐富的跨國產品開發經驗。"
-    },
-    {
-        "level": 4,
-        "place": 3,
-        "logolink": "http://www.gamesofa.com/",
-        "logourl": "/2016-assets/images/sponsor-Gamesofa.png",
-        "nameen": "Gamesofa",
-        "namezh": "慧邦科技Gamesofa",
-        "introen": "Gamesofa was founded in 2005.  The company's pioneering use of the best emerging web technologies allowed Gamesofa to expand on the gaming market, having since developed 20 franchises across multiple platforms including web, Android, and iOS, all of which have cemented Gamesofa’s reputation as one of Taiwan’s leading game development companies.\r\rGamesofa’s motto, “Fun in Five Minutes” reflects the company’s core philosophy of providing a fun yet casual multiplayer experience.  With the creation of “Godgame Mahjong,” Gamesofa successfully brought Taiwan its very first web Mahjong game. Gamesofa followed up their success with the world’s first browser-based 3D shooter, “Guns Rush.” More recently Gamesofa has gone international, breaking into markets in Indonesia, Thailand, and Vietnam with localized Texas Hold’em applications, in India with “Bollywood Teen Patti,” and in Russia with their 3D tank warfare game, “Tank Hit.”  Overall, Gamesofa boasts a user base of 50 million registered players worldwide and over 2 million daily active users.",
-        "introzh": "慧邦科技Gamesofa Inc.成立於2005年，透過優異的網路核心技術，自製研發並行銷營運20餘款web, iOS, Android多人遊戲，是台灣首屈一指的遊戲開發公司。\rGamesofa以提供玩家「5分鐘．想樂最輕鬆」的休閒對戰遊戲為核心理念，成功打造台灣第一大網路麻將遊戲【神來也麻將】以及全球首款中文3D網頁射擊遊戲【即刻槍戰】。近年更積極開拓國際市場，在印尼、泰國、越南推出在地語言版本的德州撲克遊戲，亦在印度推出【Bollywood Teen Patti】，並以多人射擊對戰手遊【坦克戰境Tank Hit】成功切入俄羅斯市場，全球累積註 冊用戶數超過5,000萬，每日活躍用戶超過200萬人。\rGamesofa除了在遊戲開發力求創新，更擅長以資料分析驅動營運決策，讓產品開發、營運、行銷團隊皆能透過數據分析工具與預測模型，快速掌握遊戲狀況，擬定策略，是一間充滿熱情與效率的年輕企業。\r"
-    },
-    {
-        "level": 4,
-        "place": 4,
-        "logolink": "http://www.gamer.com.tw",
-        "logourl": "/2016-assets/images/sponsor-Gamer.png",
-        "nameen": "BAHAMUT",
-        "namezh": "巴哈姆特",
-        "introen": "BAHAMUT was constructed at 1996, we eager to be the biggest gamer's community in Greater China region and we supply variety ACG contents included: On-line game、VR、TV game(PS4、XBOXone …)、Pocket game ( 3DS、PSV…) 、PC game、Mobile game also Animation and Comics.\nWe have both high Reach Rate and Strong Stickiness. We also willing to support game related exhibitions and conventions in the Greater China region. According to the research by \"2015 Business Next Magazine\", BAHAMUT is the TOP 8 website in Taiwan. ",
-        "introzh": "巴哈姆特成立於 1996 年，當初是第一個以遊戲為主題的 BBS 站，於 2000 年設立公司隨即推出網站服務，如今已經邁入第二十年。\n我們的使命是藉由社群力量，將動漫畫、遊戲市場帶到一個更蓬勃、更健全的發展環境。\n\n巴哈姆特有超然的立場，在所有廠商和玩家之中取得屹立不搖的地位，\n我們不變的經營理念是：以最專業、最負責、最客觀的立場，來提供所有玩家們最即時、最有品質、最多元化的服務。"
-    },
-    {
-        "level": 4,
-        "place": 5,
-        "logolink": "http://www.cnezsoft.com",
-        "logourl": "/2016-assets/images/sponsor-NesTrans.png",
-        "nameen": "Qingdao Nature Easy Soft Network Technology Co.,",
-        "namezh": "青島易軟天創網絡科技有限公司",
-        "introen": "LTD(www.cnezsoft.com), established in 2010, is a young and vibrate internet software company. We take it as our mission to provide professional management tools to companies all around the world. We embrace open source, and have developed a lot of management software, such as ZenTao, a project management tool, ChanZhi, a marketing portal, and Ranzhi, an integrated OA and CRM system, which have helped tens of thousands of companies improve their management and operation process.\r",
-        "introzh": "青島易軟天創網絡科技有限公司(www.cnezsoft.com)成立於2010年，是一家年輕的互聯網軟件公司。公司以為天下企業提供專業的管理工具為使命，堅持開源開放，先後開發了禪道項目管理、蟬知企業門戶、然之協同等多款企業管理軟件，幫助國內外成千上萬的公司改善了其管理運營流程。"
-    },
-    {
-        "level": 4,
-        "place": 6,
-        "logolink": "https://www.skymirror.com.tw/",
-        "logourl": "/2016-assets/images/sponsor-SkyMirror.png",
-        "nameen": "天鏡科技",
-        "namezh": "Sky mirror",
-        "introen": "Sky Mirror Technology Co., Ltd. is a leading advanced large-scaled App, Web design innovator which is formed by a group of brilliant young people with an average age of 30, specializing in functional platform development, cross- domain system integration solution, information technology, contemporary art design, electrical circuit design, big data, artificial intelligence and mathematical statistics.\r\n\r\nUsing above technologies we have developed and run “ Cirple Smart Community” and “Stranity : Future Automated Trading System” for many years.To provide better service quality and product development to our customer, Sky Mirror Technology Co., Ltd.is established in the year of 2011. With great R&D strength and a wide variety of customer support, we are brave enough to challenge what we have right now, satisfying people for their diversity needs for today’s mobile application, and yet letting people enjoy the convenient life they never have before.",
-        "introzh": "天鏡科技股份有限公司由一群年輕但經驗豐富的網路資訊、藝術設計、電子電路、數學統計等跨領域的專業團隊所組成。團隊成員平均年齡僅 30 歲。擅長先進大型 Web/APP 功能性平台開發與跨領域系統整合，搭配巨量資料與人工智慧技術，深耕經營包括 Cirple 智慧社區、策略無限 Stranity 期貨自動化交易等服務平台開發。\r\n\r\n為求更高品質且精緻化的客戶服務與產品開發，本公司於 2011 年正式成立，專精於融合設計與科技，並以優良的研發技術與服務品質作為後盾，勇於挑戰現狀，藉此來滿足體驗者的多元需求，讓體驗者得以享受從所未有的便利生活。\r"
-    },
-    {
-        "level": 4,
-        "place": 7,
-        "logolink": "http://cprteam.org",
-        "logourl": "/2016-assets/images/sponsor-CPRTeam.png",
-        "nameen": "CPRTeam",
-        "namezh": "CPRTeam",
-        "introen": "CPRTeam provides provisional network solutions for exhibition, conference, lecture, hackathon, contest, live streaming, and any type of events. An assistant fulfills the network requirement for every events.\n\nThirst for network connection solutions? Contact us now! http://cprteam.org",
-        "introzh": "CPRTeam 專門為展覽、研討會、商業活動、課程、黑客松、競賽、網路直播等活動，提供臨時網路解決方案；是成功活動的幕後推手，滿足各大活動最不可或缺的網路需求。\n\n任何對網路通訊的需求嗎？快聯絡我們！http://cprteam.org"
+        "name": {
+            "en": "Bronze Level",
+            "zh": "青銅級贊助"
+        },
+        "data": [
+        ]
     },
     {
         "level": 5,
-        "place": 1,
-        "logolink": "http://ocf.tw/?gclid=CIvIraTImc4CFVcnvQodArsKnQ",
-        "logourl": "/2016-assets/images/cohost-OCF.png",
-        "nameen": "OCF.tw",
-        "namezh": "財團法人開放文化基金會",
-        "introen": "Open Culture Foundation (OCF) was founded in 2014 by various Open Source communities in Taiwan. Our mission is to support local communities to advocate the use of open technologies in broader sectors. We help government, enterprises, and NGOs recognizing the advantages of Open Source Software and the importance of Open Data, and promote the culture of open collaboration. In 2015, we supported local communities, such as COSCUP and PyCON Taiwan, running several hackathons and conferences. We also worked with institutions, such as British Office Taipei, American Institute in Taiwan, and The World Bank Group, bridging the local and international communities together.",
-        "introzh": "開放文化基金會（OCF）成立於 2014 年，由多個開源社群及活動組織共同發起，希望協助台灣蓬勃的開放社群，進一步促進開放源碼、開放資料、開放硬體等自由精神，能更廣泛的於各領域中應用，同時也協助政府、企業及非政府組織更能了解開源軟體的優勢、開放資料的重要，進而推廣開放協作的文化。我們支援如 COSCUP 等開源社群主辦多場中大型活動，同時也和英國代表處、美國在台協會及世界銀行等單位共同舉辦各種主題講座，深耕台灣的開放文化與國際交流。"
-    },
-    {
-        "level": 5,
-        "place": 2,
-        "logolink": "http://www.iis.sinica.edu.tw",
-        "logourl": "/2016-assets/images/cohost-IIS.png",
-        "nameen": "IIS",
-        "namezh": "中央研究院資訊科學研究所",
-        "introen": "The Institute of Information Science (IIS) was formally established in September 1982 after a five-year preparation period, and is one of the eleven institutes and research centers within the Division of Mathematical and Physical Sciences. IIS presently has 39 full-time research fellows, 29 postdoctoral research fellows and over 300 full-time information technology specialists and part-time research assistants supporting research and development of information science and engineering. All members of IIS prescribe to the motto, \"Every job is a self-portrait of those who did it; autograph your work with quality,\" emphasizing excellence and synergistic teamwork effort.\r\r       The mission of IIS is to conduct quality fundamental research in information science, develop cutting edge technologies applicable to advanced information systems, and improve our national competitiveness in information technology, and international visibility. Being a member of the highest research institution in Taiwan, IIS is obligated to assuming the leadership role in the area of information science and engineering, and aims to establish itself as one of the first-class research institutions in the world.\r\r       The institute has eight research labs: Bioinformatics Lab, Computer System Lab, Data Management and Information Discovery Lab, Multimedia Technologies Lab, Network System and Service Lab, Programming Languages and Formal Methods Lab and Computation Theory and Algorithms Lab.Current research areas include: bioinformatics, parallel and distributed computing, internet intelligent agents, document analysis and recognition, multimedia, computer vision and image processing, Chinese language and information processing, natural language understanding, computer communication and networking, web-based computing and eXtensible Markup Language technology, network and software security, formal verification, design and analysis of algorithms, cryptography, robotics.\r\r       Research funding of IIS is primarily from the Academia Sinica, the National Science Council (NSC), Ministry of Education, Department of Health, and other government agencies, and some from the private sector. Researchers of IIS collaborate with local industries and universities, as well as overseas institutions.\r\rTo find more information about IIS please consult our web page at http://www.iis.sinica.edu.tw \r\r",
-        "introzh": "中央研究院資訊科學研究所於1977年開始設立籌備處，歷經五年籌備， 於1982年9月正式成立研究所，是中央研究院數 理組十一個單位之一。目前編制內有39位研究人員，另外有29位博士後研究學者，將近300位專任之資訊技術人員與非全時之研究助理，支援資訊領域之研究與系統之開發。「件件工作，反映自我，凡經我手，必為佳作」是全體同仁一致秉持的工作信念，重視工作之卓越品質，發揮最佳綜效之團隊精神。\n\n本所除了從事資訊科學領域的基礎研究之外，亦以開發具前瞻性之尖端技術與發展以應用為導向的最先進系統為職志。身處學術重鎮，本所有責任在國內資訊領域肩負起學術領導地位，提升本國資訊科技水準，並躋身國際一流學術研究單位。\n\n本所依研究領域共有生物資訊實驗室、電腦系統實驗室、資料處理與探勘實驗室、多媒體技術實驗室、語言與知 識處理實驗室、網路系統與服務實驗室、程式語言與形式方法實驗室、計算理論與演算法實驗室等八大實驗室，研究重點包含生物資訊、平行及分 散式運算、智慧代理人、文件分析與辨識、多媒體系統、電腦視覺、影像處理及圖形識別、中文資訊處理、自然語言理解、電腦通訊與網路、網路內容管理與XML、網路與軟體安全、形式驗證、演算法設計與分析、密碼學、機器人學等。\n\n本所的研究經費，主要來源是中央研究院，國科會，教育部，衛生署，以及其他政府或民間財團法人等單位，亦接受國內資訊業界委託計畫。與國內學術、研究單位及產業界建立良好合作關係，也歡迎跨國的學術合作與交流。\n\n如欲進一步瞭解本所之各項活動，歡迎上網查詢本所網頁 http://www.iis.sinica.edu.tw。"
-    },
-    {
-        "level": 5,
-        "place": 3,
-        "logolink": "http://www.intel.com.tw/content/www/tw/zh/homepage.html",
-        "logourl": "/2016-assets/images/cohost-Intel.png",
-        "nameen": "Intel",
-        "namezh": "Intel",
-        "introen": "INTEL MAKES POSSIBLE THE MOST AMAZING EXPERIENCES OF THE FUTURE\rYou know us best for our processors.  But we do so much more.  We are makers, catalysts and inventors.  We innovate at the boundaries of technology to make amazing experiences possible for business and society, and for every person on Earth.\rThroughout our proud history, Intel has continuously expanded the reach, influence and power of computing to improve people’s everyday lives.  With employees in 63 countries and customers in over 120 countries, Intel’s products and services create the foundation for limitless invention.  Intel is like no other company on the planet: our technology is a critical part of an increasingly interdependent ecosystem that creates and expands value for shareholders, partners, customers and society. \rOur innovations are bringing sight, touch, depth-perception and the ability to communicate to devices, objects and spaces to make them smart and connected.  More than an essential ingredient of the most valued compute devices, Intel harnesses the capability of the cloud, the ubiquity of the Internet of Things, the latest advances in memory and programmable solutions, and the promise of always-on 5G connectivity to disrupt industries and solve global challenges - such as those in healthcare, agriculture and commerce.  And we lead on important matters of policy, diversity, inclusion, education and sustainability.  \rOur manufacturing advantage - fueled by our leadership pursuit of Moore’s Law - lets us continuously push the limits of performance, functionality and economics.",
-        "introzh": "英特爾實現最驚艷的未來體驗\r \r大家最熟知的是英特爾的處理器，但我們所做的遠超越於此。英特爾製造產品、促成演進並發明各項新技術。英特爾站在科技的最前端不斷創新，為企業、社會、以及所有人實現各種美妙的經驗。\r \r英特爾在引以自豪的歷史中持續擴展運算的範疇、影響層面以及力量，從而改善人們的日常生活。我們的員工分布在63國，客戶更遍及超過120個國家，英特爾的產品及服務為無止境的發明奠定完善基礎。英特爾不同於全球其他企業：我們的科技在日趨相互依賴的產業體系中扮演關鍵要素，為公司股東、夥伴廠商、客戶、以及社會創造與擴大價值。\r \r英特爾的創新發明為各種裝置、物件與場域帶來視覺、觸覺、景深感和通訊能力，讓它們具備智慧與連網功能。除了為富有價值的運算裝置帶來關鍵元件外，英特爾還運用雲端的力量，並結合物聯網無所不在的普遍性、記憶體與可編程解決方案的最新進展、以及5G技術，顛覆產業的形態並解決包括醫療、農業以及商業等領域的全球性挑戰。此外，我們還在政策、多樣性、社會融合、教育以及永續發展等層面率先做出重要貢獻。\r \r英特爾的製造優勢–在領先各界追求摩爾定律的激勵下–我們將持續突破效能、功能性以及經濟效益的極限。"
-    },
-    {
-        "level": 5,
-        "place": 4,
-        "logolink": "http://www.makezine.com.tw/",
-        "logourl": "/2016-assets/images/cohost-Fullon.png",
-        "nameen": "Fullon",
-        "namezh": "馥林文化",
-        "introen": "Fullon——a brief introduction \r\rReading can enlarge and better people's life. We think the most richest person is who addicts to reading. That's the reason we name ourself fullon.\r \rTai Tien Electric Co., Ltd was formed in 1960, currently has 100 employees in Taiwan and a capital of NTD 196,000,000. Fullon is the publishing department of Tai Tien, established in 2002.\rFullon’s perspective is to broaden readers’ horizons, and provide diverse knowledge and experience to readers. In the initial stage, Fullon’s publication was mainly focused on finance and parent education, producing series of practical books in simple language for modern business people and parents. \r\rPresently Fullon has 12 series, among which brings in books of bestselling authors in the UK and the USA, such as Sophia Kinsella, Nick Hornby and Jennifer Weiner. All these books are rated brilliant performances.\r\rFullon is expected to expand its scale by: \r1.\tCooperating with main publishers in China, first aiming to bring in eminent and oncoming writers to Taiwan and later set up and carry out projects on publishing together.\r2.\tEnhancing its publication of books and cultivate new writers.\rContinuously bring in books of eminent writers in the UK and the USA to Taiwan and expand its present series.",
-        "introzh": "「馥林」，取其書香及富文學氣息之名 \r馥林文化是由泰電電業股份有限公司於2002年成立的出版部門，在這個地方，夢想與熱情繚繞，我們以傳遞文化與知識為任，滿懷理想，灌注無限熱情，期望以最輕盈的姿態，從現在開始，立足台灣，深耕華文創作世界，放眼世界舞台，傳遞品味與文化的氣息。\r\r除了持續傳遞文化的鮮度、力量、溫度之外，鑒於21世紀將是數位、科技、人文融合互動的世代，我們亦將推出科普書系、品味生活書系、移民文學…等，更強調與讀者互動並關注生活姿態，見證城市的成長，擴展閱讀的角度，期望讓馥林成為夢想起飛，幸福的根源，如果你帶著一雙夢想的翅膀，請和我們一起飛翔。"
-    },
-    {
-        "level": 5,
-        "place": 5,
-        "logolink": "http://softwarefreedom.org/",
-        "logourl": "/2016-assets/images/cohost-SFLC.png",
-        "nameen": "SFLC",
-        "namezh": "SFLC",
-        "introen": "The Software Freedom Law Center provides pro-bono legal services to developers of Free, Libre, and Open Source Software.SFLC's practice brings together expertise in all the fields of law that FOSS projects are affected by, including copyrights, patents, trademarks, and nonprofit governance. We can counsel our clients on the big picture, beyond today's specific problems, helping projects reach their long-term goals safely and efficiently so hackers can concentrate on making great software.If you would like to learn more about having the SFLC present to your group, please contact us.\r\r",
-        "introzh": "The Software Freedom Law Center provides pro-bono legal services to developers of Free, Libre, and Open Source Software.SFLC's practice brings together expertise in all the fields of law that FOSS projects are affected by, including copyrights, patents, trademarks, and nonprofit governance. We can counsel our clients on the big picture, beyond today's specific problems, helping projects reach their long-term goals safely and efficiently so hackers can concentrate on making great software.If you would like to learn more about having the SFLC present to your group, please contact us.\r\r"
+        "name": {
+            "en": "Co-host",
+            "zh": "協辦單位"
+        },
+        "data": [
+        ]
     }
 ]

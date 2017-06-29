@@ -106,6 +106,76 @@ export default CSSModules(class extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className='card'>
+                        <div className='title'>開車</div>
+                        <div className='content'>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='card'>
+                        <div className='title'>開車</div>
+                        <div className='content'>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                            <div className='person'>
+                                <div className='person--wrapper'>
+                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                    <div className='name'>小畢</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <Containers.general.SponsorList />

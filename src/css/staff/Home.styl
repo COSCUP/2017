@@ -1,0 +1,51 @@
+
+@import "./../_custom-variable.styl"
+
+.stafflist {
+
+    flexbox(row, center, flex-start)
+    margin-bottom: 150px
+
+    .card {
+
+        max-width: 510px;
+        background-color: white;
+        padding: 15px;
+        box-shadow: -20px 20px 100px rgba(20%,20%,40%,0.5);
+        box-sizing: border-box;
+        margin-right: 50px;
+
+        .title {
+            font-size: 24px;
+            color: #009A79;
+            margin: 15px 15px 15px 0
+        }
+
+        .content {
+
+            .person {
+
+
+                display: inline-block;
+                width: 120px;
+                height: 150px;
+                margin-bottom: 15px;
+
+                .person--wrapper {
+                    flexbox(column, flex-start, center)
+                    .photo {
+
+                        width: 100px;
+                        height: 100px;
+                        margin-bottom: 15px;
+                    }
+
+                    .name {
+                        font-size: 16px
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -10,12 +10,14 @@ import CSSModules from 'react-css-modules'
 export default CSSModules(class extends Component {
     async componentDidMount () {
         await this.props.getTranslate()
+        await this.props.getSocial()
         this.setState({
             loaded: true
         })
     }
     render () {
         if (!this.state.loaded) return null
+        const { Social } = this.props
         return (
             <StyleRoot style={{
                 height: '100%',
@@ -33,6 +35,15 @@ export default CSSModules(class extends Component {
                         <div className="content--footer">
                             <div>
 
+                            </div>
+                            <div className="content--footer--social">
+                                {
+                                    Social.map((social, id) => (
+                                        <a href={social.link}>
+                                            <img src={require(`static/social/${social.title}.png`)}/>
+                                        </a>
+                                    ))
+                                }
                             </div>
                             <div className="content--footer--history">
                                 {

@@ -13,7 +13,7 @@ export default CSSModules(class extends Component {
     }
 
     componentDidMount () {
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll, {passive: true})
     }
 
     componentWillUnmount () {

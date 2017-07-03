@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Radium from 'radium'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 import { IndexLink, Link } from 'react-router'
 
 @Radium
-export default CSSModules(class extends Component {
+export default CSSModules(class extends PureComponent {
     constructor (props) {
         super(props)
         this.handleScroll = this.handleScroll.bind(this)
@@ -16,10 +16,11 @@ export default CSSModules(class extends Component {
             offsetY: 0,
             animationActive: true
         }
+        this.ticking = false
     }
 
     componentDidMount () {
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll, {passive: true})
         this.setState({
             animationActive: this.props.NavbarConfig.isIndex
         })
@@ -36,9 +37,17 @@ export default CSSModules(class extends Component {
     }
 
     handleScroll (event) {
-        this.setState({
-            offsetY: window.pageYOffset
-        })
+        var self = this
+        var lastKnownScrollPosition = window.pageYOffset
+        if (!self.ticking) {
+            window.requestAnimationFrame(function () {
+                self.setState({
+                    offsetY: lastKnownScrollPosition
+                })
+                self.ticking = false
+            })
+        }
+        self.ticking = true
     }
 
     MenuWidth () {

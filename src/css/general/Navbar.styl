@@ -4,12 +4,13 @@
     z-index: 10
     width: 80%
     height: 55px
-    position: absolute
+    position: sticky
     top: 0
     box-shadow: 0 2px 16px $navbar-box-shadow
     flexbox(row, flex-start, center)
     background: white
     left: 0%
+    margin-top: calc(80vh - 400px)
 
     .logo {
 
@@ -184,21 +185,13 @@
     }
 
     @media screen and (min-width: $mobile-screen-width) {
-
-        &.navbar--abs {
-
-            width: 80%
-            height: 55px
-            position: fixed
-            top: 50%
-        }
-
         &.navbar--fixed {
 
             width: 100%
             height: 55px
             position: fixed
             top: 0
+            margin-top: 0
         }
     }
 }

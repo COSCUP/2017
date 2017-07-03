@@ -46,6 +46,7 @@ export default CSSModules(class extends Component {
                         </div>
                     </div>
                 </div>
+                <Containers.general.Navbar isIndex={true} />
                 <div className="indexpage--content">
                     <div className="indexpage--section">
                         <div className="section--title">

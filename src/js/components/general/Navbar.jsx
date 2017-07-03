@@ -10,16 +10,16 @@ export default CSSModules(class extends Component {
         super(props)
         this.handleScroll = this.handleScroll.bind(this)
         this.MenuWidth = this.MenuWidth.bind(this)
-        this.MenuTopOffset = this.MenuTopOffset.bind(this)
         this.MenuLeftOffset = this.MenuLeftOffset.bind(this)
         this.state = {
             offsetY: 0,
             animationActive: true
         }
+        this.ticking = false
     }
 
     componentDidMount () {
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll, {passive: true})
         this.setState({
             animationActive: this.props.NavbarConfig.isIndex
         })
@@ -39,6 +39,17 @@ export default CSSModules(class extends Component {
         this.setState({
             offsetY: window.pageYOffset
         })
+        var self = this
+        var lastKnownScrollPosition = window.pageYOffset
+        if (!self.ticking) {
+            window.requestAnimationFrame(function () {
+                self.setState({
+                    offsetY: lastKnownScrollPosition
+                })
+                self.ticking = false
+            })
+        }
+        self.ticking = true
     }
 
     MenuWidth () {
@@ -51,21 +62,6 @@ export default CSSModules(class extends Component {
                 return '100%'
             }
             let returnWidth = (80 + (20 * this.state.offsetY / 480)) + '%'
-            return returnWidth
-        }
-        return ''
-    }
-
-    MenuTopOffset () {
-        if (this.state.animationActive === true) {
-            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-            if (width < 720) {
-                return ''
-            }
-            if (this.state.offsetY / 480 > 1) {
-                return '0%'
-            }
-            let returnWidth = (80 - (80 * this.state.offsetY / 480)) + '%'
             return returnWidth
         }
         return ''
@@ -90,9 +86,8 @@ export default CSSModules(class extends Component {
         const language = this.props.language
         return (
             <div
-                className={ classNames('navbar', {'navbar--fixed': (!this.state.animationActive || this.state.offsetY > 480)}, {'navbar--abs': (this.state.animationActive && this.state.offsetY < 480)})}
+                className={ classNames('navbar', {'navbar--fixed': (!this.state.animationActive)})}
                 style={{
-                    top: this.MenuTopOffset(),
                     width: this.MenuWidth(),
                     left: this.MenuLeftOffset()
                 }}>

@@ -69,7 +69,7 @@ export default CSSModules(class extends Component {
                     </div>
                     */
                 }
-                    <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
+                     { this.props.location.pathname !== '/' ? <Containers.general.Navbar isIndex={this.props.location.pathname === '/'} /> : null }
                     {
                         this.props.location.pathname === '/'
                         ? <Containers.general.Banner />

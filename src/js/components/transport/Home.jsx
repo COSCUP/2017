@@ -37,7 +37,7 @@ export default CSSModules(class extends Component {
                     </div>
                     <div className='card'>
                         <div className="M">
-                            <img src={require(`static/transport/metro.png`)}/>
+                            <img src={require(`static/transport/park.png`)}/>
                         </div>
                         <div className='title'>開車</div>
                         <div className='content'>

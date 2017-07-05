@@ -2,11 +2,12 @@
 
 .subpage--banner {
     width: 100vw
-    height: 100vh
+    min-height: 100vh
     z-index: 0
     position: absolute
     top: 0
     left: 0
+    // overflow-x: hidden;
 
     $bronze: #fff;
     $white: #fff;
@@ -19,6 +20,7 @@
         height: 100%
         top: 0
         left: 0
+        transform: translateX(-110px) scale(1.15);
     }
 
     #content {

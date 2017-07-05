@@ -26,6 +26,9 @@ export default CSSModules(class extends Component {
                 </div>
                 <div className='transport--way'>
                     <div className='card'>
+                        <div className="M">
+                            <img src={require(`static/transport/metro.png`)}/>
+                        </div>
                         <div className='title'>大眾運輸</div>
                         <div className='content'>
                             捷運科技大樓站（文湖線）：捷運科技大樓站出口左轉，沿著復興南路步行至辛亥路交叉口，過馬路即可抵達臺大北門，右手邊大樓即為臺大社會科學院，步行路程約 10 分鐘。<br/>
@@ -33,6 +36,9 @@ export default CSSModules(class extends Component {
                         </div>
                     </div>
                     <div className='card'>
+                        <div className="M">
+                            <img src={require(`static/transport/metro.png`)}/>
+                        </div>
                         <div className='title'>開車</div>
                         <div className='content'>
                             臺大社會科學院大樓位於臺大校總區北門（辛亥路與復興南路交叉口的西南角）的西側，靠近法律系霖澤館。停車場計時收費，位於本院大樓地下室 B1 和 B2（建議停 B2，停車位多而方便），入口 請 <br/>

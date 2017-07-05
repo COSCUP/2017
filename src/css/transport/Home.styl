@@ -8,10 +8,11 @@
 
     .card {
 
+        position: relative;
         min-height: 360px;
         width: 480px;
         background-color: white;
-        padding: 15px;
+        padding: 25px;
         box-shadow: -20px 20px 100px rgba(20%,20%,40%,0.5);
         box-sizing: border-box;
 
@@ -26,6 +27,20 @@
         .content {
             font-size: 16px
             line-height: 38px
+        }
+
+        .M {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 96px;
+            height: 96px;
+            flexbox(row, center, center);
+
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
 
         @media only screen and (max-width: $mobile-screen-width) {

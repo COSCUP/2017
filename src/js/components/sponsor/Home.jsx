@@ -1,16 +1,35 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
+import classNames from 'classnames'
 
 export default CSSModules(class extends Component {
-    static propTypes = {
+    constructor (props) {
+        super(props)
+        this.blurHandler = this.blurHandler.bind(this)
+        this.state = {
+            isBlur: false
+        }
+    }
+
+    blurHandler () {
+        let _blur = this.state.isBlur
+        this.setState({
+            isBlur: !_blur
+        })
+
+        let list = document.querySelectorAll("[data-type='blur']")
+        for (let i = 0; i < list.length; i++) {
+            list[i].classList.toggle('blur-in')
+        }
     }
     render () {
         const { Sponsor, Language } = this.props
         return (
             <div>
                 <div className="subPage">
-                    <div className="mobile subpage--title">
+                    <div className="mobile subpage--title" onClick={this.blurHandler}>
                         <div className="title--text">{ this.props.Translate['sponsor'][Language] }</div>
+                        <div className="popout--toggler"></div>
                     </div>
                     <div className="desktop subpage--title">
                         <div className="title--text">
@@ -55,7 +74,7 @@ export default CSSModules(class extends Component {
                     }
                 </div>
 
-                <div className="popOutMenu--mobile">
+                <div className={classNames('popOutMenu--mobile', {'active': this.state.isBlur === true})} onClick={this.blurHandler}>
                     <div className="popOutMenu--bg"></div>
                     <div className="popOutMenu--content"></div>
                 </div>

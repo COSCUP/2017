@@ -25,6 +25,7 @@ export default CSSModules(class extends Component {
             }}>
                 <div
                     className="mainPage"
+                    // data-type='blur'
                     style={{
                         position: 'relative',
                         display: 'flex',
@@ -32,7 +33,7 @@ export default CSSModules(class extends Component {
                         alignItems: 'center',
                         height: '100%'
                     }}>
-                    <div className="content--wrapper">
+                    <div className="content--wrapper" data-type='blur'>
                         { this.props.children }
                         <div className="content--footer">
                             <div>

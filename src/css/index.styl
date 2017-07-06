@@ -23,10 +23,18 @@ body {
         margin: 0
     }
 
+    li {
+        
+        text-decoration: none
+
+        a {
+            text-decoration: none
+        }
+    }
     .mainPage {
         &.blur-in {
-            animation: blur 2s forwards;
-        }    
+            animation: blur 0.35s forwards;
+        }
     }
     .content--wrapper {
         z-index: 1
@@ -37,7 +45,8 @@ body {
         // background: radial-gradient(rgba(white, 1) 0%, rgba(white, 0) 100%)
 
         &.blur-in {
-            animation: blur 2s forwards;
+            z-index: 9999;
+            // animation: blur 2s forwards;
         }
     }
 

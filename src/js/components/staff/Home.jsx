@@ -1,9 +1,27 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import Containers from 'js/containers'
+import classNames from 'classnames'
 
 export default CSSModules(class extends Component {
-    static propTypes = {
+    constructor (props) {
+        super(props)
+        this.blurHandler = this.blurHandler.bind(this)
+        this.state = {
+            isBlur: false
+        }
+    }
+
+    blurHandler () {
+        let _blur = this.state.isBlur
+        this.setState({
+            isBlur: !_blur
+        })
+
+        let list = document.querySelectorAll("[data-type='blur']")
+        for (let i = 0; i < list.length; i++) {
+            list[i].classList.toggle('blur-in')
+        }
     }
     componentDidMount () {
         this.props.getStaff()
@@ -17,7 +35,9 @@ export default CSSModules(class extends Component {
                 }}>
                 <div className="subPage">
                     <div className="mobile subpage--title">
+                        <div className="popout--toggler"></div>
                         <div className="title--text">{ this.props.Translate['staff'][Language] }</div>
+                        <div className="popout--toggler" onClick={this.blurHandler}></div>
                     </div>
                     <div className="desktop subpage--title">
                         <div className="title--text">
@@ -30,23 +50,41 @@ export default CSSModules(class extends Component {
                 <div className='stafflist'>
                     {
                         Staff.map((StaffList, id) => (
-                            <div key={id} className='card'>
-                                <div className='title'>{StaffList['name']}</div>
-                                <div className='content'>
-                                    {
-                                        StaffList.data.map((staff, subid) => (
-                                            <div key={subid} className='person'>
-                                                <div className='person--wrapper'>
-                                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                                    <div className='name'>{staff.name}</div>
+                            <a name={'#' + StaffList['name']}>
+                                <div key={id} className='card'>
+                                    <div className='title'>{StaffList['name']}</div>
+                                    <div className='content'>
+                                        {
+                                            StaffList.data.map((staff, subid) => (
+                                                <div key={subid} className='person'>
+                                                    <div className='person--wrapper'>
+                                                        <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                                        <div className='name'>{staff.name}</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))
-                                    }
+                                            ))
+                                        }
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         ))
                     }
+                </div>
+                <div className={classNames('stafflist--popOut', 'popOutMenu--mobile', {'active': this.state.isBlur === true})} onClick={this.blurHandler}>
+                    <div className="popOutMenu--bg"></div>
+                    <div className="popOutMenu--content">
+                        <ul>
+                            <li>
+                                <a href="#總召">總召</a>
+                            </li>
+                            <li>
+                                <a href="#總召">記錄組</a>
+                            </li>
+                            <li>
+                                <a href="#總召">課程委員組</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div>
                     <Containers.general.SponsorList />

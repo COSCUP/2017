@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import Actions from 'js/actions'
 import Components from 'components'
 
 const mapStateToProps = (state, ownProps) => ({
@@ -6,6 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
+    getStaff: () => dispatch(Actions.Staff.get())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Components.staff.Home)

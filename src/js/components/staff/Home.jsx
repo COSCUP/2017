@@ -5,6 +5,9 @@ import Containers from 'js/containers'
 export default CSSModules(class extends Component {
     static propTypes = {
     }
+    componentDidMount () {
+        this.props.getStaff()
+    }
     render () {
         const { Language } = this.props
         return (

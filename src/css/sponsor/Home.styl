@@ -1,4 +1,5 @@
 @import "./../general/SubpageContent.styl"
+@import "./../_custom-variable.styl"
 
 .sponsor--sponsorlist {
 
@@ -21,7 +22,7 @@
         flexbox(row, flex-start, flex-start)
 
         .sponsor--sponsorimage {
-            
+
             a {
                 font-size: 0px
                 display: inline-block;
@@ -41,5 +42,33 @@
             .sponsor--description {
             }
         }
+    }
+}
+
+.sponsorlist--popOut {
+    .popOutMenu--bg {
+        background-image: url('./../../static/staff/blur-bg.png') !important;
+    }
+    .popOutMenu--content {
+        width: 100%;
+
+        ul {
+            z-index: 9999
+            width: 100%
+            height: 100vh
+            flexbox(row, space-between, space-between)
+            flex-wrap: wrap;
+
+            li {
+                flexbox(row, center, center)
+                width: 100%
+                text-decoration: none
+
+                a {
+                    color: black
+                }
+            }
+        }
+
     }
 }

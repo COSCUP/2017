@@ -28,8 +28,9 @@ export default CSSModules(class extends Component {
             <div>
                 <div className="subPage">
                     <div className="mobile subpage--title" onClick={this.blurHandler}>
-                        <div className="title--text">{ this.props.Translate['sponsor'][Language] }</div>
                         <div className="popout--toggler"></div>
+                        <div className="title--text">{ this.props.Translate['sponsor'][Language] }</div>
+                        <div className="popout--toggler" onClick={this.blurHandler}></div>
                     </div>
                     <div className="desktop subpage--title">
                         <div className="title--text">
@@ -74,9 +75,21 @@ export default CSSModules(class extends Component {
                     }
                 </div>
 
-                <div className={classNames('popOutMenu--mobile', {'active': this.state.isBlur === true})} onClick={this.blurHandler}>
+                <div className={classNames('sponsorlist--popOut', 'popOutMenu--mobile', {'active': this.state.isBlur === true})} onClick={this.blurHandler}>
                     <div className="popOutMenu--bg"></div>
-                    <div className="popOutMenu--content"></div>
+                    <div className="popOutMenu--content">
+                        <ul>
+                            <li>
+                                <a href="#總召">總召</a>
+                            </li>
+                            <li>
+                                <a href="#總召">記錄組</a>
+                            </li>
+                            <li>
+                                <a href="#總召">課程委員組</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )

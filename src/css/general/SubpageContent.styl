@@ -64,6 +64,9 @@
         align-items: center
 
         .mobile.subpage--title {
+
+            position: fixed;
+            z-index: 10;
             margin-top: 0px
             background: linear-gradient(-315deg, #F9FEA5, #20E2D7)
             width: 100%
@@ -110,7 +113,7 @@
             }
             @media only screen and (max-width: $mobile-screen-width) {
                 visibility: hidden;
-
+                display: none;
             }
         }
 

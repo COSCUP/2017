@@ -9,7 +9,7 @@ export default CSSModules(class extends Component {
         this.props.getStaff()
     }
     render () {
-        const { Language } = this.props
+        const { Staff, Language } = this.props
         return (
             <div
                 style={{
@@ -28,157 +28,25 @@ export default CSSModules(class extends Component {
                     </div>
                 </div>
                 <div className='stafflist'>
-                    <div className='card'>
-                        <div className='title'>總召</div>
-                        <div className='content'>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
+                    {
+                        Staff.map((StaffList, id) => (
+                            <div key={id} className='card'>
+                                <div className='title'>{StaffList['name'][Language]}</div>
+                                <div className='content'>
+                                    {
+                                        StaffList.data.map((staff, subid) => (
+                                            <div key={subid} className='person'>
+                                                <div className='person--wrapper'>
+                                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
+                                                    <div className='name'>{staff.name[Language]}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='title'>開車</div>
-                        <div className='content'>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='title'>開車</div>
-                        <div className='content'>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='title'>開車</div>
-                        <div className='content'>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='title'>開車</div>
-                        <div className='content'>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                            <div className='person'>
-                                <div className='person--wrapper'>
-                                    <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                    <div className='name'>小畢</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
                 </div>
                 <div>
                     <Containers.general.SponsorList />

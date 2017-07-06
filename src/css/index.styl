@@ -23,6 +23,11 @@ body {
         margin: 0
     }
 
+    .mainPage {
+        &.blur-in {
+            animation: blur 2s forwards;
+        }    
+    }
     .content--wrapper {
         z-index: 1
         min-height: 200vh
@@ -36,6 +41,17 @@ body {
         }
     }
 
+    .navbar {
+        &.blur-in {
+            animation: blur 2s forwards;
+        }
+    }
+
+    .subpage--banner--wrapper {
+        &.blur-in {
+            animation: blur 2s forwards;
+        }
+    }
     @media only screen and (max-width: $mobile-screen-width) {
 
         .content--wrapper {

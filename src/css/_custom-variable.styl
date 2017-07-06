@@ -23,3 +23,24 @@ flexbox($type, $a, $b)
     flex-direction: $type
     justify-content: $a
     align-items: $b
+
+// blur animation
+@keyframes blur {
+    0% {
+        filter: blur(0px);
+    }
+
+    100% {
+        filter: blur(5px);
+    }
+}
+
+@keyframes blur-out {
+    0% {
+        filter: blur(5px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+}

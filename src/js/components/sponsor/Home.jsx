@@ -54,6 +54,11 @@ export default CSSModules(class extends Component {
                         ))
                     }
                 </div>
+
+                <div className="popOutMenu--mobile">
+                    <div className="popOutMenu--bg"></div>
+                    <div className="popOutMenu--content"></div>
+                </div>
             </div>
         )
     }

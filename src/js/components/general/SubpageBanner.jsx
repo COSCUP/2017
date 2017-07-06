@@ -45,7 +45,7 @@ export default CSSModules(class extends Component {
 
     render () {
         return (
-            <div>
+            <div className="subpage--banner--wrapper">
                 <div className="subpage--banner">
                     <div id='hero'>
                         <div className='layer-bg layer'></div>

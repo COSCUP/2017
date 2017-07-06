@@ -23,13 +23,15 @@ export default CSSModules(class extends Component {
                 height: '100%',
                 width: '100%'
             }}>
-                <div style={{
-                    position: 'relative',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    height: '100%'
-                }}>
+                <div
+                    className="mainPage"
+                    style={{
+                        position: 'relative',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '100%'
+                    }}>
                     <div className="content--wrapper">
                         { this.props.children }
                         <div className="content--footer">
@@ -71,12 +73,15 @@ export default CSSModules(class extends Component {
                 }
                     <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
                     {
-                        this.props.location.pathname === '/'
-                        ? <Containers.general.Banner />
-                    : <Containers.general.SubpageBanner />
+                        this.props.location.pathname === '/' ? (
+                            <Containers.general.Banner />
+                        ) : (
+                            <Containers.general.SubpageBanner />
+                        )
                     }
                     <Containers.general.Footer />
                 </div>
+
             </StyleRoot>
         )
     }

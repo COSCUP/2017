@@ -31,14 +31,14 @@ export default CSSModules(class extends Component {
                     {
                         Staff.map((StaffList, id) => (
                             <div key={id} className='card'>
-                                <div className='title'>{StaffList['name'][Language]}</div>
+                                <div className='title'>{StaffList['name']}</div>
                                 <div className='content'>
                                     {
                                         StaffList.data.map((staff, subid) => (
                                             <div key={subid} className='person'>
                                                 <div className='person--wrapper'>
                                                     <img src='https://assets-cdn.github.com/favicon.ico' className='photo' />
-                                                    <div className='name'>{staff.name[Language]}</div>
+                                                    <div className='name'>{staff.name}</div>
                                                 </div>
                                             </div>
                                         ))

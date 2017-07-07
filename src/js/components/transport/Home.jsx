@@ -51,15 +51,15 @@ export default CSSModules(class extends Component {
                 </div>
                 <div
                     style={{
-                        marginBottom: '50px',
-                        width: '100%',
+                        margin: '0 -50px 50px',
+                        width: '100vw',
                         overflow: 'hidden',
                         textAlign: 'center'
                     }}>
                     <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC5dVrGuTloVYvFsSA_id1IEp4cFZtLqL0&q=%E5%9C%8B%E7%AB%8B%E8%87%BA%E7%81%A3%E5%A4%A7%E5%AD%B8%E7%A4%BE%E6%9C%83%E7%A7%91%E5%AD%B8%E9%99%A2"
                         frameBorder="0"
                         style={{
-                            width: '640px',
+                            width: '100%',
                             height: '480px',
                             border: 0
                         }}

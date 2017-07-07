@@ -2,25 +2,37 @@
 @import "./../_custom-variable.styl"
 
 .stafflist {
-
-    flexbox(row, center, flex-start)
     margin-bottom: 150px;
     flex-wrap: wrap
+    column-gap: 50px
+
+    @media screen and (min-width: 600px) {
+      column-count: 2
+    }
+    @media screen and (min-width: 1000px) {
+      column-count: 3
+    }
 
     a {
-        color: black
+        display: block
+        width: 100%
+
+        -webkit-column-break-inside: avoid; /* Chrome, Safari */
+        page-break-inside: avoid;           /* Theoretically FF 20+ */
+        break-inside: avoid-column;         /* IE 11 */
+        display:table;                      /* Actually FF 20+ */
+
         cursor: default
         text-decoration: none
-
+        margin-right: 50px
         .card {
-
+            display: block;
             width: 100%
-            max-width: 510px;
-            background-color: white;
+            background-color: rgba(255,255,255,.7);
             padding: 15px;
-            box-shadow: -20px 20px 100px rgba(20%,20%,40%,0.5);
+            box-shadow: 0 20px 50px $shadow-color
+            border-radius: 5px
             box-sizing: border-box;
-            margin-left: 50px;
             margin-right: 50px;
             margin-bottom: 50px;
 
@@ -31,13 +43,19 @@
             }
 
             .content {
-
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                @media screen and (min-width: 800px) {
+                  grid-template-columns: repeat(3, 1fr);
+                }
+                @media screen and (min-width: 1200px) {
+                  grid-template-columns: repeat(4, 1fr);
+                }
                 .person {
 
 
                     display: inline-block;
-                    width: 120px;
-                    // height: 150px;
                     margin-bottom: 15px;
 
                     .person--wrapper {

@@ -8,7 +8,10 @@
     .title--wrapper {
         min-height: 300px
         flexbox(column, flex-start, flex-start)
-        margin: 100px 0 0 100px
+        //margin: 100px 0 0 100px
+        position: relative;
+        top:250px
+        left: 250px
 
         .text--wrapper {
             color: $navbar-text-hover
@@ -49,17 +52,23 @@
                 .title--sub {
                     font-size: 20px
                     letter-spacing: 5px
+                    font-family: 'Noto Sans'
+                    font-weight: 100
                 }
 
                 .title--date {
                     font-size: 29px
                     letter-spacing: 10px
+                    font-family: 'Advent Pro'
+                    line-height: 2em
                 }
 
                 .title--main {
                     font-size: 100px
                     font-weight: 400
                     line-height: 80px
+                    font-family: 'Cantata One'
+                    line-height: 1em
                 }
             }
 
@@ -82,7 +91,11 @@
                 text-align: center
                 transition: all 0.35s ease
                 background: $navbar-text-hover
-                box-shadow: 12px 16px 50px 0px $navbar-button-shadow
+                box-shadow: 0 50px 50px $shadow-color
+                font-family: Abel
+                text-transform: uppercase
+                letter-spacing: .2em
+
 
                 &:hover {
 
@@ -153,10 +166,6 @@
                     max-width: 80%
                     padding: 20px 70px
 
-                    p {
-
-                        color: #4A4A4A
-                    }
                 }
 
             }

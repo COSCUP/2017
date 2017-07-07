@@ -14,7 +14,9 @@ export default CSSModules(class extends Component {
                 }}>
                 <div className="subPage">
                     <div className="mobile subpage--title">
+                        <div className="popout--toggler"></div>
                         <div className="title--text">{ this.props.Translate['transport'][Language] }</div>
+                        <div className="popout--toggler"></div>
                     </div>
                     <div className="desktop subpage--title">
                         <div className="title--text">

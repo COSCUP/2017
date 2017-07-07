@@ -58,6 +58,14 @@ export default CSSModules(class extends Component {
                                                         <img src={sponsor.logourl} />
                                                     </a>
                                                 </div>
+                                                <div className='sponsor--content--mobile'>
+                                                    <div className='sponsor--title'>
+                                                        { sponsor.name[Language] }
+                                                    </div>
+                                                    <a target='_blank' href={sponsor.logolink}>
+                                                        <img src='#' />
+                                                    </a>
+                                                </div>
                                                 <div className='sponsor--content'>
                                                     <div className='sponsor--title'>
                                                         { sponsor.name[Language] }
@@ -80,13 +88,13 @@ export default CSSModules(class extends Component {
                     <div className="popOutMenu--content">
                         <ul>
                             <li>
-                                <a href="#總召">總召</a>
+                                <a href="#鑽石級">鑽石級</a>
                             </li>
                             <li>
-                                <a href="#總召">記錄組</a>
+                                <a href="#黃金級">黃金級</a>
                             </li>
                             <li>
-                                <a href="#總召">課程委員組</a>
+                                <a href="#白銀級">白銀級</a>
                             </li>
                         </ul>
                     </div>

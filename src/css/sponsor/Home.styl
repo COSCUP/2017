@@ -33,6 +33,11 @@
                 }
             }
         }
+
+        .sponsor--content--mobile {
+            display: none;
+        }
+
         .sponsor--content {
             max-width: 900px;
             .sponsor--title {
@@ -40,6 +45,77 @@
                 margin-bottom: 16px;
             }
             .sponsor--description {
+            }
+        }
+    }
+    @media only screen and (max-width: $mobile-screen-width) {
+
+        flexbox(column, flex-start, center)
+
+        .sponsor--subSponsorlist {
+            width: 100%;
+            max-width: 320px;
+            flexbox(column, flex-start, center)
+
+            > div {
+                width: 100%
+            }
+
+            .title--wrapper {
+                flexbox(row, center, center)
+            }
+
+            .sponsor {
+                width: 100%
+                margin: 20px 0
+                box-shadow: rgba(#8A6B76, 0.08) 0px 4px 8px
+                flexbox(column, flex-start, flex-start)
+
+                .sponsor--sponsorimage {
+                    width: 100%
+                    a {
+                        width: 100%
+                        padding: 18px 12px
+                        max-width: calc(100% - 24px)
+                        flexbox(row, center, center)
+                        background-color: white
+                    }
+                }
+
+                .sponsor--content--mobile {
+                    flexbox(row, space-between, center)
+                    padding: 10px;
+                    width: 100%;
+                    max-width: 300px;
+                    background-image: linear-gradient(180deg, rgba(#000, 0.04) 0%, rgba(#000, 0) 100%);
+                    background-color: white;
+
+                    a {
+                        width: 20px
+                        height: 20px
+
+                        img {
+                            width: 20px
+                            height: auto
+                        }
+                    }
+                }
+                .sponsor--content {
+                    z-index: 0
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-image: url('./../../static/staff/blur-bg.png')
+                    background-size: cover;
+
+                    display: none;
+
+                    &.active {
+                        display: block;
+                    }
+                }
             }
         }
     }
@@ -51,11 +127,13 @@
     }
     .popOutMenu--content {
         width: 100%;
+        height: 100vh;
+        flexbox(row, center, center)
 
         ul {
             z-index: 9999
             width: 100%
-            height: 100vh
+            height: 80vh
             flexbox(row, space-between, space-between)
             flex-wrap: wrap;
 

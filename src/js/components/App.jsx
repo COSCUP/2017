@@ -2,12 +2,34 @@ require('babel-polyfill')
 import React, { Component } from 'react'
 import Containers from 'containers'
 import Radium, { StyleRoot } from 'radium'
-// import classNames from 'classnames'
+import classNames from 'classnames'
 import _ from 'lodash'
 import CSSModules from 'react-css-modules'
 
 @Radium
 export default CSSModules(class extends Component {
+    constructor (props) {
+        super(props)
+        this.blurSocialHandler = this.blurSocialHandler.bind(this)
+        this.blurHistoryHandler = this.blurHistoryHandler.bind(this)
+        this.state = {
+            isBlurHistory: false,
+            isBlurSocial: false
+        }
+    }
+    blurSocialHandler () {
+        let _isBlurSocial = this.state.isBlurSocial
+        this.setState({
+            isBlurSocial: !_isBlurSocial
+        })
+    }
+    blurHistoryHandler () {
+        let _isBlurHistory = this.state.isBlurHistory
+        this.setState({
+            isBlurHistory: !_isBlurHistory
+        })
+    }
+
     async componentDidMount () {
         await this.props.getTranslate()
         await this.props.getSocial()
@@ -18,6 +40,7 @@ export default CSSModules(class extends Component {
     render () {
         if (!this.state.loaded) return null
         const { Social } = this.props
+        console.log(this.state)
         return (
             <StyleRoot style={{
                 height: '100%',
@@ -37,8 +60,8 @@ export default CSSModules(class extends Component {
                         { this.props.children }
                         <div className="content--footer">
                             <div className="content--footer--mobile">
-                                <div className="btn-mobile">Social media</div>
-                                <div className="btn-mobile">歷屆網站</div>
+                                <div className="btn-mobile" onClick={this.blurSocialHandler}>Social media</div>
+                                <div className="btn-mobile" onClick={this.blurHistoryHandler}>歷屆網站</div>
                             </div>
                             <div className="content--footer--social">
                                 {
@@ -72,6 +95,44 @@ export default CSSModules(class extends Component {
                         )
                     }
                     <Containers.general.Footer />
+                    {/*  彈出 popout */}
+                    <div className={classNames('indexpage--popOut--social', 'popOutMenu--mobile', {'active': this.state.isBlurSocial === true})} onClick={this.blurSocialHandler}>
+                        <div className="popOutMenu--bg"></div>
+                        <div className="popOutMenu--content">
+                            <ul>
+                                <li>
+                                    <a href="#鑽石級">鑽石級</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className={classNames('indexpage--popOut--history', 'popOutMenu--mobile', {'active': this.state.isBlurHistory === true})} onClick={this.blurHistoryHandler}>
+                        <div className="popOutMenu--bg"></div>
+                        <div className="popOutMenu--content">
+                            <ul>
+                                {
+                                    ['coco', 'coco', 'coco', 'coco', 'coco', 'dad'].map((sponsor, subid) => (
+                                        <div key={subid} className='sponsor'>
+                                            <div className='sponsor--sponsorimage'>
+                                                <a target='_blank' href={sponsor}>
+                                                    <img src={require(`static/sponsor/appier.png`)} />
+                                                </a>
+                                            </div>
+                                            <div className='sponsor--content--mobile'>
+                                                <div className='sponsor--title'>
+                                                    { sponsor }
+                                                </div>
+                                                <a target='_blank' href={sponsor}>
+                                                    <img src='#' />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </StyleRoot>

@@ -36,8 +36,9 @@ export default CSSModules(class extends Component {
                     <div className="content--wrapper" data-type='blur'>
                         { this.props.children }
                         <div className="content--footer">
-                            <div>
-
+                            <div className="content--footer--mobile">
+                                <div className="btn-mobile">Social media</div>
+                                <div className="btn-mobile">歷屆網站</div>
                             </div>
                             <div className="content--footer--social">
                                 {
@@ -62,16 +63,6 @@ export default CSSModules(class extends Component {
                     </div>
                     { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
                     {/* 這裡是一些常用 component */}
-                    {
-                    /*
-                    <div className={classNames('popOutMenu', 'blur-in')}>
-                        <div className="popOutMenu--bg"></div>
-                        <div className="popOutMenu--content">
-                            XDDD
-                        </div>
-                    </div>
-                    */
-                }
                     <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
                     {
                         this.props.location.pathname === '/' ? (

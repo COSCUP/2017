@@ -44,7 +44,6 @@ export default CSSModules(class extends Component {
     render () {
         if (!this.state.loaded) return null
         const { Social } = this.props
-        console.log(this.state)
         return (
             <StyleRoot style={{
                 height: '100%',
@@ -52,7 +51,6 @@ export default CSSModules(class extends Component {
             }}>
                 <div
                     className="mainPage"
-                    // data-type='blur'
                     style={{
                         position: 'relative',
                         display: 'flex',
@@ -125,21 +123,25 @@ export default CSSModules(class extends Component {
                             <div className="content--title">歷屆網站</div>
                             <ul>
                                 {
-                                    _.range(2016, 2006).map((sponsor, subid) => (
+                                    _.range(2016, 2006).map((year, subid) => (
                                         <div key={subid} className='sponsor'>
+                                            { /*
                                             <div className='sponsor--sponsorimage'>
                                                 <a target='_blank' href={`http://coscup.org/${sponsor}/`}>
                                                     <img src={require(`static/sponsor/appier.png`)} />
                                                 </a>
                                             </div>
-                                            <div className='sponsor--content--mobile'>
+                                            */ }
+                                            <a className='sponsor--content--mobile' target='_blank' href={`http://coscup.org/${year}/`}>
                                                 <div className='sponsor--title'>
-                                                    { sponsor }
+                                                    { year }
                                                 </div>
-                                                <a target='_blank' href={sponsor}>
+                                                { /*
+                                                <a >
                                                     <img src='#' />
                                                 </a>
-                                            </div>
+                                                */ }
+                                            </a>
                                         </div>
                                     ))
                                 }

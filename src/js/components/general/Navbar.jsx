@@ -116,7 +116,7 @@ export default CSSModules(class extends PureComponent {
                             <IndexLink activeClassName="active" to='/'>{ this.props.translate['intro'][language] }</IndexLink>
                         </li>
                         <li>
-                            <Link activeClassName="active" to='/schedule'>{ this.props.translate['schedule'][language] }</Link>
+                            <a href='https://hackmd.io/IYMwnMAsAcBGkFoDGAGA7LBkCm3HDACZgEA2ARgFZYQATUyWMEcoA===?view'>{ this.props.translate['schedule'][language] }</a>
                         </li>
                         <li>
                             <Link activeClassName="active" to='/transport'>{ this.props.translate['transport'][language] }</Link>
@@ -128,7 +128,7 @@ export default CSSModules(class extends PureComponent {
                             <Link activeClassName="active" to='/staff'>{ this.props.translate['staff'][language] }</Link>
                         </li>
                         <li>
-                            <Link activeClassName="active" to='/news'>{ this.props.translate['news'][language] }</Link>
+                            <a href='http://blog.coscup.org/' target='_blank'>{ this.props.translate['news'][language] }</a>
                         </li>
                     </ul>
                     <ul className="lang-selector">

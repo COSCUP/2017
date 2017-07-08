@@ -31,10 +31,9 @@ export default CSSModules(class extends Component {
     render () {
         const { Staff, Language } = this.props
         return (
-            <div
-                style={{
-                    width: '100%'
-                }}>
+            <div style={{
+                width: '100%'
+            }}>
                 <div className="subPage">
                     <div className="mobile subpage--title">
                         <div className="popout--toggler"></div>

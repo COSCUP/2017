@@ -27,7 +27,10 @@ export default CSSModules(class extends Component {
     render () {
         const { Sponsor, Language } = this.props
         return (
-            <div>
+            <div
+                style={{
+                    width: '100%'
+                }}>
                 <div className="subPage">
                     <div className="mobile subpage--title" onClick={this.blurHandler}>
                         <div className="popout--toggler"></div>

@@ -21,6 +21,8 @@ export default CSSModules(class extends Component {
         for (let i = 0; i < list.length; i++) {
             list[i].classList.toggle('blur-in')
         }
+        let target = document.querySelector('body')
+        target.style.overflow = (target.style.overflow === 'hidden' ? 'visible' : 'hidden')
     }
     render () {
         const { Sponsor, Language } = this.props
@@ -86,6 +88,7 @@ export default CSSModules(class extends Component {
                 <div className={classNames('sponsorlist--popOut', 'popOutMenu--mobile', {'active': this.state.isBlur === true})} onClick={this.blurHandler}>
                     <div className="popOutMenu--bg"></div>
                     <div className="popOutMenu--content">
+                        <div className="content--title"> </div>
                         <ul>
                             <li>
                                 <a href="#鑽石級">鑽石級</a>
@@ -97,6 +100,9 @@ export default CSSModules(class extends Component {
                                 <a href="#白銀級">白銀級</a>
                             </li>
                         </ul>
+                        <div className="content--close">
+                            <img src={require(`static/times.svg`)} />
+                        </div>
                     </div>
                 </div>
             </div>

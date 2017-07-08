@@ -22,12 +22,16 @@ export default CSSModules(class extends Component {
         this.setState({
             isBlurSocial: !_isBlurSocial
         })
+        let target = document.querySelector('body')
+        target.style.overflow = (target.style.overflow === 'hidden' ? 'visible' : 'hidden')
     }
     blurHistoryHandler () {
         let _isBlurHistory = this.state.isBlurHistory
         this.setState({
             isBlurHistory: !_isBlurHistory
         })
+        let target = document.querySelector('body')
+        target.style.overflow = (target.style.overflow === 'hidden' ? 'visible' : 'hidden')
     }
 
     async componentDidMount () {
@@ -99,23 +103,32 @@ export default CSSModules(class extends Component {
                     <div className={classNames('indexpage--popOut--social', 'popOutMenu--mobile', {'active': this.state.isBlurSocial === true})} onClick={this.blurSocialHandler}>
                         <div className="popOutMenu--bg"></div>
                         <div className="popOutMenu--content">
+                            <div className="content--title">Social media</div>
                             <ul>
-                                <li>
-                                    <a href="#鑽石級">鑽石級</a>
-                                </li>
+                                {
+                                    Social.map((social, id) => (
+                                        <a href={social.link}>
+                                            <img src={require(`static/social/green/g-${social.title}.png`)}/>
+                                        </a>
+                                    ))
+                                }
                             </ul>
+                            <div className="content--close">
+                                <img src={require(`static/times.svg`)} />
+                            </div>
                         </div>
                     </div>
 
                     <div className={classNames('indexpage--popOut--history', 'popOutMenu--mobile', {'active': this.state.isBlurHistory === true})} onClick={this.blurHistoryHandler}>
                         <div className="popOutMenu--bg"></div>
                         <div className="popOutMenu--content">
+                            <div className="content--title">歷屆網站</div>
                             <ul>
                                 {
-                                    ['coco', 'coco', 'coco', 'coco', 'coco', 'dad'].map((sponsor, subid) => (
+                                    _.range(2016, 2006).map((sponsor, subid) => (
                                         <div key={subid} className='sponsor'>
                                             <div className='sponsor--sponsorimage'>
-                                                <a target='_blank' href={sponsor}>
+                                                <a target='_blank' href={`http://coscup.org/${sponsor}/`}>
                                                     <img src={require(`static/sponsor/appier.png`)} />
                                                 </a>
                                             </div>
@@ -131,6 +144,9 @@ export default CSSModules(class extends Component {
                                     ))
                                 }
                             </ul>
+                            <div className="content--close">
+                                <img src={require(`static/times.svg`)} />
+                            </div>
                         </div>
                     </div>
                 </div>

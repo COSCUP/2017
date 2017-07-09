@@ -54,7 +54,7 @@ export default CSSModules(class extends Component {
                         <div className='layer-3 layer'></div>
                     </div>
                     <div id='hero-mobile'>
-                        <img src={require('static/sub-mb-bg.png')}/>
+                        {/* <img src={require('static/sub-mb-bg.png')}/> */}
                     </div>
                 </div>
                 <div>

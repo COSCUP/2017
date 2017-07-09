@@ -51,7 +51,7 @@ export default CSSModules(class extends Component {
                     <div className='layer-3 layer' data-depth='1.75' data-type='parallax'></div>
                 </div>
                 <div id='hero-mobile'>
-                    <img src={require('static/mb-bg.png')}/>
+                    {/* <img src={require('static/mb-bg.png')}/> */}
                 </div>
             </div>
         )

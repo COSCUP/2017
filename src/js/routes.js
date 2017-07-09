@@ -12,9 +12,6 @@ export default class Root extends Component {
             <Router history={history}>
                 <Route path="/" component={Containers.App}>
                     <IndexRoute component={Containers.general.IndexPage}/>
-                    <Route path="intro" name="intro">
-                        <IndexRoute component={Containers.intro.Home}/>
-                    </Route>
                     <Route path="schedule" name="schedule">
                         <IndexRoute component={Containers.schedule.Home}/>
                     </Route>

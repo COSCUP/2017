@@ -37,6 +37,19 @@ export default CSSModules(class extends Component {
         this.setState({
             loaded: true
         })
+        window.location.hash = window.decodeURIComponent(window.location.hash)
+        const scrollToAnchor = () => {
+            const hashParts = window.location.hash.split('#')
+            if (hashParts.length > 2) {
+                const hash = hashParts.slice(-1)[0]
+                document.querySelector(`#${hash}`).scrollIntoView(true)
+                document.getElementById(hash).scrollTop += 100
+            } else {
+                window.scrollTo(0, 0)
+            }
+        }
+        scrollToAnchor()
+        window.onhashchange = scrollToAnchor
     }
     render () {
         if (!this.state.loaded) return null

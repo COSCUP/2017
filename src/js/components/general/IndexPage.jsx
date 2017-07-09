@@ -6,10 +6,6 @@ import classNames from 'classnames'
 
 @Radium
 export default CSSModules(class extends Component {
-    // constructor (props) {
-    //     super(props)
-    // }
-
     render () {
         const language = this.props.language
         return (
@@ -38,15 +34,15 @@ export default CSSModules(class extends Component {
                     </div>
                     <div className="button--wrapper">
                         <div>
-                            <Link to={'/intro'}>{ this.props.translate['intro'][language] }</Link>
+                            <Link to='/#intro'>{ this.props.translate['intro'][language] }</Link>
                         </div>
                         <div>
-                            <Link to={'/'}>{ this.props.translate['register'][language] }</Link>
+                            <Link to='/'>{ this.props.translate['register'][language] }</Link>
                         </div>
                     </div>
                 </header>
                 <div className="indexpage--content">
-                    <div className="indexpage--section">
+                    <div id='intro' className="indexpage--section">
                         <div className="section--title">
                             <div>
                                 <h2 className="title--en">ABOUT</h2>

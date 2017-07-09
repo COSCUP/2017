@@ -54,7 +54,7 @@
                 }
                 .person {
 
-
+                    width: 33.3%
                     display: inline-block;
                     margin-bottom: 15px;
 
@@ -72,6 +72,10 @@
                             font-size: 16px
                         }
                     }
+
+                    @media screen and (max-width: 1200px) {
+                        width: 50%
+                    }
                 }
             }
 
@@ -81,6 +85,7 @@
 
 .stafflist--popOut {
     .popOutMenu--bg {
+        z-index: -1
         background-image: url('./../../static/staff/blur-bg.png') !important;
     }
     .popOutMenu--content {

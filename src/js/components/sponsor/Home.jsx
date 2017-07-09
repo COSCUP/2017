@@ -6,8 +6,10 @@ export default CSSModules(class extends Component {
     constructor (props) {
         super(props)
         this.blurHandler = this.blurHandler.bind(this)
+        this.blurSponsorHandler = this.blurSponsorHandler.bind(this)
         this.state = {
-            isBlur: false
+            isBlur: false,
+            isSponsorBlur: false
         }
     }
 
@@ -22,6 +24,25 @@ export default CSSModules(class extends Component {
             list[i].classList.toggle('blur-in')
         }
         let target = document.querySelector('body')
+        target.style.overflow = (target.style.overflow === 'hidden' ? 'visible' : 'hidden')
+    }
+
+    blurSponsorHandler (targetName) {
+        console.log('target type: ', targetName)
+        let _blur = this.state.isSponsorBlur
+        this.setState({
+            isSponsorBlur: !_blur
+        })
+
+        let list = document.querySelectorAll("[data-type='blur']")
+        for (let i = 0; i < list.length; i++) {
+            list[i].classList.toggle('blur-in')
+        }
+        let target = document.querySelectorAll(`[data-type='${targetName}']`)
+        for (let i = 0; i < target.length; i++) {
+            target[i].classList.toggle('active')
+        }
+        target = document.querySelector('body')
         target.style.overflow = (target.style.overflow === 'hidden' ? 'visible' : 'hidden')
     }
     render () {
@@ -58,10 +79,10 @@ export default CSSModules(class extends Component {
                                     {
                                         subSponsor.data.map((sponsor, subid) => (
                                             <div key={subid} className='sponsor'>
-                                                <div className='sponsor--sponsorimage'>
-                                                    <a target='_blank' href={sponsor.logolink}>
+                                                <div className='sponsor--sponsorimage' onClick={() => this.blurSponsorHandler(sponsor.name[Language])}>
+                                                    <div>
                                                         <img src={sponsor.logourl} />
-                                                    </a>
+                                                    </div>
                                                 </div>
                                                 <div className='sponsor--content--mobile'>
                                                     <div className='sponsor--title'>
@@ -71,12 +92,18 @@ export default CSSModules(class extends Component {
                                                         <img src='#' />
                                                     </a>
                                                 </div>
-                                                <div className='sponsor--content'>
+                                                <div className='sponsor--content' data-type={sponsor.name[Language]}>
+                                                    <div className="content--headimg">
+                                                        <img src={sponsor.logourl} />
+                                                    </div>
                                                     <div className='sponsor--title'>
                                                         { sponsor.name[Language] }
                                                     </div>
                                                     <div className='sponsor--description'>
                                                         { sponsor.intro[Language] }
+                                                    </div>
+                                                    <div className="content--close" onClick={() => this.blurSponsorHandler(sponsor.name[Language])}>
+                                                        <img src={require(`static/times.svg`)} />
                                                     </div>
                                                 </div>
                                             </div>

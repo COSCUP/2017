@@ -5,8 +5,6 @@ import Radium from 'radium'
 
 @Radium
 export default CSSModules(class extends Component {
-    static propTypes = {
-    }
     render () {
         const { Language } = this.props
         return (

@@ -42,7 +42,10 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loaders: 'babel-loader',
-                include: path.join(__dirname, 'src/')
+                include: path.join(__dirname, 'src/'),
+                query: {
+                    presets: ['es2015']
+                }
             },
             {
                 test: /\.sass$/,

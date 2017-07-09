@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import Containers from 'js/containers'
 import Radium from 'radium'
 
 @Radium
@@ -85,9 +84,6 @@ export default CSSModules(class extends Component {
                         }}
                         allowFullScreen>
                     </iframe>
-                </div>
-                <div>
-                    <Containers.general.SponsorList />
                 </div>
             </div>
         )

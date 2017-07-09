@@ -1,18 +1,56 @@
 @import "./../_custom-variable.styl"
 
+#home::before, #home::after, #home > header::before, #home > header::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    transform-origin: 0 0;
+    transform: rotate(40deg);
+    z-index: -2;
+    width: 1400px;
+    height: 1400px;
+    opacity: .4;
+    will-change: transform;
+}
+#home::before {
+    background-image: linear-gradient(to bottom, #D1FDFF, #FDDB92);
+    height: 1840px;
+    left: calc(50vw + 678px);
+    top: calc(-918px - var(--scroll) * 0.25);
+}
+#home::after {
+    background-image: linear-gradient(to bottom, #20E2D7, #F9FEA5);
+    width: 1680px;
+    top: calc(-1090px - var(--scroll) * 0.75);
+    left: calc(50vw - 674px);
+    opacity: 1;
+}
+#home > header::before {
+    width: 1440px;
+    height: 2345px;
+    background-image: linear-gradient(to bottom, transparent, #fff);
+    left: calc(50vw + 960px);
+    top: calc(-952px - var(--scroll));
+    z-index: -1;
+    opacity: .8;
+}
+#home > header::after {
+    width: 1250px;
+    height: 1250px;
+    background-image: url('./../../static/background.jpg');
+    left: calc(50vw + 593px);
+    top: calc(-219px - var(--scroll) * 0.5);
+    z-index: -1;
+}
+
 .indexpage {
     width: 100vw
     height: auto
     flexbox(column, flex-start, flex-start)
 
     .title--wrapper {
-        min-height: 300px
-        flexbox(column, flex-start, flex-start)
-        //margin: 100px 0 0 100px
-        position: relative;
-        top:250px
-        left: 250px
-
+        min-height: 100vh
+        box-sizing: border-box;
         .text--wrapper {
             color: $navbar-text-hover
             display: flex
@@ -117,9 +155,6 @@
     }
 
     .indexpage--content {
-        width: 100%
-        height: auto
-        padding-top: 50vh
         flexbox(column, flex-start, center)
 
         .indexpage--section {
@@ -190,7 +225,14 @@
             }
         }
     }
+
     // Media Queries
+    @media only screen and (min-width: 1024px) {
+      .title--wrapper {
+        padding-top: 250px
+        padding-left: 250px
+      }
+    }
     @media only screen and (max-width: $mobile-screen-width) {
 
         .title--wrapper {

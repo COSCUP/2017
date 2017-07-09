@@ -3,7 +3,6 @@ import Radium from 'radium'
 import CSSModules from 'react-css-modules'
 import { Link } from 'react-router'
 import classNames from 'classnames'
-import Containers from 'js/containers'
 
 @Radium
 export default CSSModules(class extends Component {
@@ -14,8 +13,8 @@ export default CSSModules(class extends Component {
     render () {
         const language = this.props.language
         return (
-            <div className="indexpage">
-                <div className="title--wrapper">
+            <div id="home" className="indexpage">
+                <header className="title--wrapper">
                     <div className="text--wrapper mobile">
                         <div className="title--main">COSCUP</div>
                         <div className="title--sub">開源人年會</div>
@@ -45,7 +44,7 @@ export default CSSModules(class extends Component {
                             <Link to={'/'}>{ this.props.translate['register'][language] }</Link>
                         </div>
                     </div>
-                </div>
+                </header>
                 <div className="indexpage--content">
                     <div className="indexpage--section">
                         <div className="section--title">
@@ -82,20 +81,6 @@ export default CSSModules(class extends Component {
                                     </div>
                                 )
                             }
-                        </div>
-                    </div>
-                    <div className="indexpage--section">
-                        <div className="section--title">
-                            <div>
-                                <h2 className="title--en">SPONSORS</h2>
-                                <div>/</div>
-                                <h2 className="title--ch">贊助</h2>
-                            </div>
-                        </div>
-                        <div className="section--content">
-                            <div>
-                                <Containers.general.SponsorList />
-                            </div>
                         </div>
                     </div>
                 </div>

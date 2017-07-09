@@ -1,50 +1,104 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
 import CSSModules from 'react-css-modules'
-// import classNames from 'classnames'
+import _ from 'lodash'
+import classNames from 'classnames'
+import Containers from 'js/containers'
+
 @Radium
 export default CSSModules(class extends Component {
-    constructor (props) {
-        super(props)
-        this.handleScroll = this.handleScroll.bind(this)
-        this.state = {
-            offsetY: 0
-        }
-    }
-
-    componentDidMount () {
-        window.addEventListener('scroll', this.handleScroll, {passive: true})
-    }
-
-    componentWillUnmount () {
-        window.removeEventListener('scroll', this.handleScroll, {passive: true})
-    }
-
-    handleScroll (event) {
-        this.setState({
-            offsetY: window.pageYOffset
-        })
-
-        let depth, i, layer, layers, len, movement, topDistance, translate3d
-        topDistance = this.state.offsetY
-        layers = document.querySelectorAll("[data-type='parallax']")
-        for (i = 0, len = layers.length; i < len; i++) {
-            layer = layers[i]
-            depth = layer.getAttribute('data-depth')
-            movement = -(topDistance * depth)
-            translate3d = 'translate3d(0, ' + movement + 'px, 0)'
-            layer.style['-webkit-transform'] = translate3d
-            layer.style['-moz-transform'] = translate3d
-            layer.style['-ms-transform'] = translate3d
-            layer.style['-o-transform'] = translate3d
-            layer.style.transform = translate3d
-        }
+    async componentDidMount () {
+        await this.props.getSocial()
     }
 
     render () {
+        const { Social } = this.props
         return (
-            <div className="footer">
-            </div>
+            <footer id="footer">
+              <section>
+                  <h2 className="title" data-en="SPONSORS">贊助</h2>
+                  <Containers.general.SponsorList />
+              </section>
+              <div className="content--footer">
+                  <div className="content--footer--mobile">
+                      <div className="btn-mobile" onClick={this.blurSocialHandler}>Social media</div>
+                      <div className="btn-mobile" onClick={this.blurHistoryHandler}>歷屆網站</div>
+                  </div>
+                  <div className="content--footer--social">
+                      {
+                          Social.map((social, id) => (
+                              <a href={social.link}>
+                                  <img src={require(`static/social/${social.title}.png`)}/>
+                              </a>
+                          ))
+                      }
+                  </div>
+                  <div className="content--footer--history">
+                      {
+                          _.range(2006, 2017).map((year) => (
+                              <div key={year}>
+                                  <a href={`http://coscup.org/${year}/`} target='_blank'>{year}</a>
+                              </div>
+                          ))
+                      }
+                  </div>
+
+              </div>
+              {/*  彈出 popout */}
+              <div className={classNames('indexpage--popOut--social', 'popOutMenu--mobile', {'active': this.state.isBlurSocial === true})} onClick={this.blurSocialHandler}>
+                  <div className="popOutMenu--bg"></div>
+                  <div className="popOutMenu--content">
+                      <div className="content--title">Social media</div>
+                      <ul>
+                          {
+                              Social.map((social, id) => (
+                                  <a href={social.link}>
+                                      <img src={require(`static/social/green/g-${social.title}.png`)}/>
+                                  </a>
+                              ))
+                          }
+                      </ul>
+                      <div className="content--close">
+                          <img src={require(`static/times.svg`)} />
+                      </div>
+                  </div>
+              </div>
+
+              <div className={classNames('indexpage--popOut--history', 'popOutMenu--mobile', {'active': this.state.isBlurHistory === true})} onClick={this.blurHistoryHandler}>
+                  <div className="popOutMenu--bg"></div>
+                  <div className="popOutMenu--content">
+                      <div className="content--title">歷屆網站</div>
+                      <ul>
+                          {
+                              _.range(2016, 2006).map((year, subid) => (
+                                  <div key={subid} className='sponsor'>
+                                      { /*
+                                      <div className='sponsor--sponsorimage'>
+                                          <a target='_blank' href={`http://coscup.org/${sponsor}/`}>
+                                              <img src={require(`static/sponsor/appier.png`)} />
+                                          </a>
+                                      </div>
+                                      */ }
+                                      <a className='sponsor--content--mobile' target='_blank' href={`http://coscup.org/${year}/`}>
+                                          <div className='sponsor--title'>
+                                              { year }
+                                          </div>
+                                          { /*
+                                          <a >
+                                              <img src='#' />
+                                          </a>
+                                          */ }
+                                      </a>
+                                  </div>
+                              ))
+                          }
+                      </ul>
+                      <div className="content--close">
+                          <img src={require(`static/times.svg`)} />
+                      </div>
+                  </div>
+              </div>
+            </footer>
         )
     }
 }, require('css/general/Footer.styl'))

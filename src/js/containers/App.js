@@ -7,8 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    getTranslate: () => dispatch(Actions.Translate.get()),
-    getSocial: () => dispatch(Actions.Social.get())
+    getTranslate: () => dispatch(Actions.Translate.get())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Components.App)

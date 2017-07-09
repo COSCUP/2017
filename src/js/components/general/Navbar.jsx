@@ -98,7 +98,7 @@ export default CSSModules(class extends PureComponent {
     render () {
         const language = this.props.language
         return (
-            <div
+            <nav
                 className={ classNames('navbar', {'navbar--fixed': (!this.state.animationActive || this.state.offsetY > 480)}, {'navbar--abs': (this.state.animationActive && this.state.offsetY < 480)})}
                 style={{
                     top: this.MenuTopOffset(),
@@ -137,7 +137,7 @@ export default CSSModules(class extends PureComponent {
                         <li className={classNames({'active': language === 'zh'})} onClick={() => this.props.putLanguage('zh')}>繁</li>
                     </ul>
                 </div>
-            </div>
+            </nav>
         )
     }
 }, require('css/general/Navbar.styl'))

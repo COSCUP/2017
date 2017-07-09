@@ -4,11 +4,12 @@
 // blur effect in /gerneral/popOutMenu
 
 body {
-    padding: 0
+    max-width: 100vw;
+    overflow-x: hidden;
+    --scroll: 0px;
     margin: 0
+    padding: 0
     box-sizing: content-box
-    min-height: 200vh
-    height: auto
     font-family: 'Noto Sans', serif
     line-height: 2em
     color: rgba(0,0,0,.7)
@@ -34,21 +35,12 @@ body {
         }
     }
     .mainPage {
+        overflow-y: hidden;
+        /* @media screen and (min-width: 1025px) {
+          margin: 64px;
+        } */
         &.blur-in {
             animation: blur 0.35s forwards;
-        }
-    }
-    .content--wrapper {
-        z-index: 1
-        min-height: 200vh
-        width: calc(100% - 100px)
-        height: calc(100% - 100px)
-        flexbox(column, flex-start, center)
-        // background: radial-gradient(rgba(white, 1) 0%, rgba(white, 0) 100%)
-
-        &.blur-in {
-            z-index: 9999;
-            // animation: blur 2s forwards;
         }
     }
 
@@ -61,14 +53,6 @@ body {
     .subpage--banner--wrapper {
         &.blur-in {
             animation: blur 2s forwards;
-        }
-    }
-    @media only screen and (max-width: $mobile-screen-width) {
-
-        .content--wrapper {
-
-            width: calc(100%)
-            height: calc(100%)
         }
     }
 
@@ -204,4 +188,8 @@ body {
             }
         }
     }
+}
+
+main {
+  background-color: #fff;
 }

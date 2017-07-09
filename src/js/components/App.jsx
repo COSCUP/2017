@@ -2,8 +2,6 @@ require('babel-polyfill')
 import React, { Component } from 'react'
 import Containers from 'containers'
 import Radium, { StyleRoot } from 'radium'
-import classNames from 'classnames'
-import _ from 'lodash'
 import CSSModules from 'react-css-modules'
 
 @Radium
@@ -36,123 +34,35 @@ export default CSSModules(class extends Component {
 
     async componentDidMount () {
         await this.props.getTranslate()
-        await this.props.getSocial()
         this.setState({
             loaded: true
         })
     }
     render () {
         if (!this.state.loaded) return null
-        const { Social } = this.props
+
         return (
             <StyleRoot style={{
                 height: '100%',
                 width: '100%'
             }}>
-                <div
-                    className="mainPage"
-                    style={{
-                        position: 'relative',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        height: '100%'
-                    }}>
+                <div className="mainPage">
                     <div className="content--wrapper" data-type='blur'>
                         { this.props.children }
-                        <div className="content--footer">
-                            <div className="content--footer--mobile">
-                                <div className="btn-mobile" onClick={this.blurSocialHandler}>Social media</div>
-                                <div className="btn-mobile" onClick={this.blurHistoryHandler}>歷屆網站</div>
-                            </div>
-                            <div className="content--footer--social">
-                                {
-                                    Social.map((social, id) => (
-                                        <a href={social.link}>
-                                            <img src={require(`static/social/${social.title}.png`)}/>
-                                        </a>
-                                    ))
-                                }
-                            </div>
-                            <div className="content--footer--history">
-                                {
-                                    _.range(2006, 2017).map((year) => (
-                                        <div key={year}>
-                                            <a href={`http://coscup.org/${year}/`} target='_blank'>{year}</a>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-
-                        </div>
                     </div>
-                    { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
                     {/* 這裡是一些常用 component */}
                     <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
                     {
                         this.props.location.pathname === '/' ? (
-                            <Containers.general.Banner />
+                            null
                         ) : (
                             <Containers.general.SubpageBanner />
                         )
                     }
                     <Containers.general.Footer />
-                    {/*  彈出 popout */}
-                    <div className={classNames('indexpage--popOut--social', 'popOutMenu--mobile', {'active': this.state.isBlurSocial === true})} onClick={this.blurSocialHandler}>
-                        <div className="popOutMenu--bg"></div>
-                        <div className="popOutMenu--content">
-                            <div className="content--title">Social media</div>
-                            <ul>
-                                {
-                                    Social.map((social, id) => (
-                                        <a href={social.link}>
-                                            <img src={require(`static/social/green/g-${social.title}.png`)}/>
-                                        </a>
-                                    ))
-                                }
-                            </ul>
-                            <div className="content--close">
-                                <img src={require(`static/times.svg`)} />
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className={classNames('indexpage--popOut--history', 'popOutMenu--mobile', {'active': this.state.isBlurHistory === true})} onClick={this.blurHistoryHandler}>
-                        <div className="popOutMenu--bg"></div>
-                        <div className="popOutMenu--content">
-                            <div className="content--title">歷屆網站</div>
-                            <ul>
-                                {
-                                    _.range(2016, 2006).map((year, subid) => (
-                                        <div key={subid} className='sponsor'>
-                                            { /*
-                                            <div className='sponsor--sponsorimage'>
-                                                <a target='_blank' href={`http://coscup.org/${sponsor}/`}>
-                                                    <img src={require(`static/sponsor/appier.png`)} />
-                                                </a>
-                                            </div>
-                                            */ }
-                                            <a className='sponsor--content--mobile' target='_blank' href={`http://coscup.org/${year}/`}>
-                                                <div className='sponsor--title'>
-                                                    { year }
-                                                </div>
-                                                { /*
-                                                <a >
-                                                    <img src='#' />
-                                                </a>
-                                                */ }
-                                            </a>
-                                        </div>
-                                    ))
-                                }
-                            </ul>
-                            <div className="content--close">
-                                <img src={require(`static/times.svg`)} />
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
+                { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
             </StyleRoot>
         )
     }

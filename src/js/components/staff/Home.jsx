@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import Containers from 'js/containers'
 import classNames from 'classnames'
 
 export default CSSModules(class extends Component {
@@ -90,9 +89,6 @@ export default CSSModules(class extends Component {
                             <img src={require(`static/times.svg`)} />
                         </div>
                     </div>
-                </div>
-                <div>
-                    <Containers.general.SponsorList />
                 </div>
             </div>
         )

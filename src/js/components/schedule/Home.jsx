@@ -9,9 +9,14 @@ export default CSSModules(class extends Component {
     render () {
         const { Schedule, Language } = this.props
         let res
-        res = _.groupBy(Schedule, (schedule) => (schedule.start))
+        res = _.map(Schedule, (slot) => ({
+            ...slot,
+            start: new Date(slot.start),
+            end: new Date(slot.end)
+        }))
+        res = _.groupBy(res, (schedule) => (schedule.start))
         res = _.groupBy(res, (day) => {
-            return (new Date(day[0].start)).getDate()
+            return (day[0].start).getDate()
         })
         return (
             <div>
@@ -31,23 +36,17 @@ export default CSSModules(class extends Component {
                     {
                         _.map(res, (daySchedule, day) => (
                             <div key={day}>
-                                <div>{day}</div>
+                                <div>8/{day}</div>
                                 <div>
                                     {
                                         _.sortBy((daySchedule), (schedule) => (schedule[0].start)).map((timeSlot, id) => (
                                             <div key={id}>
-                                                <div>{timeSlot[0].start}</div>
+                                                <div>{timeSlot[0].start.getHours()} : {timeSlot[0].start.getMinutes()}</div>
                                                 <div>
                                                     {
                                                         _.map(timeSlot, (slot, sid) => (
                                                             <div key={sid}>
-                                                                {slot.room}
-                                                                {slot.community}
                                                                 {slot.subject}
-                                                                {slot.start}
-                                                                {slot.end}
-                                                                {slot.lang}
-                                                                {slot.speaker.name}
                                                             </div>
                                                         ))
                                                     }

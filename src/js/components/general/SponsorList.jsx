@@ -18,11 +18,9 @@ export default CSSModules(class extends Component {
                             <div>
                                 {
                                     subSponsor.data.map((sponsor, subid) => (
-                                        <div key={subid} className='sponsor'>
-                                            <a target='_blank' href={sponsor.logolink}>
-                                                <img src={sponsor.logourl} />
-                                            </a>
-                                        </div>
+                                        <a target='_blank' href={sponsor.logolink} key={subid} className='sponsor'>
+                                            <img src={sponsor.logourl} />
+                                        </a>
                                     ))
                                 }
                             </div>

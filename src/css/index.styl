@@ -34,11 +34,9 @@ body {
             text-decoration: none
         }
     }
-    .mainPage {
-        overflow-y: hidden;
-        /* @media screen and (min-width: 1025px) {
-          margin: 64px;
-        } */
+    .container {
+        overflow: hidden;
+
         &.blur-in {
             animation: blur 0.35s forwards;
         }
@@ -192,5 +190,12 @@ body {
 }
 
 main {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .9);
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding-top: 100px;
+  @media only screen and (min-width: $mobile-screen-width) {
+    padding: 0 64px 0;
+  }
 }

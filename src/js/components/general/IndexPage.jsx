@@ -41,8 +41,8 @@ export default CSSModules(class extends Component {
                         </div>
                     </div>
                 </header>
-                <div className="indexpage--content">
-                    <div id='intro' className="indexpage--section">
+                <main className="indexpage--content">
+                    <div id="intro" className="indexpage--section">
                         <div className="section--title">
                             <div>
                                 <h2 className="title--en">ABOUT</h2>
@@ -79,7 +79,7 @@ export default CSSModules(class extends Component {
                             }
                         </div>
                     </div>
-                </div>
+                </main>
             </div>
         )
     }

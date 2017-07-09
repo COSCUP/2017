@@ -6,10 +6,10 @@ export default CSSModules(class extends Component {
         const language = this.props.language
         return (
             <div className="subPage">
-                <div className="subpage subpage--title">
+                <header className="subpage subpage--title">
                     <div className="title--text">{ this.props.translate['map'][language] }</div>
-                </div>
-                <div className="map--wrapper"
+                </header>
+                <main className="map--wrapper"
                     style={{
                         width: '100%',
                         height: '100vw',
@@ -25,7 +25,7 @@ export default CSSModules(class extends Component {
                         }}
                         allowFullScreen>
                     </iframe>
-                </div>
+                </main>
             </div>
         )
     }

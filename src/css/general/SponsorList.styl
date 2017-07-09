@@ -1,6 +1,7 @@
 
 .general--sponsorlist {
     display: block
+    padding: 32px;
     .general--subSponsorlist {
         margin-bottom: 15px;
         .title {
@@ -8,16 +9,14 @@
             font-size: 38px;
         }
         .sponsor {
-            margin: 15px;
+            margin: 15px 0;
             display: inline-block;
-            &>a {
-                font-size: 0
-                display: inline-block;
-                &>img {
-                    height: 75px
-                    width: 150px
-                }
-            }
+            max-width: 50%;
+              img {
+                  display: block;
+                  max-height: 75px
+                  max-width: 150px
+              }
         }
     }
 }

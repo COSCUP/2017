@@ -55,23 +55,12 @@ export default CSSModules(class extends Component {
         if (!this.state.loaded) return null
 
         return (
-            <StyleRoot style={{
-                height: '100%',
-                width: '100%'
-            }}>
-                <div className="mainPage">
+            <StyleRoot>
+                <div className="container">
+                    <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
                     <div className="content--wrapper" data-type='blur'>
                         { this.props.children }
                     </div>
-                    {/* 這裡是一些常用 component */}
-                    <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
-                    {
-                        this.props.location.pathname === '/' ? (
-                            null
-                        ) : (
-                            <Containers.general.SubpageBanner />
-                        )
-                    }
                     <Containers.general.Footer />
 
                 </div>

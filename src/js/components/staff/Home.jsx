@@ -31,10 +31,8 @@ export default CSSModules(class extends Component {
     render () {
         const { Staff, Language } = this.props
         return (
-            <div style={{
-                width: '100%'
-            }}>
-                <div className="subPage">
+            <div>
+                <header className="subPage">
                     <div className="mobile subpage--title">
                         <div className="popout--toggler"></div>
                         <div className="title--text">{ this.props.Translate['staff'][Language] }</div>
@@ -47,8 +45,8 @@ export default CSSModules(class extends Component {
                             <div> { this.props.Translate['staff']['en'] } </div>
                         </div>
                     </div>
-                </div>
-                <div className='stafflist'>
+                </header>
+                <main className='stafflist'>
                     {
                         Staff.map((StaffList, id) => (
                             <a name={'#' + StaffList['name']}>
@@ -70,7 +68,7 @@ export default CSSModules(class extends Component {
                             </a>
                         ))
                     }
-                </div>
+                </main>
                 <div className={classNames('stafflist--popOut', 'popOutMenu--mobile', {'active': this.state.isBlur === true})} onClick={this.blurHandler}>
                     <div className="popOutMenu--bg"></div>
                     <div className="popOutMenu--content">

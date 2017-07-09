@@ -55,11 +55,8 @@ export default CSSModules(class extends Component {
     render () {
         const { Sponsor, Language } = this.props
         return (
-            <div
-                style={{
-                    width: '100%'
-                }}>
-                <div className="subPage">
+            <div>
+                <header className="subPage">
                     <div className="mobile subpage--title" onClick={this.blurHandler}>
                         <div className="popout--toggler"></div>
                         <div className="title--text">{ this.props.Translate['sponsor'][Language] }</div>
@@ -72,8 +69,8 @@ export default CSSModules(class extends Component {
                             <div> { this.props.Translate['sponsor']['en'] } </div>
                         </div>
                     </div>
-                </div>
-                <div className='sponsor--sponsorlist'>
+                </header>
+                <main className='sponsor--sponsorlist'>
                     {
                         Sponsor.map((subSponsor, id) => (
                             <div className='sponsor--subSponsorlist' key={id}>
@@ -127,7 +124,7 @@ export default CSSModules(class extends Component {
                             </div>
                         ))
                     }
-                </div>
+                </main>
 
                 <div className={classNames('sponsorlist--popOut', 'popOutMenu--mobile', {'active': this.state.isBlur === true})} onClick={this.blurHandler}>
                     <div className="popOutMenu--bg"></div>

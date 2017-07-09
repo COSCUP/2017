@@ -25,7 +25,16 @@
 
 #footer {
     position: relative;
-    padding: 32px;
+    margin: 0 auto;
+    padding-bottom: 64px
+    max-width: 1200px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0));
+    section {
+      h2 {
+        margin: 0;
+        padding: 32px;
+      }
+    }
     .content--footer--social {
         margin: 20px 0;
         flexbox(row, center, center)
@@ -80,10 +89,6 @@
 
     .content--footer--mobile {
         display: none;
-    }
-
-    @media only screen and (min-width: 1024px) {
-      padding: 64px;
     }
 
     @media only screen and (max-width: $mobile-screen-width) {

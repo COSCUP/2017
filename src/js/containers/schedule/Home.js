@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    putLanguage: (data) => dispatch(Actions.Language.put(data))
+    getSchedule: () => dispatch(Actions.Schedule.get())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Components.schedule.Home)

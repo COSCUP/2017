@@ -67,7 +67,7 @@ export default CSSModules(class extends Component {
                 }
                 <div
                     style={{
-                        margin: '0 -50px 50px',
+                        // margin: '0 -50px 50px',
                         width: '100vw',
                         overflow: 'hidden',
                         textAlign: 'center',

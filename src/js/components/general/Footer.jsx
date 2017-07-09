@@ -5,6 +5,8 @@ import _ from 'lodash'
 import classNames from 'classnames'
 import Containers from 'js/containers'
 
+import FaClose from 'react-icons/lib/fa/close'
+
 @Radium
 export default CSSModules(class extends Component {
     constructor (props) {
@@ -84,7 +86,10 @@ export default CSSModules(class extends Component {
                           }
                       </ul>
                       <div className="content--close">
-                          <img src={require(`static/times.svg`)} />
+                          {/* <img src={require(`static/times.svg`)} /> */}
+                          <FaClose
+                              color='#009A79'
+                              />
                       </div>
                   </div>
               </div>
@@ -119,7 +124,10 @@ export default CSSModules(class extends Component {
                           }
                       </ul>
                       <div className="content--close">
-                          <img src={require(`static/times.svg`)} />
+                          <FaClose
+                              color='#009A79'
+                            />
+                          {/* <img src={require(`static/times.svg`)} /> */}
                       </div>
                   </div>
               </div>

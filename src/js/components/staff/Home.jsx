@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 
+import FaClose from 'react-icons/lib/fa/close'
 export default CSSModules(class extends Component {
     constructor (props) {
         super(props)
@@ -86,7 +87,9 @@ export default CSSModules(class extends Component {
                             </li>
                         </ul>
                         <div className="content--close">
-                            <img src={require(`static/times.svg`)} />
+                            <FaClose
+                                color='#009A79'
+                              />
                         </div>
                     </div>
                 </div>

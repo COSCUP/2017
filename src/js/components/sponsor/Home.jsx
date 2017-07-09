@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import classNames from 'classnames'
 
+import FaClose from 'react-icons/lib/fa/close'
+import GoLinkExternal from 'react-icons/lib/go/link-external'
+
 export default CSSModules(class extends Component {
     constructor (props) {
         super(props)
@@ -30,6 +33,10 @@ export default CSSModules(class extends Component {
     blurSponsorHandler (targetName) {
         console.log('target type: ', targetName)
         let _blur = this.state.isSponsorBlur
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        if (width > 720) {
+            return ''
+        }
         this.setState({
             isSponsorBlur: !_blur
         })
@@ -88,8 +95,13 @@ export default CSSModules(class extends Component {
                                                     <div className='sponsor--title'>
                                                         { sponsor.name[Language] }
                                                     </div>
-                                                    <a target='_blank' href={sponsor.logolink}>
-                                                        <img src='#' />
+                                                    <a
+                                                        style={{
+                                                            color: '#9B9B9B',
+                                                            display: 'flex'
+                                                        }}
+                                                        target='_blank' href={sponsor.logolink}>
+                                                        <GoLinkExternal />
                                                     </a>
                                                 </div>
                                                 <div className='sponsor--content' data-type={sponsor.name[Language]}>
@@ -103,7 +115,9 @@ export default CSSModules(class extends Component {
                                                         { sponsor.intro[Language] }
                                                     </div>
                                                     <div className="content--close" onClick={() => this.blurSponsorHandler(sponsor.name[Language])}>
-                                                        <img src={require(`static/times.svg`)} />
+                                                        <FaClose
+                                                            color='#009A79'
+                                                          />
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,7 +145,9 @@ export default CSSModules(class extends Component {
                             </li>
                         </ul>
                         <div className="content--close">
-                            <img src={require(`static/times.svg`)} />
+                            <FaClose
+                                color='#009A79'
+                              />
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,10 @@
     @media screen and (min-width: 1000px) {
       column-count: 3
     }
+    // Media Queries
+    @media only screen and (max-width: $mobile-screen-width) {
+        padding: 0 20px;
+    }
 
     a {
         display: block
@@ -54,12 +58,12 @@
                 }
                 .person {
 
-                    width: 33.3%
+                    width: 100%
                     display: inline-block;
                     margin-bottom: 15px;
 
                     .person--wrapper {
-                        flexbox(column, flex-start, center)
+                        flexbox(column, flex-start, flex-start)
                         .photo {
 
                             display: none;

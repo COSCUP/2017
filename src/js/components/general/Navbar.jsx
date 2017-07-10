@@ -116,7 +116,10 @@ export default CSSModules(class extends PureComponent {
                             <IndexLink activeClassName="active" to='/'>{ this.props.translate['intro'][language] }</IndexLink>
                         </li>
                         <li>
+                            <a href='https://hackmd.io/IYMwnMAsAcBGkFoDGAGA7LBkCm3HDACZgEA2ARgFZYQATUyWMEcoA===?view'>{ this.props.translate['schedule'][language] }</a>
+                            { /*
                             <Link activeClassName="active" to='/schedule'>{ this.props.translate['schedule'][language] }</Link>
+                            */ }
                         </li>
                         <li>
                             <Link activeClassName="active" to='/transport'>{ this.props.translate['transport'][language] }</Link>

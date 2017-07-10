@@ -1,1 +1,13 @@
-<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>COSCUP 2017</title><link href=styles.93d1ee9a9e3cd476bf28.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=vendor.017473eda77878876551.js></script><script type=text/javascript src=bundle.7b23c62619d8f81e7bac.js></script></body></html>
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>COSCUP 2017</title><link href=styles.f35711fe115ee29958bf.css rel=stylesheet></head><body><div id=app></div><script>var last_known_scroll_position = 0;
+        var ticking = false;
+
+        window.addEventListener('scroll', function(e) {
+          last_known_scroll_position = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              document.body.setAttribute("style", "--scroll: " + last_known_scroll_position + "px");
+              ticking = false;
+            });
+          }
+          ticking = true;
+        });</script><script type=text/javascript src=vendor.c826e75120bbec3eb59f.js></script><script type=text/javascript src=bundle.a517ef952daeb12c214d.js></script></body></html>

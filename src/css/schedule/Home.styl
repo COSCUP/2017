@@ -1,0 +1,133 @@
+@import "./../_custom-variable.styl"
+
+.content--wrapper {
+    .subPage {
+        .mobile {
+            &.subpage--title {
+                flexbox(column, flex-end, center)
+                height: calc(75px + 50px)
+
+                .date--picker {
+                    width: 100%
+                    height: 50px
+                    flexbox(row, flex-start, center)
+
+                    div {
+                        box-sizing: border-box
+                        width: 50%
+                        height: 100%
+                        cursor: pointer
+                        font-family: 'Noto Sans', serif
+                        color: $navbar-text-hover
+                        flexbox(row, center, center)
+                        border-bottom: 5px solid transparent
+
+                        &.active {
+                            border-bottom: 5px solid $navbar-text-hover
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        padding-top: 125px
+    }
+}
+
+.schedule--wrapper {
+
+    .schedule--date {
+        display: inline-block
+        color: white
+        font-size: 40px
+        line-height: 40px
+        background: black
+        padding: 4px 0 8px 18px
+    }
+
+    .schedule--eachday {
+        margin-bottom: 110px
+
+        .eachday--period {
+            padding-bottom: 30px
+            border-bottom: 1px solid #B8D2CF
+            flexbox(row, flex-start, flex-start)
+
+            .list--time {
+                font-size: 20px
+                letter-spacing: 1px
+                padding-top: 15px
+                color: $navbar-text-hover
+                width: 100px
+            }
+
+            .period--list--wrapper {
+
+                .period--list {
+                    padding-top: 15px
+
+                    .list--title {
+                        font-size: 24px
+                        color: black
+                    }
+
+                    .list--info {
+                        font-size: 18px
+                        color: #9B9B9B
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: $mobile-screen-width) {
+
+        display: none;
+
+        .schedule--date {
+            display: none
+        }
+
+        .schedule--eachday {
+            background: white
+
+            .eachday--period {
+                padding: 0px
+                border: none
+                flexbox(column, flex-start, flex-start)
+
+                .list--time {
+                    width: 100%
+                    background: #ECF5F4
+                    padding: 10px
+                    flexbox(row, flex-start, center)
+                }
+
+                .period--list--wrapper {
+                    width: 100%
+
+                    .period--list {
+                        padding: 10px 20px
+                        border-bottom: 1px solid #E9E9E9
+
+                        .list--title {
+                            font-size: 15px
+                            color: black
+                        }
+
+                        .list--info {
+                            font-size: 12px
+                            color: #9B9B9B
+                        }
+                    }
+                }
+            }
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}

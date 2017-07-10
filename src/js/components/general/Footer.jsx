@@ -40,10 +40,18 @@ export default CSSModules(class extends Component {
 
     render () {
         const { Social } = this.props
+        const language = this.props.language
         return (
             <footer id="footer">
               <section>
-                  <h2 className="title" data-en="SPONSORS">贊助</h2>
+                  <h2 className="title" data-en="SPONSORS">
+                        {
+                          language === 'zh' ? (
+                            '贊助'
+                            ) : (
+                            'Sponsors')
+                        }
+                  </h2>
                   <Containers.general.SponsorList />
               </section>
               <div className="content--footer">

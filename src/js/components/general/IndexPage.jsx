@@ -34,7 +34,7 @@ export default CSSModules(class extends Component {
                     </div>
                     <div className="button--wrapper">
                         <div>
-                            <Link to='/#intro'>{ this.props.translate['intro'][language] }</Link>
+                            <Link to='/'>{ this.props.translate['intro'][language] }</Link>
                         </div>
                         <div>
                             <Link to='/'>{ this.props.translate['register'][language] }</Link>

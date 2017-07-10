@@ -37,6 +37,7 @@ export default CSSModules(class extends Component {
         this.setState({
             loaded: true
         })
+        /*
         window.location.hash = window.decodeURIComponent(window.location.hash)
         const scrollToAnchor = () => {
             const hashParts = window.location.hash.split('#')
@@ -50,6 +51,7 @@ export default CSSModules(class extends Component {
         }
         scrollToAnchor()
         window.onhashchange = scrollToAnchor
+        */
     }
     render () {
         if (!this.state.loaded) return null

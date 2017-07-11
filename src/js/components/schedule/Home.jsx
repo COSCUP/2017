@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import _ from 'lodash'
+import printf from 'printf'
 
 export default CSSModules(class extends Component {
     constructor (props) {
@@ -16,7 +17,6 @@ export default CSSModules(class extends Component {
     }
     clickHandler (target) {
         let _currentBox = this.state.currentBox
-        console.log('compare: ', _currentBox, target)
         if (_currentBox === target) {
             return
         }
@@ -24,7 +24,6 @@ export default CSSModules(class extends Component {
             currentBox: target
         })
         let boxes = document.querySelectorAll(`div[data-type='${target}']`)
-        console.log(boxes)
         let i, len
         for (i = 0, len = boxes.length; i < len; i++) {
             let box = boxes[i]
@@ -32,7 +31,6 @@ export default CSSModules(class extends Component {
         }
 
         boxes = document.querySelectorAll(`div[data-type='${1 - target}']`)
-        console.log(boxes)
         for (i = 0, len = boxes.length; i < len; i++) {
             let box = boxes[i]
             box.classList.remove('active')
@@ -77,7 +75,7 @@ export default CSSModules(class extends Component {
                                     {
                                         _.sortBy((daySchedule), (schedule) => (schedule[0].start)).map((timeSlot, id) => (
                                             <div className="eachday--period" key={id}>
-                                                <div className="list--time">{timeSlot[0].start.getHours()} : {timeSlot[0].start.getMinutes()}</div>
+                                                <div className="list--time">{timeSlot[0].start.getHours()} : {printf('%02d', timeSlot[0].start.getMinutes())}</div>
                                                 <div className="period--list--wrapper">
                                                     {
                                                         _.map(timeSlot, (slot, sid) => (

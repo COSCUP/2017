@@ -8,6 +8,8 @@ export default CSSModules(class extends Component {
         super(props)
         this.handleScroll = this.handleScroll.bind(this)
         this.clickHandler = this.clickHandler.bind(this)
+        this.contentHandler = this.contentHandler.bind(this)
+
         this.state = {
             currentBox: 2,
             offsetY: 0,
@@ -81,6 +83,18 @@ export default CSSModules(class extends Component {
             }
         }
     }
+
+    contentHandler (event) {
+        let targetList = document.querySelectorAll('div.period--list.active')
+        for (let i = 0; i < targetList.length; i++) {
+            targetList[i].classList.remove('active')
+        }
+        if (event.target.classList[0] === 'period--list') {
+            event.target.classList.add('active')
+        } else {
+            event.target.parentNode.classList.add('active')
+        }
+    }
     render () {
         const { Schedule, Language } = this.props
         let res
@@ -127,12 +141,31 @@ export default CSSModules(class extends Component {
                                                 <div className="period--list--wrapper">
                                                     {
                                                         _.map(timeSlot, (slot, sid) => (
-                                                            <div className="period--list" key={sid}>
+                                                            <div className="period--list" key={sid} onClick={(e) => this.contentHandler(e)}>
                                                                 <div className="list--title">
                                                                     {slot.subject}
                                                                 </div>
                                                                 <div className="list--info">
                                                                     Room {slot.room} - {(slot.end.getHours() * 60 + slot.end.getMinutes()) - (slot.start.getHours() * 60 + slot.start.getMinutes())} mins
+                                                                </div>
+                                                                <div className="list--content">
+                                                                    <div className="content--author">
+                                                                        <div
+                                                                            className="author--avatar"
+                                                                            style={{
+                                                                                backgroundImage: `url(${slot.speaker.avatar})`
+                                                                            }}
+                                                                            >
+                                                                            {/* <img src={`${slot.speaker.avatar}`}/> */}
+                                                                        </div>
+                                                                        <div className="author--mention">
+                                                                            <h3>{slot.speaker.name}</h3>
+                                                                            <p>{slot.speaker.bio}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="content--mention">
+                                                                        {slot.summary}
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         ))

@@ -67,6 +67,7 @@
                 width: calc(100% - 100px)
 
                 .period--list {
+                    cursor: pointer
                     padding-top: 15px
 
                     .list--title {
@@ -77,6 +78,77 @@
                     .list--info {
                         font-size: 18px
                         color: #9B9B9B
+                    }
+
+                    .list--content {
+                        background: #ECF5F4
+                        width: 100%
+                        padding: 30px
+                        border-radius: 5px
+                        display: none
+
+                        .content--author {
+                            padding: 25px 0
+                            border-bottom: 1px solid #E9E9E9
+                            flexbox(row, flex-start, center)
+
+                            .author--avatar {
+                                width: 85px
+                                height: 85px
+                                max-width: 85px
+                                max-height: 85px
+                                overflow: hidden
+                                border-radius: 50%
+                                border: 3px solid $navbar-text-hover
+
+                                background-position: center
+                                background-repeat: no-repeat
+                                background-size: cover
+
+                                img {
+                                    width: 100%
+                                    height: auto
+                                }
+                            }
+
+                            .author--mention {
+                                width: calc(100% - 110px)
+                                border-radius: 5px
+                                background: rgba(white, 1)
+                                margin-left: 20px
+                                padding: 6px 20px
+                                position: relative
+
+                                &:before {
+                                    content: ''
+                                    width: 15px
+                                    height: 15px
+                                    background: rgba(white, 1)
+                                    position: absolute;
+                                    top: calc(50% - 5px)
+                                    left: -7.5px
+                                    border-radius: 1px
+                                    transform: rotate(135deg)
+                                }
+                            }
+                        }
+
+                        .content--mention {
+                            margin-top: 10px
+                            font-size: 14px
+                            line-height: 43px
+                        }
+                    }
+
+                    &.active {
+                        .list--title,
+                        .list--info {
+                            color: $navbar-text-hover
+                        }
+
+                        .list--content {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -122,6 +194,10 @@
                             font-size: 12px
                             color: #9B9B9B
                         }
+
+                        .list--content {
+                            display: none
+                        }
                     }
                 }
             }
@@ -145,6 +221,7 @@
     background: #444
     transition all 0.4s ease
     visibility: hidden
+    z-index: 100
     flexbox(row, flex-start, center)
 
     &.active {

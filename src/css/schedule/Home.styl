@@ -64,6 +64,7 @@
             }
 
             .period--list--wrapper {
+                width: calc(100% - 100px)
 
                 .period--list {
                     padding-top: 15px
@@ -129,5 +130,51 @@
         &.active {
             display: block;
         }
+    }
+}
+
+.sticky--nav {
+    position: fixed
+    top: 55px
+    width: 100%
+    height: 0px
+    padding: 0px
+    color: white
+    display: block
+    font-size: 24px
+    background: #444
+    transition all 0.4s ease
+    visibility: hidden
+    flexbox(row, flex-start, center)
+
+    &.active {
+        height: 40px
+        padding: 10px 64px
+        visibility: visible
+        transition all 0.4s ease
+
+        div {
+            width: 100%
+            max-width: 1200px
+            margin: 0 auto
+        }
+    }
+
+    &.mobile {
+        color: $navbar-text-hover
+        background: #ECF5F4
+        padding: 7px 10px 5px
+        top: 125px
+        font-size: 20px
+    }
+}
+
+@@keyframes stickyShow {
+    0% {
+        height: 0px
+    }
+
+    100% {
+        height: 50px
     }
 }

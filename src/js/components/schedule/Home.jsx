@@ -6,15 +6,24 @@ import printf from 'printf'
 export default CSSModules(class extends Component {
     constructor (props) {
         super(props)
+        this.handleScroll = this.handleScroll.bind(this)
         this.clickHandler = this.clickHandler.bind(this)
         this.state = {
-            currentBox: 2
+            currentBox: 2,
+            offsetY: 0,
+            stickyContent: '8:00'
         }
     }
     componentDidMount () {
+        window.addEventListener('scroll', this.handleScroll, {passive: true})
         this.props.getSchedule()
-        // this.clickHandler(1)
+        this.clickHandler(0)
     }
+
+    componentWillUnmount () {
+        window.removeEventListener('scroll', this.handleScroll, {passive: true})
+    }
+
     clickHandler (target) {
         let _currentBox = this.state.currentBox
         if (_currentBox === target) {
@@ -34,6 +43,42 @@ export default CSSModules(class extends Component {
         for (i = 0, len = boxes.length; i < len; i++) {
             let box = boxes[i]
             box.classList.remove('active')
+        }
+    }
+
+    handleScroll (event) {
+        this.setState({
+            offsetY: window.pageYOffset
+        })
+        let stickyNav = document.querySelector('div.sticky--nav')
+        let wrapper = document.querySelector('div.schedule--wrapper')
+        // console.log('y: ', this.state.offsetY, 'wrapper: ', wrapper.offsetTop)
+
+        // show sticky dom
+        if (this.state.offsetY + 50 > wrapper.offsetTop) {
+            stickyNav.classList.add('active')
+        } else {
+            stickyNav.classList.remove('active')
+        }
+
+        let periodList, width
+        width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        if (width < 720) {
+            stickyNav.classList.add('mobile')
+            // show content
+            periodList = document.querySelectorAll(`div[data-type='${this.state.currentBox}'] div.eachday--period`)
+        } else {
+            stickyNav.classList.remove('mobile')
+            // show content
+            periodList = document.querySelectorAll('div.eachday--period')
+        }
+        for (let i = 0; i < periodList.length; i++) {
+            if (this.state.offsetY + 50 > periodList[i].offsetTop) {
+                // console.log('target[', i, ']: ', periodList[i].offsetTop, ', time: ', periodList[i].children[0].textContent)
+                this.setState({
+                    stickyContent: periodList[i].children[0].textContent
+                })
+            }
         }
     }
     render () {
@@ -66,6 +111,9 @@ export default CSSModules(class extends Component {
                         </div>
                     </div>
                 </header>
+                <div className="sticky--nav">
+                    <div>{this.state.stickyContent}</div>
+                </div>
                 <main>
                     {
                         _.map(res, (daySchedule, day) => (

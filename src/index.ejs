@@ -20,7 +20,7 @@
             window.requestAnimationFrame(function() {
               document.body.setAttribute("style",
                 "--scroll: " + last_known_scroll_position + "px; " +
-                "--fold: " + last_known_scroll_position / document.documentElement.clientHeight
+                "--fold: " + last_known_scroll_position / (document.documentElement.clientHeight * 0.8)
               );
               document.body.classList.toggle("underfold", last_known_scroll_position < document.documentElement.clientHeight * 0.8);
               ticking = false;

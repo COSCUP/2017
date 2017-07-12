@@ -7,7 +7,6 @@
       padding: 0
       list-style: none
       margin-bottom: 15px;
-      text-align: center;
     }
     .title {
         color: #FFD200;
@@ -15,24 +14,28 @@
     }
     .sponsor {
         margin: 15px 0;
-        border: 1px solid #eee;
           img {
+              border: 1px solid #eee;
               display: block;
               margin: 0 auto;
               max-width: 100%
           }
     }
     @media only screen and (min-width: 600px) {
+      ul {
+        margin: 0 -1em;
+      }
       .sponsor {
         display: inline-block;
-        max-width: 40%;
-        margin-right: 2em;
+        box-sizing: border-box;
+        max-width: 50%;
+        padding: 0 1em;
       }
     }
     @media only screen and (min-width: 1024px) {
       .sponsor {
         display: inline-block;
-        max-width: 20%;
+        max-width: 25%;
       }
     }
 }

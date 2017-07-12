@@ -2,7 +2,6 @@
 
 #home::before, #home::after, #home > header::before, #home > header::after {
     content: ' ';
-    display: block;
     position: fixed;
     transform-origin: 0 0;
     transform: rotate(40deg);
@@ -10,7 +9,9 @@
     width: 1400px;
     height: 1400px;
     opacity: .4;
+    top: 0;
     left: 50vw;
+    transition: ease .1s tranform;
     will-change: transform;
 }
 #home::before {
@@ -24,7 +25,7 @@
     width: 1680px;
     opacity: 1;
     transform: rotate(40deg) translate(-1220px, -404px);
-    transform: rotate(40deg) translate(calc(-1220px - var(--scroll)), calc(-404px - var(--scroll)));
+    transform: rotate(40deg) translate(calc(-1220px - var(--scroll) * 1), calc(-404px - var(--scroll) * 1));
 }
 #home > header::before {
     width: 1440px;
@@ -32,16 +33,16 @@
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
     opacity: .8;
     z-index: -1;
-    transform: rotate(40deg) translate(-40px, -1539px);
-    transform: rotate(40deg) translate(calc(-40px - var(--scroll) * 1.5), calc(-1539px - var(--scroll) * 1.5));
+    transform: rotate(40deg) translate(124px, -1349px);
+    transform: rotate(40deg) translate(calc(124px - var(--scroll) * 1.5), calc(-1349px - var(--scroll) * 1.5));
 }
 #home > header::after {
     width: 1250px;
     height: 1250px;
     background-image: url('./../../static/background.jpg');
     z-index: -1;
-    transform: rotate(40deg) translate(-70px, -1000px);
-    transform: rotate(40deg) translate(calc(-70px - var(--scroll) * 0.5), calc(-1000px - var(--scroll)));
+    transform: rotate(40deg) translate(314px, -550px);
+    transform: rotate(40deg) translate(calc(314px - var(--scroll) * 0.5), calc(-550px - var(--scroll)));
 }
 
 .indexpage {

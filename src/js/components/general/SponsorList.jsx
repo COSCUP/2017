@@ -13,18 +13,20 @@ export default CSSModules(class extends Component {
             <div className='general--sponsorlist'>
                 {
                     Sponsor.map((subSponsor, id) => (
-                        <div className='general--subSponsorlist' key={id}>
-                            <div className='title'>{ subSponsor.name[Language] }</div>
-                            <div>
-                                {
-                                    subSponsor.data.map((sponsor, subid) => (
-                                        <a target='_blank' href={sponsor.logolink} key={subid} className='sponsor'>
-                                            <img src={sponsor.logourl} />
-                                        </a>
-                                    ))
-                                }
-                            </div>
-                        </div>
+                        <section className='general--subSponsorlist' key={id}>
+                            <h3 className='title'>{ subSponsor.name[Language] }</h3>
+                            <ul>
+                              {
+                                  subSponsor.data.map((sponsor, subid) => (
+                                    <li key={subid} className='sponsor'>
+                                      <a target='_blank' href={sponsor.logolink}>
+                                          <img src={sponsor.logourl} />
+                                      </a>
+                                    </li>
+                                  ))
+                              }
+                            </ul>
+                        </section>
                     ))
                 }
             </div>

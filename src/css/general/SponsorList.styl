@@ -2,21 +2,38 @@
 .general--sponsorlist {
     display: block
     padding: 32px;
-    .general--subSponsorlist {
-        margin-bottom: 15px;
-        .title {
-            color: #FFD200;
-            font-size: 1.5em;
+    ul {
+      margin: 0
+      padding: 0
+      list-style: none
+      margin-bottom: 15px;
+    }
+    .title {
+        color: #FFD200;
+        font-size: 1.5em;
+    }
+    .sponsor {
+        margin: 15px 0;
+        border: 1px solid #eee;
+          img {
+              display: block;
+              margin: 0 auto;
+          }
+    }
+    @media only screen and (min-width: 600px) {
+      .sponsor {
+        display: inline-block;
+        max-width: 50%;
+        margin-right: 2em;
+        img {
+          max-width: 100%
         }
-        .sponsor {
-            margin: 15px 0;
-            display: inline-block;
-            max-width: 50%;
-              img {
-                  display: block;
-                  max-height: 75px
-                  max-width: 150px
-              }
-        }
+      }
+    }
+    @media only screen and (min-width: 1024px) {
+      .sponsor {
+        display: inline-block;
+        max-width: 50%;
+      }
     }
 }

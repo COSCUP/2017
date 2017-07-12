@@ -1,25 +1,32 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import CSSModules from 'react-css-modules'
 import _ from 'lodash'
 import printf from 'printf'
 
-export default CSSModules(class extends Component {
+export default CSSModules(class extends PureComponent {
     constructor (props) {
         super(props)
         this.handleScroll = this.handleScroll.bind(this)
         this.clickHandler = this.clickHandler.bind(this)
         this.contentHandler = this.contentHandler.bind(this)
-
+        this.stickyNav = null
+        this.sticky = ''
+        this.wrapper = null
+        this.periodList = []
         this.state = {
-            currentBox: 2,
-            offsetY: 0,
-            stickyContent: '8:00'
+            currentBox: 2
         }
+        this.ticking = false
+        this.width = 0
     }
+
     componentDidMount () {
         window.addEventListener('scroll', this.handleScroll, {passive: true})
         this.props.getSchedule()
         this.clickHandler(0)
+        this.stickyNav = document.querySelector('div.sticky--nav')
+        this.sticky = document.querySelector('div.sticky--nav > div')
+        this.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
     }
 
     componentWillUnmount () {
@@ -49,39 +56,60 @@ export default CSSModules(class extends Component {
     }
 
     handleScroll (event) {
-        this.setState({
-            offsetY: window.pageYOffset
-        })
-        let stickyNav = document.querySelector('div.sticky--nav')
-        let wrapper = document.querySelector('div.schedule--wrapper')
-        // console.log('y: ', this.state.offsetY, 'wrapper: ', wrapper.offsetTop)
+        var self = this
+        var lastKnownScrollPosition = window.pageYOffset
+        if (!self.ticking) {
+            window.requestAnimationFrame(function () {
+                // console.log('y: ', self.state.offsetY, 'wrapper: ', wrapper.offsetTop)
 
-        // show sticky dom
-        if (this.state.offsetY + 50 > wrapper.offsetTop) {
-            stickyNav.classList.add('active')
-        } else {
-            stickyNav.classList.remove('active')
-        }
+                // show sticky dom
+                if (self.wrapper === null) {
+                    self.wrapper = document.querySelector('div.schedule--wrapper')
+                }
 
-        let periodList, width
-        width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-        if (width < 720) {
-            stickyNav.classList.add('mobile')
-            // show content
-            periodList = document.querySelectorAll(`div[data-type='${this.state.currentBox}'] div.eachday--period`)
-        } else {
-            stickyNav.classList.remove('mobile')
-            // show content
-            periodList = document.querySelectorAll('div.eachday--period')
+                if (lastKnownScrollPosition + 50 > self.wrapper.offsetTop) {
+                    self.stickyNav.classList.add('active')
+                } else {
+                    self.stickyNav.classList.remove('active')
+                }
+
+                let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+                if (self.periodList.length === 0) {
+                    if (width < 720) {
+                        self.stickyNav.classList.add('mobile')
+                        // show content
+                        self.periodList = document.querySelectorAll(`div[data-type='${self.state.currentBox}'] div.eachday--period`)
+                    } else {
+                        self.stickyNav.classList.remove('mobile')
+                        // show content
+                        self.periodList = document.querySelectorAll('div.eachday--period')
+                    }
+                } else if (width !== self.width) {
+                    if (width < 720) {
+                        self.stickyNav.classList.add('mobile')
+                        // show content
+                        self.periodList = document.querySelectorAll(`div[data-type='${self.state.currentBox}'] div.eachday--period`)
+                    } else {
+                        self.stickyNav.classList.remove('mobile')
+                        // show content
+                        self.periodList = document.querySelectorAll('div.eachday--period')
+                    }
+                    self.width = width
+                }
+
+                for (let i = 0; i < self.periodList.length; i++) {
+                    if (lastKnownScrollPosition + 50 > self.periodList[i].offsetTop) {
+                        // console.log('target[', i, ']: ', periodList[i].offsetTop, ', time: ', periodList[i].children[0].textContent)
+                        // self.setState({
+                        //     stickyContent: self.periodList[i].children[0].textContent
+                        // })
+                        self.sticky.textContent = self.periodList[i].children[0].textContent
+                    }
+                }
+                self.ticking = false
+            })
         }
-        for (let i = 0; i < periodList.length; i++) {
-            if (this.state.offsetY + 50 > periodList[i].offsetTop) {
-                // console.log('target[', i, ']: ', periodList[i].offsetTop, ', time: ', periodList[i].children[0].textContent)
-                this.setState({
-                    stickyContent: periodList[i].children[0].textContent
-                })
-            }
-        }
+        self.ticking = true
     }
 
     contentHandler (event) {

@@ -2,12 +2,9 @@ import { connect } from 'react-redux'
 import Components from 'components'
 import Actions from 'js/actions'
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     language: state.Language,
-    translate: state.Translate,
-    NavbarConfig: {
-        ...ownProps
-    }
+    translate: state.Translate
 })
 
 const mapDispatchToProps = (dispatch) => ({

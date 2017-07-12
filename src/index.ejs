@@ -7,7 +7,7 @@
         <title>COSCUP 2017</title>
     </head>
 
-    <body>
+    <body class="underfold" style="--scroll: 0px; --fold: 0">
         <div id="app">
         </div>
         <script>
@@ -18,7 +18,11 @@
           last_known_scroll_position = window.scrollY;
           if (!ticking) {
             window.requestAnimationFrame(function() {
-              document.body.setAttribute("style", "--scroll: " + last_known_scroll_position + "px");
+              document.body.setAttribute("style",
+                "--scroll: " + last_known_scroll_position + "px; " +
+                "--fold: " + last_known_scroll_position / document.documentElement.clientHeight
+              );
+              document.body.classList.toggle("underfold", last_known_scroll_position < document.documentElement.clientHeight * 0.8);
               ticking = false;
             });
           }

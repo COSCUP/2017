@@ -1,15 +1,17 @@
 @import "./../_custom-variable.styl"
 
 .navbar {
+    contain: strict;
+    width: 100%
+    height: 65px
+    position: fixed
+    top: inherit
+    bottom: 0
     z-index: 10
-    width: 80%
-    height: 55px
-    position: absolute
-    top: 0
     box-shadow: 0 2px 16px $navbar-box-shadow
     flexbox(row, flex-start, center)
     background: white
-    left: 0%
+    left: 0
     max-width: 100vw;
     .logo {
 
@@ -24,181 +26,112 @@
             width: 40px
             height: 40px
         }
-        @media screen and (max-width: $mobile-screen-width) {
 
-        }
     }
 
-    .menu-list {
+    ul {
 
-        width: auto
+        max-width: 800px
         height: 100%
-        overflow-x: scroll
         flexbox(row, flex-start, center)
 
-        .separator {
-            width: 1px
-            height: 100%
-            border-right: 1px solid $navbar-logo-border
-        }
+        li {
+            margin: 0 15px
+            list-style: none
+            letter-spacing: 1.05px
+            transition: color 0.35s ease
+            text-transform: uppercase
+            color: $navbar-text-noactive
+            font-size: $navbar-text-font-primary
 
-        @media screen and (min-width: $mobile-screen-width) {
-            overflow-x: auto;
-        }
+            a {
+                white-space: nowrap
+                text-decoration: none
+                color: inherit;
+                &.active {
 
-        ul {
+                    color: $navbar-text-hover
 
-            width: auto
-            height: 100%
-            flexbox(row, flex-start, center)
-
-            li {
-                margin: 0 15px
-                list-style: none
-                cursor: pointer
-                letter-spacing: 1.05px
-                transition: all 0.35s ease
-                text-transform: uppercase
-                color: $navbar-text-noactive
-                font-size: $navbar-text-font-primary
-
-                a {
-                    white-space: nowrap
-                    text-decoration: none
-                    color: $navbar-text-noactive
-                    &.active {
-
-                        color: $navbar-text-active
-
-                        a {
-                            color: $navbar-text-active
-                            font-weight: bold
-                        }
-
-                    }
                 }
+            }
 
+        }
+    }
+
+    .tag-selector {
+      max-width: calc(100% - 70px);
+      overflow-x: auto;
+      padding: 0 .5em;
+      li {
+        margin: 0;
+        padding: 0 1em;
+        a {
+          display: block;
+        }
+      }
+      @media screen and (max-width: $mobile-screen-width) {
+        &::after {
+            content: ''
+            position: absolute
+            top: 0px
+            right: 0px
+            height: 100%
+            width: 2em
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+        }
+      }
+      @media screen and (min-width: $mobile-screen-width) {
+        max-width: 800px;
+        flex-grow: 1;
+        display: flex;
+        margin-left: auto
+        padding: 0;
+        li {
+          flex-grow: 1;
+          text-align: center;
+        }
+      }
+    }
+
+    .lang-selector {
+
+        max-width: 100px
+        margin-left: auto;
+        flexbox(row, center, center)
+        border-left: 1px solid $navbar-logo-border
+
+        li {
+
+            padding: 5px 0 0
+            border: 1px solid transparent
+            cursor: pointer
+
+            &.active {
+
+                font-weight: bold
+                color: $navbar-text-active
+                border-bottom: 1px solid rgba(0, 0, 0, .8)
             }
         }
 
         @media screen and (max-width: $mobile-screen-width) {
-
-            ul {
-
-                padding: 0 10px
-
-                li {
-
-                    margin: 0 8px
-                }
-            }
-
-            ul.tag-selector {
-                min-width: 65px
-
-                li:last-child {
-                    padding-right: 15px
-                }
-            }
-            ul.lang-selector {
-
-                display: none
-            }
-
-            &::after {
-
-                display: block
-                content: ''
-                position: absolute
-                top: 0px
-                right: 0px
-                height: 100%
-                width: 10px
-                background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 100))
-            }
+          display: none
         }
-
-        @media screen and (min-width: $mobile-screen-width) {
-
-            width: 100%
-
-            ul {
-
-                padding: 0 10px
-
-                li {
-
-                    &:hover {
-                        color: $navbar-text-hover
-
-                        a {
-                            color: $navbar-text-hover
-                        }
-                    }
-                }
-            }
-
-            ul.tag-selector {
-                flex-grow: 1
-                flexbox(row, center, center)
-            }
-
-            ul.lang-selector {
-
-                max-width: 100px
-                align-self: flex-end
-                flexbox(row, center, center)
-
-                li {
-
-                    padding: 5px 0
-                    border: 1px solid transparent
-
-                    &.active {
-
-                        font-weight: normal
-                        color: $navbar-text-active
-                        border-bottom: 1px solid $navbar-text-active
-                    }
-
-                    &.noactive {
-
-                        font-weight: normal
-                        color: $navbar-text-noactive
-                        border-bottom: 1px solid transparent
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: $mobile-screen-width) {
-
-        width: 100%
-        height: 65px
-        position: fixed
-        top: inherit
-        bottom: 0
-        box-shadow: 0 2px 16px $navbar-box-shadow
-        flexbox(row, flex-start, center)
     }
 
     @media screen and (min-width: $mobile-screen-width) {
-
-        &.navbar--abs {
-
-            width: 80%
-            height: 55px
-            position: fixed
-            top: 50%
-        }
-
-        &.navbar--fixed {
-
-            width: 100%
-            height: 55px
-            position: fixed
-            top: 0
-        }
+      top: 0
+      bottom: auto;
     }
+}
+
+.underfold .navbar.intro {
+  @media screen and (min-width: $mobile-screen-width) {
+    width: auto;
+    transform: translate(0, calc(80vh - var(--scroll)));
+    left: 0;
+    left: calc(10vw - 10vw * var(--fold));
+    right: 0;
+    right: calc(10vw - 10vw * var(--fold));
+  }
 }

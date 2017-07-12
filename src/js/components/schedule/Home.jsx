@@ -113,14 +113,14 @@ export default CSSModules(class extends PureComponent {
     }
 
     contentHandler (event) {
-        let targetList = document.querySelectorAll('div.period--list.active')
-        for (let i = 0; i < targetList.length; i++) {
-            targetList[i].classList.remove('active')
-        }
+        // let targetList = document.querySelectorAll('div.period--list.active')
+        // for (let i = 0; i < targetList.length; i++) {
+        //     targetList[i].classList.remove('active')
+        // }
         if (event.target.classList[0] === 'period--list') {
-            event.target.classList.add('active')
+            event.target.classList.toggle('active')
         } else {
-            event.target.parentNode.classList.add('active')
+            event.target.parentNode.classList.toggle('active')
         }
     }
     render () {

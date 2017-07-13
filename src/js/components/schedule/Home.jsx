@@ -174,7 +174,7 @@ export default CSSModules(class extends PureComponent {
                                                                     {slot.subject}
                                                                 </div>
                                                                 <div className="list--info">
-                                                                    Room {slot.room} - {(slot.end.getHours() * 60 + slot.end.getMinutes()) - (slot.start.getHours() * 60 + slot.start.getMinutes())} mins
+                                                                    Room {slot.room} - {(slot.end.getHours() * 60 + slot.end.getMinutes()) - (slot.start.getHours() * 60 + slot.start.getMinutes())} mins  - {slot.lang}
                                                                 </div>
                                                                 <div className="list--content">
                                                                     <div className="content--author">

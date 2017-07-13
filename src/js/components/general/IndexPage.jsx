@@ -37,7 +37,7 @@ export default CSSModules(class extends Component {
                             <Link to='/'>{ this.props.translate['intro'][language] }</Link>
                         </div>
                         <div>
-                            <Link to='/'>{ this.props.translate['register'][language] }</Link>
+                            <a href='https://coscup2017.kktix.cc/events/coscup2017regist'>{ this.props.translate['register'][language] }</a>
                         </div>
                     </div>
                 </header>

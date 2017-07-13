@@ -1,4 +1,4 @@
-# coucup 2017
+# COSCUP 2017
 
 ## Develop
 

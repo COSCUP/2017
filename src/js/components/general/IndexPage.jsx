@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
 import CSSModules from 'react-css-modules'
-import { Link } from 'react-router'
 import classNames from 'classnames'
 
 @Radium
 export default CSSModules(class extends Component {
+    scrollToIntro (event) {
+        event.preventDefault()
+        window.scroll(0, window.document.getElementById('intro').offsetTop - 100)
+    }
+
     render () {
         const language = this.props.language
         return (
@@ -34,7 +38,7 @@ export default CSSModules(class extends Component {
                     </div>
                     <div className="button--wrapper">
                         <div>
-                            <Link to='/'>{ this.props.translate['intro'][language] }</Link>
+                            <a href='#' onClick={this.scrollToIntro.bind(this)}>{ this.props.translate['intro'][language] }</a>
                         </div>
                         <div>
                             <a href='https://coscup2017.kktix.cc/events/coscup2017regist'>{ this.props.translate['register'][language] }</a>

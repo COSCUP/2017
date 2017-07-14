@@ -23,10 +23,10 @@ export default CSSModules(class extends PureComponent {
     componentDidMount () {
         window.addEventListener('scroll', this.handleScroll, {passive: true})
         this.props.getSchedule()
-        this.clickHandler(0)
         this.stickyNav = document.querySelector('div.sticky--nav')
         this.sticky = document.querySelector('div.sticky--nav > div')
         this.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        window.setTimeout(() => this.clickHandler(0), 50)
     }
 
     componentWillUnmount () {
@@ -34,24 +34,29 @@ export default CSSModules(class extends PureComponent {
     }
 
     clickHandler (target) {
-        let _currentBox = this.state.currentBox
-        if (_currentBox === target) {
-            return
-        }
-        this.setState({
-            currentBox: target
-        })
         let boxes = document.querySelectorAll(`div[data-type='${target}']`)
-        let i, len
-        for (i = 0, len = boxes.length; i < len; i++) {
-            let box = boxes[i]
-            box.classList.toggle('active')
-        }
+        if (boxes.length === 2) {
+            let _currentBox = this.state.currentBox
+            if (_currentBox === target) {
+                return
+            }
+            this.setState({
+                currentBox: target
+            })
+            let boxes = document.querySelectorAll(`div[data-type='${target}']`)
+            let i, len
+            for (i = 0, len = boxes.length; i < len; i++) {
+                let box = boxes[i]
+                box.classList.toggle('active')
+            }
 
-        boxes = document.querySelectorAll(`div[data-type='${1 - target}']`)
-        for (i = 0, len = boxes.length; i < len; i++) {
-            let box = boxes[i]
-            box.classList.remove('active')
+            boxes = document.querySelectorAll(`div[data-type='${1 - target}']`)
+            for (i = 0, len = boxes.length; i < len; i++) {
+                let box = boxes[i]
+                box.classList.remove('active')
+            }
+        } else {
+            window.setTimeout(() => this.clickHandler(target), 50)
         }
     }
 

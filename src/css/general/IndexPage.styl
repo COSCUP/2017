@@ -121,7 +121,8 @@
             margin-top: 70px
             flexbox(row, center, center)
 
-            div {
+            a {
+                display: block
                 font-size: $navbar-text-font-button
                 color: white
                 padding: 10px
@@ -135,21 +136,13 @@
                 font-family: Abel
                 text-transform: uppercase
                 letter-spacing: .2em
-
+                text-decoration: none
 
                 &:hover {
-
                     transition: all 0.25s ease
                     color: $navbar-text-hover
                     background: white
-                    a {
-                        color: $navbar-text-hover
-                        text-decoration: none
-                    }
-                }
-
-                a {
-                    color: white
+                    color: $navbar-text-hover
                     text-decoration: none
                 }
             }

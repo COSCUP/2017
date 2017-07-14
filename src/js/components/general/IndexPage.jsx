@@ -37,12 +37,8 @@ export default CSSModules(class extends Component {
                         <span className="separator"></span>
                     </div>
                     <div className="button--wrapper">
-                        <div>
-                            <a href='#' onClick={(event) => this.scrollToIntro(event)}>{ this.props.translate['intro'][language] }</a>
-                        </div>
-                        <div>
-                            <a href='https://coscup2017.kktix.cc/events/coscup2017regist'>{ this.props.translate['register'][language] }</a>
-                        </div>
+                        <a href='#' onClick={(event) => this.scrollToIntro(event)}>{ this.props.translate['intro'][language] }</a>
+                        <a href='https://coscup2017.kktix.cc/events/coscup2017regist'>{ this.props.translate['register'][language] }</a>
                     </div>
                 </header>
                 <main className="indexpage--content">

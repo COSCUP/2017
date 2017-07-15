@@ -175,6 +175,9 @@ export default CSSModules(class extends PureComponent {
                                                     {
                                                         _.map(timeSlot, (slot, sid) => (
                                                             <div className="period--list" key={sid} onClick={(e) => this.contentHandler(e)}>
+                                                                <div className="list--community">
+                                                                    {slot.community}
+                                                                </div>
                                                                 <div className="list--title">
                                                                     {slot.subject}
                                                                 </div>

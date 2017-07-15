@@ -1,5 +1,21 @@
 @import "./../_custom-variable.styl"
 
+
+.subPage ~ main::before {
+  content: ' ';
+  pointer-events: none;
+  background-image: url('./../../static/dot.svg');
+  width: 1289px;
+  height: 889px;
+  position: fixed;
+  top: -400px;
+  left: calc(50vw - 1289px / 2);
+  opacity: .7;
+  transform: translate(0, calc(var(--scroll) * -1));
+  will-change: transform;
+  contain: strict;
+}
+
 .content--wrapper {
     .subPage::before, .subPage::after {
         content: ' ';

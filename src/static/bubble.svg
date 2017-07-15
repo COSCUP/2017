@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1417px" height="935px" viewBox="0 0 1417 935" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="79.2596027%" cy="96.3959461%" fx="79.2596027%" fy="96.3959461%" r="83.7902594%" id="radialGradient-1">
+            <stop stop-color="#D8D8D8" offset="0%"></stop>
+            <stop stop-color="#F0F0F0" offset="65.1323475%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </radialGradient>
+        <filter x="-18.6%" y="-18.6%" width="137.2%" height="137.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="30.421317" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop_index" transform="translate(-23.000000, -143.000000)" fill="url(#radialGradient-1)">
+            <g id="background" transform="translate(-1640.000000, -1090.000000)">
+                <g id="circle" transform="translate(1663.000000, 1090.000000)">
+                    <g id="Group-2" transform="translate(0.000000, 143.000000)">
+                        <circle id="c4" opacity="0.387115036" filter="url(#filter-2)" cx="1233.5" cy="614.5" r="245.5"></circle>
+                        <circle id="c3" cx="140.5" cy="35.5" r="35.5"></circle>
+                        <circle id="c2" opacity="0.578408062" cx="70.5" cy="577.5" r="70.5"></circle>
+                        <circle id="c1" opacity="0.387115036" cx="918" cy="80" r="46"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

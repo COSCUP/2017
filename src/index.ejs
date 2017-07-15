@@ -17,7 +17,7 @@
         <meta property="twitter:description" content="COSCUP 2017 即將在 8/5, 6 於臺灣大學社科院與你相見。COSCUP 為 Open Source 愛好者交流與分享的大型開放原始碼研討會，且今年有十八個來自臺灣本土的社群所各自籌辦的社群議程，讓會眾瞭解並投入開源社群。">
     </head>
 
-    <body class="underfold" style="--scroll: 0px; --fold: 0">
+    <body class="underfold halffold" style="--scroll: 0px; --fold: 0">
         <div id="app">
         </div>
         <script>
@@ -33,6 +33,7 @@
                 "--fold: " + last_known_scroll_position / (document.documentElement.clientHeight * 0.8)
               );
               document.body.classList.toggle("underfold", last_known_scroll_position < document.documentElement.clientHeight * 0.8);
+              document.body.classList.toggle("halffold", last_known_scroll_position < document.documentElement.clientHeight * 0.5);
               ticking = false;
             });
           }

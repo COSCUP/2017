@@ -13,6 +13,7 @@
     left: 50vw;
     transition: ease .1s tranform;
     will-change: transform;
+    contain: strict;
 }
 #home::before {
     background-image: linear-gradient(to bottom, #D1FDFF, #FDDB92);
@@ -43,6 +44,38 @@
     z-index: -1;
     transform: rotate(40deg) translate(314px, -550px);
     transform: rotate(40deg) translate(calc(314px - var(--scroll) * 0.5), calc(-550px - var(--scroll)));
+}
+
+#home main::before, #home main::after {
+  content: ' ';
+  position: fixed;
+  pointer-events: none;
+  transition: ease-out .5s opacity;
+  transform: translate(0, calc(var(--scroll) * -0.5));
+  will-change: transform, opacity;
+  contain: strict;
+  z-index: -1;
+  opacity: 0;
+}
+
+#home main::before {
+  background-image: url('./../../static/dot.svg');
+  width: 1289px;
+  height: 889px;
+  top: 0;
+  left: calc(50vw - 1289px / 2);
+}
+
+#home main::after {
+  background-image: url('./../../static/bubble.svg');
+  width: 1417px;
+  height: 935px;
+  top: 100px;
+  left: 0;
+}
+
+body.halffold #home main::before, body.halffold #home main::after {
+  opacity: .7;
 }
 
 .indexpage {
@@ -227,7 +260,7 @@
         padding-top: calc(10vh)
         padding-left: calc(10vw)
     }
-    
+
     @media only screen and (max-width: $mobile-screen-width) {
 
         .title--wrapper {

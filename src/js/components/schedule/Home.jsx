@@ -18,6 +18,7 @@ export default CSSModules(class extends PureComponent {
         }
         this.ticking = false
         this.width = 0
+        this.lastBox = 0
     }
 
     componentDidMount () {
@@ -79,7 +80,7 @@ export default CSSModules(class extends PureComponent {
                 }
 
                 let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-                if (self.periodList.length === 0) {
+                if (self.periodList.length === 0 || width !== self.width || self.lastBox !== self.state.currentBox) {
                     if (width < 720) {
                         self.stickyNav.classList.add('mobile')
                         // show content
@@ -89,28 +90,14 @@ export default CSSModules(class extends PureComponent {
                         // show content
                         self.periodList = document.querySelectorAll('div.eachday--period')
                     }
-                } else if (width !== self.width) {
-                    if (width < 720) {
-                        self.stickyNav.classList.add('mobile')
-                        // show content
-                        self.periodList = document.querySelectorAll(`div[data-type='${self.state.currentBox}'] div.eachday--period`)
-                    } else {
-                        self.stickyNav.classList.remove('mobile')
-                        // show content
-                        self.periodList = document.querySelectorAll('div.eachday--period')
-                    }
-                    self.width = width
                 }
 
                 for (let i = 0; i < self.periodList.length; i++) {
                     if (lastKnownScrollPosition + 50 > self.periodList[i].offsetTop) {
-                        // console.log('target[', i, ']: ', periodList[i].offsetTop, ', time: ', periodList[i].children[0].textContent)
-                        // self.setState({
-                        //     stickyContent: self.periodList[i].children[0].textContent
-                        // })
                         self.sticky.textContent = self.periodList[i].children[0].textContent
                     }
                 }
+                self.lastBox = self.state.currentBox
                 self.ticking = false
             })
         }

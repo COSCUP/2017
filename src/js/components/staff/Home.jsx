@@ -31,7 +31,7 @@ export default CSSModules(class extends Component {
     render () {
         const { Staff, Language } = this.props
         let mobileTitle = null
-        if (window.location.hash.match('mode=app') === null) {
+        if (window.location.search.match('mode=app') === null) {
             mobileTitle =
                 <div className="mobile subpage--title">
                     <div className="popout--toggler"></div>

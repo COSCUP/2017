@@ -57,7 +57,7 @@ export default CSSModules(class extends Component {
     render () {
         if (!this.state.loaded) return null
         let mobileNavber = null
-        if (window.location.hash.match('mode=app') === null) {
+        if (window.location.search.match('mode=app') === null) {
             mobileNavber = <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
         }
         return (

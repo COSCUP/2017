@@ -55,7 +55,7 @@ export default CSSModules(class extends Component {
     render () {
         const { Sponsor, Language } = this.props
         let mobileTitle = null
-        if (window.location.hash.match('mode=app') === null) {
+        if (window.location.search.match('mode=app') === null) {
             mobileTitle =
                 <div className="mobile subpage--title" onClick={this.blurHandler}>
                     <div className="popout--toggler"></div>

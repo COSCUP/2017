@@ -56,11 +56,14 @@ export default CSSModules(class extends Component {
     }
     render () {
         if (!this.state.loaded) return null
-
+        let mobileNavber = null
+        if (window.location.hash.match('mode=app') === null) {
+            mobileNavber = <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
+        }
         return (
             <StyleRoot>
                 <div className="container">
-                    <Containers.general.Navbar isIndex={this.props.location.pathname === '/'}/>
+                    {mobileNavber}
                     <div className="content--wrapper" data-type='blur'>
                         { this.props.children }
                     </div>

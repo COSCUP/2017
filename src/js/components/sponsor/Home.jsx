@@ -54,14 +54,19 @@ export default CSSModules(class extends Component {
     }
     render () {
         const { Sponsor, Language } = this.props
+        let mobileTitle = null
+        if (window.location.hash.match('mode=app') === null) {
+            mobileTitle =
+                <div className="mobile subpage--title" onClick={this.blurHandler}>
+                    <div className="popout--toggler"></div>
+                    <div className="title--text">{ this.props.Translate['sponsor'][Language] }</div>
+                    <div className="popout--toggler" onClick={this.blurHandler}></div>
+                </div>
+        }
         return (
             <div>
                 <header className="subPage">
-                    <div className="mobile subpage--title" onClick={this.blurHandler}>
-                        <div className="popout--toggler"></div>
-                        <div className="title--text">{ this.props.Translate['sponsor'][Language] }</div>
-                        <div className="popout--toggler" onClick={this.blurHandler}></div>
-                    </div>
+                    {mobileTitle}
                     <div className="desktop subpage--title">
                         <div className="title--text">
                             <div> { this.props.Translate['sponsor']['zh'] } </div>

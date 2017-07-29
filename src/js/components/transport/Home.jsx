@@ -80,6 +80,23 @@ export default CSSModules(class extends Component {
                       )
                   }
                   {map}
+                    <div className="indoor-map">
+                        <div className="cards">
+                            <div className='card'>
+                                {
+                                    Language === 'zh' ? (
+                                        <div className='title'>會場地圖</div>
+                                    ) : (
+                                        <div className='title'>Venue</div>
+                                    )
+                                }
+                                <img src={require(`static/transport/1F-COSCUP.jpg`)}/>
+                                <img src={require(`static/transport/2F-COSCUP.jpg`)}/>
+                                <img src={require(`static/transport/3F-COSCUP.jpg`)}/>
+                                <img src={require(`static/transport/4F-COSCUP.jpg`)}/>
+                            </div>
+                        </div>
+                    </div>
                 </main>
             </div>
         )

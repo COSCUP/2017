@@ -4,6 +4,10 @@ import Radium from 'radium'
 
 @Radium
 export default CSSModules(class extends Component {
+    ImageHandler (event) {
+        window.open(event.target.src)
+    }
+
     render () {
         const { Language } = this.props
         const map = <div
@@ -90,10 +94,10 @@ export default CSSModules(class extends Component {
                                         <div className='title'>Venue</div>
                                     )
                                 }
-                                <img src={require(`static/transport/1F-COSCUP.jpg`)}/>
-                                <img src={require(`static/transport/2F-COSCUP.jpg`)}/>
-                                <img src={require(`static/transport/3F-COSCUP.jpg`)}/>
-                                <img src={require(`static/transport/4F-COSCUP.jpg`)}/>
+                                <img src={require(`static/transport/1F-COSCUP.jpg`)} onClick={this.ImageHandler}/>
+                                <img src={require(`static/transport/2F-COSCUP.jpg`)} onClick={this.ImageHandler}/>
+                                <img src={require(`static/transport/3F-COSCUP.jpg`)} onClick={this.ImageHandler}/>
+                                <img src={require(`static/transport/4F-COSCUP.jpg`)} onClick={this.ImageHandler}/>
                             </div>
                         </div>
                     </div>

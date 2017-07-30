@@ -3,6 +3,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import store from './stores/Store'
 import { syncHistoryWithStore } from 'react-router-redux'
 import Containers from './containers'
+import SessionTable from './views/sessionTable'
 
 const history = syncHistoryWithStore(hashHistory, store)
 
@@ -12,6 +13,7 @@ export default class Root extends Component {
             <Router history={history}>
                 <Route path="/" component={Containers.App}>
                     <IndexRoute component={Containers.general.IndexPage}/>
+                    <Route path="sessions(/:day)" component={SessionTable} />
                     <Route path="schedule" name="schedule">
                         <IndexRoute component={Containers.schedule.Home}/>
                     </Route>

@@ -97,19 +97,27 @@ export default CSSModules(class extends Component {
                                                     <div className='sponsor--title'>
                                                         { sponsor.name[Language] }
                                                     </div>
-                                                    <a
-                                                        style={{
-                                                            color: '#9B9B9B',
-                                                            display: 'flex'
-                                                        }}
-                                                        target='_blank' href={sponsor.logolink}>
-                                                        <GoLinkExternal />
-                                                    </a>
+                                                    {
+                                                        (sponsor.logolink.length !== 0) ? (
+                                                        <a
+                                                            style={{
+                                                                color: '#9B9B9B',
+                                                                display: 'flex'
+                                                            }}
+                                                            target='_blank' href={sponsor.logolink}>
+                                                            <GoLinkExternal />
+                                                        </a>) : (
+                                                            null
+                                                        )
+                                                    }
                                                 </div>
                                                 <div className='sponsor--content' data-type={sponsor.name[Language]}>
-                                                    <div className="content--headimg">
-                                                        <img src={sponsor.logourl} />
-                                                    </div>
+                                                    { (sponsor.logourl.length !== 46) ? (
+                                                        <div className="content--headimg">
+                                                            <img src={sponsor.logourl} />
+                                                        </div>) : (
+                                                        <div style={{height: 50 + 'px'}}></div>
+                                                    ) }
                                                     <div className='sponsor--title'>
                                                         { sponsor.name[Language] }
                                                     </div>

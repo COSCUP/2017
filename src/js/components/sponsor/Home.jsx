@@ -90,7 +90,7 @@ export default CSSModules(class extends Component {
                                             <div key={subid} className='sponsor'>
                                                 <div className='sponsor--sponsorimage' onClick={() => this.blurSponsorHandler(sponsor.name[Language])}>
                                                     <div>
-                                                        <img src={sponsor.logourl} />
+                                                        { (sponsor.logourl.length !== 46) ? (<img src={sponsor.logourl} />) : (<div></div>) }
                                                     </div>
                                                 </div>
                                                 <div className='sponsor--content--mobile'>

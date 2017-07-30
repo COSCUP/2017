@@ -20,7 +20,7 @@ export default CSSModules(class extends Component {
                                   subSponsor.data.map((sponsor, subid) => (
                                     <li key={subid} className='sponsor'>
                                       <a target='_blank' href={sponsor.logolink}>
-                                          <img src={sponsor.logourl} />
+                                          { (sponsor.logourl.length !== 46) ? (<img src={sponsor.logourl} />) : (<div></div>) }
                                       </a>
                                     </li>
                                   ))

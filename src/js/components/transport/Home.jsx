@@ -10,7 +10,7 @@ export default CSSModules(class extends Component {
 
     render () {
         const { Language } = this.props
-        const map = <div
+        let map = <div
             style={{
                 width: '100%',
                 overflow: 'hidden',
@@ -26,26 +26,11 @@ export default CSSModules(class extends Component {
                 allowFullScreen>
             </iframe>
         </div>
-        return (
-            <div>
-                <header className="subPage">
-                    <div className="mobile subpage--title">
-                        <div className="popout--toggler"></div>
-                        <div className="title--text">{ this.props.Translate['transport'][Language] }</div>
-                        <div className="popout--toggler"></div>
-                    </div>
-                    <div className="desktop subpage--title">
-                        <div className="title--text">
-                            <div> { this.props.Translate['transport']['zh'] } </div>
-                            <div className="divider" />
-                            <div> { this.props.Translate['transport']['en'] } </div>
-                        </div>
-                    </div>
-                </header>
-                <main className='transport--way'>
-                  {
-                      Language === 'zh' ? (
-                        <div className="cards">
+        if (window.location.search.match('mode=app') !== null) map = null
+        let transport = null
+        if (window.location.search.match('mode=app') === null) {
+            if (Language === 'zh') {
+                transport = <div className="cards">
                           <div className='card'>
                               <div className="M">
                                   <img src={require(`static/transport/metro.png`)}/>
@@ -68,8 +53,8 @@ export default CSSModules(class extends Component {
                               </div>
                           </div>
                         </div>
-                      ) : (
-                          <div className="cards">
+            } else {
+                transport = <div className="cards">
                               <div className='card'>
                                   <div className="M">
                                       <img src={require(`static/transport/metro.png`)}/>
@@ -81,8 +66,28 @@ export default CSSModules(class extends Component {
                                   </div>
                               </div>
                           </div>
-                      )
-                  }
+            }
+        }
+        return (
+            <div>
+                <header className="subPage">
+                    { (window.location.search.match('mode=app') === null) ? (
+                        <div className="mobile subpage--title">
+                            <div className="popout--toggler"></div>
+                            <div className="title--text">{ this.props.Translate['transport'][Language] }</div>
+                            <div className="popout--toggler"></div>
+                        </div>
+                    ) : (<div></div>) }
+                    <div className="desktop subpage--title">
+                        <div className="title--text">
+                            <div> { this.props.Translate['transport']['zh'] } </div>
+                            <div className="divider" />
+                            <div> { this.props.Translate['transport']['en'] } </div>
+                        </div>
+                    </div>
+                </header>
+                <main className='transport--way'>
+                  {transport}
                   {map}
                     <div className="indoor-map">
                         <div className="cards">

@@ -67,8 +67,9 @@ export default CSSModules(class extends Component {
                     <div className="content--wrapper" data-type='blur'>
                         { this.props.children }
                     </div>
-                    <Containers.general.Footer />
-
+                    <div className="footer--wrapper">
+                        <Containers.general.Footer />
+                    </div>
                 </div>
                 { process.env.NODE_ENV !== 'production' ? <Containers.DevTools/> : null }
             </StyleRoot>

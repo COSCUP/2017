@@ -273,6 +273,9 @@
     display: flex;
     list-style: none;
     text-align: center;
+    position: sticky;
+    top: 65px;
+    background-color: rgba(255, 255, 255, .8);
     li {
         flex: 1 0 auto;
         font-size: smaller;
@@ -292,13 +295,20 @@
     grid-template-areas: "room101 room201 room202 room303 room305 room306 room307 room403"
     grid-gap: 0 .5em;
     grid-template-columns: repeat(8, calc((100% - 7 * 0.5em) / 8));
-    li {
-        border: 1px dashed rgba(0, 0, 0, .4);
-        border-radius: 5px;
-        padding: .5em;
-    }
+}
+
+.session {
+    border: 1px dashed rgba(0, 0, 0, .4);
+    border-radius: 5px;
+    padding: .5em;
     h4 {
         font-weight: normal;
         word-break: break-word;
     }
+}
+
+.time {
+    display: none;
+    grid-column-start: room101-start;
+    grid-column-end: room403-end;
 }

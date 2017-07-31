@@ -15,9 +15,11 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 function getTimeSlug (time) {
-    return 'day' + (time.getDate() === 5 ? '1' : '2') + '_' +
-        (time.getHours() < 10 ? '0' + time.getHours() : time.getHours()) +
-        (time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes())
+    return paddingZero(time.getHours()) + paddingZero(time.getMinutes())
+}
+
+function paddingZero (number) {
+    return number < 10 ? '0' + number : number.toString()
 }
 
 function uniqueArray (v, i, a) {
@@ -34,7 +36,6 @@ class SessionsTable extends Component {
         const times = sessions.reduce((time, session) => time.concat(new Date(session.start), new Date(session.end)), [])
             .filter(uniqueArray)
             .sort()
-            .map(time => getTimeSlug(time))
         const tracks = this.props.sessions.map(session => session.community)
             .filter(community => !!community)
             .filter(uniqueArray)
@@ -66,18 +67,25 @@ class SessionsTable extends Component {
                         <li>Room <strong>403</strong></li>
                     </ul>
                     <ul className="sessions" style={{
-                        gridTemplateRows: times.map(time => '[' + time + '] auto').join(' ')
-                    }}>{sessions.map(session =>
-                        <li style={{
+                        gridTemplateRows: times.map(time => '[t' + getTimeSlug(time) + '] auto').join(' ')
+                    }}>
+                        {times.map(time =>
+                        <li key={time.getTime()} className="time" style={{
+                            gridRowStart: 't' + getTimeSlug(time)
+                        }}>
+                            {paddingZero(time.getHours()) + ':' + paddingZero(time.getMinutes())}
+                        </li>)}
+                        {sessions.map(session =>
+                        <li key={session.room + session.start} className="session" style={{
                             gridColumn: 'room' + session.room,
-                            gridRowStart: getTimeSlug(new Date(session.start)),
-                            gridRowEnd: getTimeSlug(new Date(session.end))
+                            gridRowStart: 't' + getTimeSlug(new Date(session.start)),
+                            gridRowEnd: 't' + getTimeSlug(new Date(session.end))
                         }}>
                             <article>
                                 <h4>{session.subject}</h4>
                             </article>
-                        </li>
-                    )}</ul>
+                        </li>)}
+                    </ul>
                 </main>
             </div>
         )

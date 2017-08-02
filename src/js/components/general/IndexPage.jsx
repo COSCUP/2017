@@ -38,7 +38,7 @@ export default CSSModules(class extends Component {
                     </div>
                     <div className="button--wrapper">
                         <a href='#' onClick={(event) => this.scrollToIntro(event)}>{ this.props.translate['intro'][language] }</a>
-                        <a href='https://coscup2017.kktix.cc/events/coscup2017regist'>{ this.props.translate['register'][language] }</a>
+                        <a href='https://www.youtube.com/playlist?list=PLqfib4St70XOZt4e6XNiigzW9GI7iG-Iq'>{ this.props.translate['live'][language] }</a>
                     </div>
                 </header>
                 <main className="indexpage--content">

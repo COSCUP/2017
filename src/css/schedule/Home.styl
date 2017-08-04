@@ -271,7 +271,7 @@
 
 .days {
     margin-bottom: 1em;
-    font-size: 1.3em;
+    font-size: 1.2em;
     a {
         display: inline-block;
         text-decoration: none;
@@ -438,11 +438,13 @@
     color: #009a79;
     background-color: #ecf5f4;
     padding: .5em;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 69px;
-    z-index: 9;
+    @supports(position: -webkit-sticky) {
+      position: -webkit-sticky;
+      top: 69px;
+      z-index: 9;
+    }
     @media only screen and (min-width: 720px) {
+        position: sticky;
         margin: 0 -64px;
         padding: .5em 64px;
         border-top: 1px solid #b8d2cf;

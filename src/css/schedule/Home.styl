@@ -271,6 +271,7 @@
 
 .days {
     margin-bottom: 1em;
+    font-size: 1.3em;
     a {
         display: inline-block;
         text-decoration: none;
@@ -278,35 +279,38 @@
         line-height: auto;
         color: inherit;
     }
+    .active {
+        color: #009a79;
+        border-bottom: 5px solid;
+    }
     @media only screen and (max-width: 719px) {
         position: fixed;
         top: 0;
         width: 100%;
         background: linear-gradient(-315deg, #f9fea5, #20e2d7);
         display: flex;
+        z-index: 999;
         a {
             height: 64px;
             flex: 1 0 auto;
             text-align: center;
             line-height: 64px;
         }
-        .active {
-            border-bottom: 5px solid #009a79;
-        }
     }
     @media only screen and (min-width: 720px) {
+        text-align: right;
         a {
-            font-size: 3em;
-            margin-right: .5em;
-            padding: .3em;
-        }
-        .active {
-            color: #fff;
-            background: #000;
+            color: #b8d2cf;
+            padding: .5em;
         }
     }
     @media only screen and (min-width: 1000px) {
         margin: 0 -32px 1em;
+        font-size: 3em;
+        position: static;
+        a {
+            margin-right: .5em;
+        }
     }
 }
 
@@ -380,18 +384,32 @@
         font-weight: normal;
         margin: 0;
         word-break: break-word;
-        color: #000;
+        font-size: 16px;
+    }
+    .track {
+        color: #009a79;
+    }
+    footer {
+        position: relative;
     }
     .period {
         opacity: .8;
         display: none;
+    }
+    .length {
+        &::before, &::after {
+            content: ' - ';
+        }
+    }
+    @media only screen and (max-width: 719px) {
+        border-bottom: 1px solid #e9e9e9;
+        padding: 1em;
     }
     @media only screen and (min-width: 720px) {
         grid-column: 2;
         margin-bottom: 1em;
         h4 {
             font-size: 24px;
-            margin-bottom: 1em;
         }
     }
     @media only screen and (min-width: 1000px) {
@@ -406,6 +424,12 @@
         .period {
             display: block;
         }
+        .track {
+            font-size: smaller;
+        }
+        .length, .location, .language {
+            display: none;
+        }
     }
 }
 
@@ -417,11 +441,13 @@
     position: sticky;
     position: -webkit-sticky;
     top: 69px;
+    z-index: 9;
     @media only screen and (min-width: 720px) {
         margin: 0 -64px;
         padding: .5em 64px;
         border-top: 1px solid #b8d2cf;
         grid-column: 1 / span 2;
+        top: 64px;
     }
     @media only screen and (min-width: 1000px) {
         display: none;
@@ -434,37 +460,53 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .9);
     z-index: 999;
     padding-top: 3em;
     .close {
         position: absolute;
-        right: 1em;
-        top: 1em;
+        right: .2em;
+        top: .2em;
         cursor: pointer;
         font-size: 3em;
         font-weight: bolder;
+        pointer-events: none;
     }
     article {
         background-color: #ecf5f4;
         margin: 0 auto;
         width: 100%;
         box-sizing: border-box;
-        max-width: 800px;
+        max-width: 1000px;
         padding: 2em;
+        border-radius: 5px;
         max-height: calc(100vh - 4em);
         overflow: auto;
     }
     h4 {
-        font-size: larger;
+        font-size: 2em;
+        line-height: 1.3em;
+        margin: .3em 0;
+    }
+    p {
+        margin: 2em 0;
+    }
+    .location, .period, .language {
+        font-weight: bold;
+    }
+    .period {
+        margin: 0 .5em;
+    }
+    .track {
+        text-align: right;
+        color: #009a79;
     }
 }
 
 .speaker {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    grid-template-rows: auto 1fr;
     img {
+        display: block;
+        margin: 0 auto;
         width: 96px;
         height: 96px;
         object-fit: cover;
@@ -477,15 +519,19 @@
         grid-column: 2;
     }
     strong {
+        display: block;
+        text-align: center;
         grid-row: 1;
         font-size: larger;
-        padding: 1em 1em 0;
+        padding: .5em;
     }
     p {
         grid-row: 2;
         padding: 1em;
         margin: 0;
         word-break: break-word;
+        background-color: #fff;
+        border-radius: .5em;
     }
     &::before, &::after {
         content: ' '
@@ -502,5 +548,17 @@
         margin-left: -8px;
         transform: rotate(45deg);
         align-self: center;
+    }
+    @media only screen and (min-width: 720px) {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        grid-template-rows: auto 1fr;
+        img {
+            margin: 0;
+        }
+        strong {
+            text-align: left;
+            padding: 1em 1em 0;
+        }
     }
 }

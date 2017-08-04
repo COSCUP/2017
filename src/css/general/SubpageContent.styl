@@ -14,6 +14,9 @@
   transform: translate(0, calc(var(--scroll) * -1));
   will-change: transform;
   contain: strict;
+  @media only screen and (max-width: 719px) {
+      display: none;
+  }
 }
 
 .content--wrapper {

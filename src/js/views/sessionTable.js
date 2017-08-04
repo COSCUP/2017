@@ -44,7 +44,11 @@ class SessionsTable extends Component {
     render () {
         const day = this.props.day === 'day2' ? 6 : 5
         const sessions = this.props.sessions.filter(session => (new Date(session.start)).getDate() === day)
-            .map(session => Object.assign({}, session, {id: createId(session)}))
+            .map(session => Object.assign({}, session, {
+                id: createId(session),
+                length: ((new Date(session.end)).getTime() - (new Date(session.start)).getTime()) / 60000
+            }))
+            // .sort((a, b) => parseInt(a.room, 10) - parseInt(b.room, 10))
             .sort((a, b) => (new Date(a.start)).getTime() - (new Date(b.start)).getTime())
         const times = sessions.reduce((time, session) => time.concat(new Date(session.start), new Date(session.end)), [])
             .filter(uniqueArray)
@@ -55,6 +59,11 @@ class SessionsTable extends Component {
         /* const tracks = this.props.sessions.map(session => session.community)
             .filter(community => !!community)
             .filter(uniqueArray) */
+        const closeModal = (event) => {
+            if (event.target.classList.contains('modal')) {
+                this.props.router.goBack()
+            }
+        }
         return (
             <div>
                 <header className="subPage">
@@ -68,8 +77,8 @@ class SessionsTable extends Component {
                 </header>
                 <main>
                     <nav className="days">
-                        <Link className={day === 5 ? 'active' : null} to="sessions/day1">DAY 1 (8/5)</Link>
-                        <Link className={day === 6 ? 'active' : null} to="sessions/day2">DAY 2 (8/6)</Link>
+                        <Link className={day === 5 ? 'active' : null} to="schedule/day1">DAY 1 (8/5)</Link>
+                        <Link className={day === 6 ? 'active' : null} to="schedule/day2">DAY 2 (8/6)</Link>
                     </nav>
                     <ul className="locations">
                         <li>Room <strong>101</strong></li>
@@ -101,32 +110,34 @@ class SessionsTable extends Component {
                             '--start': 't' + getTimeSlug(session.start),
                             '--end': 't' + getTimeSlug(session.end)
                         }}>
-                            <Link to={'sessions/' + this.props.day + '/' + createId(session)}>
+                            <Link to={'schedule/' + this.props.day + '/' + createId(session)}>
                                 <article>
-                                    <div className="period">
-                                        <span className="start">{getTimeString(session.start)}</span>
-                                        &nbsp;-&nbsp;
-                                        <span className="end">{getTimeString(session.end)}</span>
-                                    </div>
-                                    <h4>{session.subject}</h4>
+                                    <footer>
+                                        <span className="period">
+                                            {getTimeString(session.start)} - {getTimeString(session.end)}
+                                        </span>
+                                        <span className="track">{session.community}</span>
+                                    </footer>
+                                    <header>
+                                        <h4>{session.subject}</h4>
+                                    </header>
+                                    <span className="location">Room {session.room}</span>
+                                    <span className="length">{session.length} mins</span>
+                                    <span className="language">{session.lang}</span>
                                 </article>
                             </Link>
                         </li>)}
                     </ul>
                 </main>
-                {modal && <div className="modal">
-                    <span className="close" onClick={this.props.router.goBack}>×</span>
+                {modal && <div className="modal" onClick={closeModal}>
+                    <span className="close">×</span>
                     <article>
                         <header>
+                            <div className="track">{modal.community}</div>
                             <h4>{modal.subject}</h4>
-                            <div className="community">{modal.community}</div>
-                            <div className="location">Room {modal.room}</div>
-                            <div className="period">
-                                <span className="start">{getTimeString(modal.start)}</span>
-                                -
-                                <span className="end">{getTimeString(modal.end)}</span>
-                            </div>
-                            <div className="language">{modal.lang}</div>
+                            <span className="location">Room {modal.room}</span>
+                            <span className="period">{getTimeString(modal.start)} - {getTimeString(modal.end)}</span>
+                            <span className="language">{modal.lang}</span>
                         </header>
                         <p>{modal.summary}</p>
                         <footer>

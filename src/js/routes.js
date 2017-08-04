@@ -13,10 +13,7 @@ export default class Root extends Component {
             <Router history={history}>
                 <Route path="/" component={Containers.App}>
                     <IndexRoute component={Containers.general.IndexPage}/>
-                    <Route path="sessions(/:day(/:id))" component={SessionTable} />
-                    <Route path="schedule" name="schedule">
-                        <IndexRoute component={Containers.schedule.Home}/>
-                    </Route>
+                    <Route path="schedule(/:day(/:id))" component={SessionTable} />
                     <Route path="transport" name="transport">
                         <IndexRoute component={Containers.transport.Home}/>
                     </Route>

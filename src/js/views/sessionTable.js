@@ -7,19 +7,30 @@ const mapStateToProps = (state, ownProps) => ({
     translations: state.Translate,
     locale: state.Language,
     sessions: state.Schedule,
-    day: ownProps.params.day
+    day: ownProps.params.day,
+    id: ownProps.params.id
 })
 
 const mapDispatchToProps = (dispatch) => ({
     getSchedule: () => dispatch(Actions.Schedule.get())
 })
 
-function getTimeSlug (time) {
+function getTimeString (date) {
+    const time = date instanceof Date ? date : (new Date(date))
+    return paddingZero(time.getHours()) + ':' + paddingZero(time.getMinutes())
+}
+
+function getTimeSlug (date) {
+    const time = date instanceof Date ? date : new Date(date)
     return paddingZero(time.getHours()) + paddingZero(time.getMinutes())
 }
 
 function paddingZero (number) {
     return number < 10 ? '0' + number : number.toString()
+}
+
+function createId (session) {
+    return session.room + getTimeSlug(session.start)
 }
 
 function uniqueArray (v, i, a) {
@@ -33,13 +44,17 @@ class SessionsTable extends Component {
     render () {
         const day = this.props.day === 'day2' ? 6 : 5
         const sessions = this.props.sessions.filter(session => (new Date(session.start)).getDate() === day)
+            .map(session => Object.assign({}, session, {id: createId(session)}))
+            .sort((a, b) => (new Date(a.start)).getTime() - (new Date(b.start)).getTime())
         const times = sessions.reduce((time, session) => time.concat(new Date(session.start), new Date(session.end)), [])
             .filter(uniqueArray)
             .sort()
-        const tracks = this.props.sessions.map(session => session.community)
+        const starts = sessions.reduce((time, session) => time.concat(new Date(session.start)), [])
+            .sort()
+        const modal = this.props.id && sessions.find(session => createId(session) === this.props.id)
+        /* const tracks = this.props.sessions.map(session => session.community)
             .filter(community => !!community)
-            .filter(uniqueArray)
-        console.log(tracks)
+            .filter(uniqueArray) */
         return (
             <div>
                 <header className="subPage">
@@ -52,9 +67,9 @@ class SessionsTable extends Component {
                     </div>
                 </header>
                 <main>
-                    <nav>
-                        <Link to="sessions/day1">DAY 1 (8/5)</Link>
-                        <Link to="sessions/day2">DAY 2 (8/6)</Link>
+                    <nav className="days">
+                        <Link className={day === 5 ? 'active' : null} to="sessions/day1">DAY 1 (8/5)</Link>
+                        <Link className={day === 6 ? 'active' : null} to="sessions/day2">DAY 2 (8/6)</Link>
                     </nav>
                     <ul className="locations">
                         <li>Room <strong>101</strong></li>
@@ -67,9 +82,14 @@ class SessionsTable extends Component {
                         <li>Room <strong>403</strong></li>
                     </ul>
                     <ul className="sessions" style={{
-                        gridTemplateRows: times.map(time => '[t' + getTimeSlug(time) + '] auto').join(' ')
+                        '--list': starts.map((time, i) => {
+                            return (i > 0 && time.getTime() === starts[i - 1].getTime())
+                            ? 'auto'
+                            : '[t' + getTimeSlug(time) + '] auto auto'
+                        }).join(' '),
+                        '--table': times.map(time => '[t' + getTimeSlug(time) + '] auto').join(' ')
                     }}>
-                        {times.map(time =>
+                        {starts.filter(uniqueArray).map(time =>
                         <li key={time.getTime()} className="time" style={{
                             gridRowStart: 't' + getTimeSlug(time)
                         }}>
@@ -77,19 +97,54 @@ class SessionsTable extends Component {
                         </li>)}
                         {sessions.map(session =>
                         <li key={session.room + session.start} className="session" style={{
-                            gridColumn: 'room' + session.room,
-                            gridRowStart: 't' + getTimeSlug(new Date(session.start)),
-                            gridRowEnd: 't' + getTimeSlug(new Date(session.end))
+                            '--room': 'room' + session.room,
+                            '--start': 't' + getTimeSlug(session.start),
+                            '--end': 't' + getTimeSlug(session.end)
                         }}>
-                            <article>
-                                <h4>{session.subject}</h4>
-                            </article>
+                            <Link to={'sessions/' + this.props.day + '/' + createId(session)}>
+                                <article>
+                                    <div className="period">
+                                        <span className="start">{getTimeString(session.start)}</span>
+                                        &nbsp;-&nbsp;
+                                        <span className="end">{getTimeString(session.end)}</span>
+                                    </div>
+                                    <h4>{session.subject}</h4>
+                                </article>
+                            </Link>
                         </li>)}
                     </ul>
                 </main>
+                {modal && <div className="modal">
+                    <span className="close" onClick={this.props.router.goBack}>×</span>
+                    <article>
+                        <header>
+                            <h4>{modal.subject}</h4>
+                            <div className="community">{modal.community}</div>
+                            <div className="location">Room {modal.room}</div>
+                            <div className="period">
+                                <span className="start">{getTimeString(modal.start)}</span>
+                                -
+                                <span className="end">{getTimeString(modal.end)}</span>
+                            </div>
+                            <div className="language">{modal.lang}</div>
+                        </header>
+                        <p>{modal.summary}</p>
+                        <footer>
+                            <div className="speaker">
+                                <img src={modal.speaker.avatar} />
+                                <strong>{modal.speaker.name}</strong>
+                                <p>{modal.speaker.bio}</p>
+                            </div>
+                        </footer>
+                    </article>
+                </div>}
             </div>
         )
     }
+}
+
+SessionsTable.defaultProps = {
+    day: 'day1'
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionsTable)

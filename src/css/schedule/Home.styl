@@ -269,13 +269,58 @@
     }
 }
 
+.days {
+    margin-bottom: 1em;
+    a {
+        display: inline-block;
+        text-decoration: none;
+        border: none;
+        line-height: auto;
+        color: inherit;
+    }
+    @media only screen and (max-width: 719px) {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: linear-gradient(-315deg, #f9fea5, #20e2d7);
+        display: flex;
+        a {
+            height: 64px;
+            flex: 1 0 auto;
+            text-align: center;
+            line-height: 64px;
+        }
+        .active {
+            border-bottom: 5px solid #009a79;
+        }
+    }
+    @media only screen and (min-width: 720px) {
+        a {
+            font-size: 3em;
+            margin-right: .5em;
+            padding: .3em;
+        }
+        .active {
+            color: #fff;
+            background: #000;
+        }
+    }
+    @media only screen and (min-width: 1000px) {
+        margin: 0 -32px 1em;
+    }
+}
+
 .locations {
-    display: flex;
+    display: none;
     list-style: none;
     text-align: center;
     position: sticky;
+    position: -webkit-sticky;
     top: 65px;
+    contain: layout;
     background-color: rgba(255, 255, 255, .8);
+    z-index: 9;
+    margin: 0 -32px;
     li {
         flex: 1 0 auto;
         font-size: smaller;
@@ -287,28 +332,175 @@
         margin: -.3em 0 .5em;
         color: rgba(0, 0, 0, .7);
     }
+    @media only screen and (min-width: 1000px) {
+        display: flex;
+    }
 }
 
 .sessions {
-    display: grid;
     list-style: none;
-    grid-template-areas: "room101 room201 room202 room303 room305 room306 room307 room403"
-    grid-gap: 0 .5em;
-    grid-template-columns: repeat(8, calc((100% - 7 * 0.5em) / 8));
+    display: grid;
+    grid-template-rows: var(--list);
+    li {
+        a {
+            display: block;
+            height: 100%;
+            contain: layout;
+            color: inherit;
+        }
+        @media only screen and (min-width: 1000px) {
+            position: relative;
+            article {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 130px;
+            }
+        }
+    }
+    @media only screen and (max-width: 719px) {
+        margin-top: -56px;
+    }
+    @media only screen and (min-width: 720px) {
+        grid-template-columns: 120px auto;
+        grid-column: 2;
+    }
+    @media only screen and (min-width: 1000px) {
+        grid-template-rows: var(--table);
+        grid-template-areas: "room101 room201 room202 room303 room305 room306 room307 room403"
+        grid-column: var(--room);
+        grid-gap: 0 .5em;
+        grid-template-columns: repeat(8, calc((100% - 7 * 0.5em) / 8));
+        margin: 0 -32px;
+    }
 }
 
 .session {
-    border: 1px dashed rgba(0, 0, 0, .4);
-    border-radius: 5px;
     padding: .5em;
     h4 {
         font-weight: normal;
+        margin: 0;
         word-break: break-word;
+        color: #000;
+    }
+    .period {
+        opacity: .8;
+        display: none;
+    }
+    @media only screen and (min-width: 720px) {
+        grid-column: 2;
+        margin-bottom: 1em;
+        h4 {
+            font-size: 24px;
+            margin-bottom: 1em;
+        }
+    }
+    @media only screen and (min-width: 1000px) {
+        grid-column: var(--room);
+        grid-row-start: var(--start);
+        grid-row-end: var(--end);
+        border: 1px dashed rgba(0, 0, 0, .4);
+        border-radius: 5px;
+        h4 {
+            font-size: large;
+        }
+        .period {
+            display: block;
+        }
     }
 }
 
 .time {
-    display: none;
-    grid-column-start: room101-start;
-    grid-column-end: room403-end;
+    font-size: 20px;
+    color: #009a79;
+    background-color: #ecf5f4;
+    padding: .5em;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 69px;
+    @media only screen and (min-width: 720px) {
+        margin: 0 -64px;
+        padding: .5em 64px;
+        border-top: 1px solid #b8d2cf;
+        grid-column: 1 / span 2;
+    }
+    @media only screen and (min-width: 1000px) {
+        display: none;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .8);
+    z-index: 999;
+    padding-top: 3em;
+    .close {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        cursor: pointer;
+        font-size: 3em;
+        font-weight: bolder;
+    }
+    article {
+        background-color: #ecf5f4;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 800px;
+        padding: 2em;
+        max-height: calc(100vh - 4em);
+        overflow: auto;
+    }
+    h4 {
+        font-size: larger;
+    }
+}
+
+.speaker {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: auto 1fr;
+    img {
+        width: 96px;
+        height: 96px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #009a79;
+        grid-row: 1 / span 2;
+        align-self: center;
+    }
+    strong, p {
+        grid-column: 2;
+    }
+    strong {
+        grid-row: 1;
+        font-size: larger;
+        padding: 1em 1em 0;
+    }
+    p {
+        grid-row: 2;
+        padding: 1em;
+        margin: 0;
+        word-break: break-word;
+    }
+    &::before, &::after {
+        content: ' '
+        background-color: #fff;
+        grid-column: 2;
+        grid-row: 1 / span 3;
+    }
+    &::before {
+        border-radius: .5em;
+    }
+    &::after {
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        transform: rotate(45deg);
+        align-self: center;
+    }
 }

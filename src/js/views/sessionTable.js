@@ -96,7 +96,7 @@ class SessionsTable extends Component {
                             ? 'auto'
                             : '[t' + getTimeSlug(time) + '] auto auto'
                         }).join(' '),
-                        '--table': times.map(time => '[t' + getTimeSlug(time) + '] auto').join(' ')
+                        '--table': times.map(time => '[t' + getTimeSlug(time) + '] minmax(1em, auto)').join(' ')
                     }}>
                         {starts.filter(uniqueArray).map(time =>
                         <li key={time.getTime()} className="time" style={{
